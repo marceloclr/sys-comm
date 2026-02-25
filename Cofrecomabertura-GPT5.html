@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>SOC Secure Terminal</title>
+
+<style>
+:root{
+--bg:#020617;
+--panel:#0f172a;
+--accent:#38bdf8;
+--matrix:#00ff41;
+--danger:#ef4444;
+--ok:#22c55e;
+}
+
+body,html{
+margin:0;
+padding:0;
+height:100%;
+background:var(--bg);
+color:#f1f5f9;
+font-family:"Courier New",monospace;
+overflow:hidden;
+}
+
+/* SPLASH */
+#splash-screen{
+position:fixed;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:var(--bg);
+gap:18px;
+z-index:1000;
+}
+
+#display-box{
+padding:2.5rem;
+border:2px solid var(--accent);
+border-radius:16px;
+background:var(--panel);
+box-sizing:border-box;
+min-width:750px;
+max-width:90vw;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+#text-anim{
+font-size:3.2rem;
+font-weight:bold;
+color:var(--accent);
+text-shadow:0 0 10px var(--accent);
+letter-spacing:4px;
+white-space:nowrap;
+}
+
+/* TERMINAL */
+#boot-screen{
+width:750px;
+background:#000;
+border:1px solid #003300;
+padding:20px;
+box-sizing:border-box;
+font-size:0.85rem;
+line-height:1.2rem;
+overflow:hidden;
+height:calc(1.2rem * 15 + 40px);
+color:#e5e7eb;
+}
+
+.ok{color:var(--ok);font-weight:bold;}
+.service{color:#e5e7eb;}
+.attack{color:var(--danger);font-weight:bold;}
+.kernel{color:var(--matrix);}
+
+/* RISK */
+#warning{
+width:750px;
+text-align:center;
+font-size:0.85rem;
+text-transform:uppercase;
+color:#ffffff;
+}
+
+#risk-text{
+color:var(--danger);
+font-weight:bold;
+}
+
+/* IP DETECTOR */
+#ip-detector{
+width:750px;
+text-align:center;
+font-size:0.75rem;
+text-transform:uppercase;
+color:#ffffff;
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.ip-line{
+color:#e5e7eb;
+}
+
+.ip-rep-low{color:#22c55e;font-weight:bold;}
+.ip-rep-medium{color:#f59e0b;font-weight:bold;}
+.ip-rep-high{color:#ef4444;font-weight:bold;}
+
+/* MAIN */
+#main-system{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+}
+
+.grid{
+display:flex;
+gap:40px;
+width:900px;
+}
+
+.box{
+flex:1;
+background:var(--panel);
+padding:2rem;
+border-radius:12px;
+border:1px solid #334155;
+}
+
+input,textarea{
+width:100%;
+margin-top:8px;
+padding:10px;
+background:#000;
+color:#ffffff;
+border:1px solid #334155;
+font-family:monospace;
+}
+
+button{
+width:100%;
+margin-top:10px;
+padding:12px;
+background:var(--accent);
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="splash-screen">
+
+<div id="display-box" onclick="abrirCofre()">
+<div id="text-anim"></div>
+</div>
+
+<div id="boot-screen">
+<div id="boot-log"></div>
+</div>
+
+<div id="warning">
+Risk of contamination by:
+<span id="risk-text">Malware</span>
+</div>
+
+<div id="ip-detector">
+<div id="ip-line" class="ip-line"></div>
+<div id="geo-line" class="ip-line"></div>
+<div id="asn-line" class="ip-line"></div>
+<div id="lat-line" class="ip-line"></div>
+<div id="rep-line" class="ip-line"></div>
+</div>
+
+</div>
+
+<div id="main-system">
+<div class="grid">
+
+<div class="box">
+<h3>🔒 ENCRIPTAR</h3>
+<textarea id="e-msg" rows="3"></textarea>
+<input type="password" id="e-pass" placeholder="Senha">
+<button onclick="execEncriptar()">CRIPTOGRAFAR</button>
+<textarea id="e-res" rows="3" readonly></textarea>
+</div>
+
+<div class="box">
+<h3>🔓 DECRIPTAR</h3>
+<textarea id="d-cipher" rows="3"></textarea>
+<input type="password" id="d-pass" placeholder="Senha">
+<button onclick="execDecriptar()">REVELAR</button>
+<textarea id="d-res" rows="3" readonly></textarea>
+</div>
+
+</div>
+</div>
+
+<script>
+const pool="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+let animState={isRunning:true,charIdx:0,currentArr:Array(20).fill("")};
+
+function rodarAnimacao(){
+if(!animState.isRunning)return;
+const el=document.getElementById("text-anim");
+animState.currentArr[animState.charIdx]=pool[Math.floor(Math.random()*pool.length)];
+el.innerHTML=animState.currentArr.map((c,i)=>
+i===animState.charIdx?
+`<span style="border-bottom:8px solid #38bdf8">${c}</span>`:c
+).join("");
+animState.charIdx=(animState.charIdx+1)%20;
+setTimeout(rodarAnimacao,90);
+}
+
+/* RISK */
+const risks=["Ransomware","Zero-Day Exploit","Credential Leak","DDoS Surge"];
+
+function aplicarGlitch(el,txt){
+let count=0;
+const interval=setInterval(()=>{
+el.textContent=txt.split("").map((c,i)=>
+i<count?c:pool[Math.floor(Math.random()*pool.length)]
+).join("");
+if(count>=txt.length)clearInterval(interval);
+count++;
+},20);
+}
+
+function rotarRiscos(){
+if(!animState.isRunning)return;
+aplicarGlitch(document.getElementById("risk-text"),
+risks[Math.floor(Math.random()*risks.length)]);
+setTimeout(rotarRiscos,2000);
+}
+
+/* IP COMPLETO */
+async function rotarIP(){
+
+if(!animState.isRunning)return;
+
+const ipEl=document.getElementById("ip-line");
+const geoEl=document.getElementById("geo-line");
+const asnEl=document.getElementById("asn-line");
+const latEl=document.getElementById("lat-line");
+const repEl=document.getElementById("rep-line");
+
+try{
+
+const start=performance.now();
+const res=await fetch("https://ipapi.co/json/");
+const data=await res.json();
+const latency=Math.round(performance.now()-start);
+
+const reputations=["LOW RISK","MEDIUM RISK","HIGH RISK"];
+const rep=reputations[Math.floor(Math.random()*reputations.length)];
+
+let repClass="ip-rep-low";
+if(rep==="MEDIUM RISK")repClass="ip-rep-medium";
+if(rep==="HIGH RISK")repClass="ip-rep-high";
+
+aplicarGlitch(ipEl,`IP: ${data.ip}`);
+aplicarGlitch(geoEl,`LOCATION: ${data.city} - ${data.country_name}`);
+aplicarGlitch(asnEl,`ISP: ${data.org} | ASN: ${data.asn}`);
+aplicarGlitch(latEl,`LATENCY: ${latency} ms`);
+
+setTimeout(()=>{
+repEl.innerHTML=`REPUTATION: <span class="${repClass}">${rep}</span>`;
+},400);
+
+}catch{
+ipEl.textContent="IP UNAVAILABLE";
+}
+
+setTimeout(rotarIP,15000);
+}
+
+/* TERMINAL */
+const kernelBoot=[
+"Linux version 6.12.0-secure (gcc 13.2.1)",
+"Command line: BOOT_IMAGE=/vmlinuz-6.12 root=/dev/sda1 ro",
+"Initializing cgroup subsys cpu",
+"Initializing cgroup subsys memory"
+];
+
+function iniciarTerminal(){
+const el=document.getElementById("boot-log");
+let bootIndex=0;
+
+function loop(){
+if(!animState.isRunning)return;
+let div=document.createElement("div");
+
+if(bootIndex<kernelBoot.length){
+div.innerHTML=`<span class="kernel">${kernelBoot[bootIndex++]}</span>`;
+}else{
+div.innerHTML=`[ <span class="ok">OK</span> ] Service running`;
+}
+
+el.appendChild(div);
+if(el.children.length>15)el.removeChild(el.children[0]);
+
+setTimeout(loop,700);
+}
+loop();
+}
+
+/* CRIPTO permanece igual */
+async function execEncriptar(){
+const msg=document.getElementById("e-msg").value;
+const pass=document.getElementById("e-pass").value;
+if(!msg||!pass){alert("Preencha os campos");return;}
+const enc=new TextEncoder();
+const salt=crypto.getRandomValues(new Uint8Array(16));
+const iv=crypto.getRandomValues(new Uint8Array(12));
+const keyMat=await crypto.subtle.importKey("raw",enc.encode(pass),"PBKDF2",false,["deriveKey"]);
+const key=await crypto.subtle.deriveKey(
+{name:"PBKDF2",salt,iterations:300000,hash:"SHA-256"},
+keyMat,{name:"AES-GCM",length:256},false,["encrypt"]);
+const ct=await crypto.subtle.encrypt({name:"AES-GCM",iv},key,enc.encode(msg));
+const result=new Uint8Array(16+12+ct.byteLength);
+result.set(salt,0);
+result.set(iv,16);
+result.set(new Uint8Array(ct),28);
+document.getElementById("e-res").value=btoa(String.fromCharCode(...result));
+}
+
+async function execDecriptar(){
+try{
+const pass=document.getElementById("d-pass").value;
+const raw=atob(document.getElementById("d-cipher").value);
+const data=new Uint8Array([...raw].map(c=>c.charCodeAt(0)));
+const salt=data.slice(0,16);
+const iv=data.slice(16,28);
+const ct=data.slice(28);
+const enc=new TextEncoder();
+const keyMat=await crypto.subtle.importKey("raw",enc.encode(pass),"PBKDF2",false,["deriveKey"]);
+const key=await crypto.subtle.deriveKey(
+{name:"PBKDF2",salt,iterations:300000,hash:"SHA-256"},
+keyMat,{name:"AES-GCM",length:256},false,["decrypt"]);
+const pt=await crypto.subtle.decrypt({name:"AES-GCM",iv},key,ct);
+document.getElementById("d-res").value=new TextDecoder().decode(pt);
+}catch{alert("Senha incorreta ou dado inválido");}
+}
+
+function abrirCofre(){
+animState.isRunning=false;
+document.getElementById("splash-screen").style.display="none";
+document.getElementById("main-system").style.display="flex";
+}
+
+rodarAnimacao();
+rotarRiscos();
+rotarIP();
+iniciarTerminal();
+</script>
+
+</body>
+</html>
