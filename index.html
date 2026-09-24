@@ -650,7 +650,7 @@ let _ultimoAlertaGps = 0;
 // Usa watchPosition e espera a precisão convergir: num aparelho com GPS (celular)
 // o primeiro fix costuma ser grosseiro e melhora em segundos. maximumAge:0 evita
 // devolver um fix antigo em cache. No desktop (sem chip GPS) fica em nível-cidade.
-const _GPS_JANELA_MS = 20000;   // tempo máximo esperando o GPS convergir
+const _GPS_JANELA_MS = 40000;   // tempo máximo esperando o GPS convergir (cold start do GPS)
 const _GPS_BOM_M    = 50;       // precisão (m) já considerada boa: para cedo
 function _obterPosicao() {
   return new Promise(function(resolve) {
