@@ -4,59 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>(function(){function aplicarClasseDispositivo(){var curto=Math.min(window.innerWidth,window.innerHeight);var movel=curto<=500;document.documentElement.classList.toggle('dispositivo-movel',movel);document.documentElement.classList.toggle('dispositivo-pc',!movel);}aplicarClasseDispositivo();window.addEventListener('resize',aplicarClasseDispositivo);window.addEventListener('orientationchange',aplicarClasseDispositivo);})();</script>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self' https://api.telegram.org https://get.geojs.io https://ipwho.is https://ipinfo.io https://ipapi.co https://api.ipify.org https://ipv4.icanhazip.com https://ipv4.seeip.org;">
-<title>Módulo de Comunicação - V2026.09.2</title>
-<style> :root{--bg:#10131a;--panel:#161a23;--accent:#7783c4;--matrix:#6f9d82;--danger:#b1614a;--ok:#5e9b7f;--win-border:#2a3040;--win-hover:#8f99d6;--row-alt:#1c212d;--r:10px;--aviso:#c2953f;--imagem:#9a7bc4;--border-soft:#232838;--serif:Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;--mono:'Courier New',ui-monospace,'Cascadia Code',monospace}*,*::before,*::after{box-sizing:border-box}body,html{margin:0;padding:0;min-height:100%;background:var(--bg);background-attachment:fixed;color:#e6e8ee;font-family:var(--sans);overflow-x:auto}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#10131a}::-webkit-scrollbar-thumb{background:#2a3040;border-radius:4px}.container-logo{width:100%;max-width:650px;margin-bottom:10px}.win-titlebar{background:#1c212d;color:#b7bccb;padding:11px 16px;font-size:13px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--win-border);position:relative}.win-titlebar .title-text{position:absolute;left:50%;transform:translateX(-50%);font-size:12px;color:#7a8296;pointer-events:none;font-family:var(--serif);font-style:italic;letter-spacing:0.3px}.mac-dots{display:flex;gap:7px;align-items:center}.mac-dot{width:13px;height:13px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:8px;color:transparent;transition:color 0.15s;position:relative;flex-shrink:0}.mac-dot:hover{color:rgba(0,0,0,0.6)}.mac-dot.close{background:#ff5f57;border:1px solid #e0443e}.mac-dot.min{background:#ffbd2e;border:1px solid #dfa123}.mac-dot.max{background:#28c840;border:1px solid #1aab29}.mac-dot.close::after{content:"✕"}.mac-dot.min::after{content:"−"}.mac-dot.max::after{content:"+"}.win-body{padding:25px}.win-label{color:#c7cbd6;font-size:13px;margin-bottom:7px;display:block;font-weight:bold;letter-spacing:0.5px}.win-input{width:100%;background:#10131a;border:1px solid #2a3040;color:var(--matrix);font-weight:bold;padding:11px 12px;margin-bottom:22px;outline:none;font-size:15px;font-family:var(--sans);text-transform:uppercase;border-radius:6px;transition:border-color 0.2s}.win-input:focus{border-color:var(--accent)}.win-button{background:var(--accent);color:white;border:none;padding:11px 28px;cursor:pointer;float:right;font-size:14px;font-weight:600;text-transform:uppercase;border-radius:8px;transition:background 0.2s,transform 0.1s}.win-button:hover{background:var(--win-hover)}.win-button:active{transform:scale(0.97)}.inner-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px}#risk-login{margin-top:22px;border-top:1px solid #232838;padding-top:14px;color:#b1614a;font-family:var(--mono);min-height:38px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px}#risk-text-login{color:#e6e8ee;text-transform:uppercase;display:inline-block;width:250px;text-align:left;white-space:nowrap}#splash-screen{display:none;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center;background:var(--bg);background-attachment:fixed;gap:20px;z-index:1000;overflow:auto}#display-box{width:850px;height:155px;border:2px solid #7783c4;border-radius:16px;background:#161a23;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:box-shadow 0.3s}#display-box:hover{box-shadow:0 0 30px rgba(119,131,196,0.3)}#text-anim{font-size:3.1rem;font-weight:bold;color:#7783c4;text-shadow:0 0 12px #7783c4;letter-spacing:4px;font-family:var(--mono)}#boot-screen{width:850px;background:#0a0c11;border:1px solid #232838;border-radius:8px;padding:14px 18px;height:320px;color:#dfe1e8;font-family:var(--mono);font-size:12px;overflow-y:auto}.lnx-ok{color:var(--ok);font-weight:bold}.lnx-alert{color:var(--danger);font-weight:bold}.lnx-warn{color:#c2953f;font-weight:bold}.lnx-info{color:#7783c4;font-weight:bold}.lnx-time{color:#2a3040;margin-right:8px}#main-system{display:none;flex-direction:column;align-items:center;padding:60px 20px 40px}.grid{display:flex;gap:30px;width:1060px;margin-bottom:28px}.box{flex:1;min-width:0;width:0;overflow:hidden;background:var(--panel);padding:1.8rem;border:1px solid var(--win-border);border-radius:var(--r);box-shadow:0 4px 20px rgba(0,0,0,0.4)}.modo-switch{display:flex;gap:16px;width:1060px;margin-bottom:24px}.modo-btn{flex:1;padding:16px;border:1px solid var(--win-border);border-radius:var(--r);background:var(--panel);color:#8991a3;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:var(--sans)}.modo-btn.proteger.ativo{background:#16241d;border-color:var(--matrix);color:var(--matrix)}.modo-btn.revelar.ativo{background:#1a1f33;border-color:var(--accent);color:var(--accent)}.modo-btn:hover:not(.ativo){border-color:#3a4358;color:#c7cbd6}.box{display:none}.box.ativo{display:block}.box.ativo.revelando{animation:revelarForm .35s ease}@keyframes revelarForm{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){.box.ativo.revelando{animation:none}}.form-cols{display:flex;gap:24px;align-items:flex-start}.form-col{flex:1;min-width:0}.box h3{margin:0 0 14px;font-size:14px;letter-spacing:1px;color:#c7cbd6;border-bottom:1px solid #232838;padding-bottom:10px}textarea{width:100%;margin-top:6px;padding:11px 13px;background:#10131a;color:#e6e8ee;border:1px solid #2a3040;font-family:var(--mono);font-size:12px;resize:none;border-radius:8px;outline:none;transition:border-color 0.2s}textarea:focus{border-color:var(--accent)}.btn-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.btn-sys{-webkit-appearance:none;appearance:none;flex:1;padding:13px;background:var(--accent);border:none;color:white;font-weight:bold;cursor:pointer;border-radius:8px;font-size:13px;letter-spacing:0.5px;transition:background 0.2s,transform 0.1s}.btn-sys:hover{background:var(--win-hover)}.btn-sys:active{transform:scale(0.98)}.btn-send{-webkit-appearance:none;appearance:none;padding:13px 16px;background:#223d2f;border:1px solid #3f6b52;color:var(--ok);cursor:pointer;border-radius:8px;font-size:12px;font-weight:bold;transition:all 0.2s;white-space:nowrap;flex-shrink:0}.btn-send:hover{background:#2c4a3a;border-color:var(--ok)}.pass-container{position:relative;width:100%;margin-top:8px}.pass-input{width:100%;height:44px;padding:11px 46px 11px 13px;background:#10131a;color:#e6e8ee;border:1px solid #2a3040;font-family:var(--mono);outline:none;border-radius:8px;font-size:13px;transition:border-color 0.2s}.pass-input:focus{border-color:var(--accent)}.eye-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:17px;user-select:none;filter:grayscale(1) opacity(0.5);transition:filter 0.2s}.eye-icon:hover{filter:grayscale(0) opacity(1)}.field-label{font-size:11px;color:#6b7690;margin-top:10px;margin-bottom:2px;letter-spacing:0.5px;text-transform:uppercase;display:block}#top-left-bar{position:fixed;top:14px;left:24px;right:24px;z-index:200;display:none;align-items:center;justify-content:space-between;gap:12px}#timer-container{display:none;flex-direction:column;gap:6px;font-family:var(--sans)}#timer-container.visible{display:flex}#btn-wipe-all{background:#2a1712;color:#e0917a;border:1px solid #8f4a38;padding:7px 16px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;white-space:nowrap}#btn-wipe-all:hover{background:#8f4a38;color:#fff;box-shadow:0 0 14px rgba(143,74,56,0.6)}.timer-pill{display:flex;align-items:center;gap:8px;padding:7px 18px;border-radius:8px;cursor:default;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}#session-timer-display{background:#10131a;color:#a3addf;border:1px solid #7783c4}#session-timer-display.warning{border-color:#8f4a38;color:#d9a794;background:#201310;animation:blink-timer 0.8s step-start infinite}#op-timer-widget{background:#16241d;color:#5e9b7f;border:1px solid #3f6b52;display:none;cursor:pointer;transition:background 0.2s}#op-timer-widget:hover{background:#1c2f24}#op-timer-widget.warning{border-color:#c2953f;color:#d4ac5f;background:#2a2011}#op-timer-widget.critical{border-color:var(--danger);color:#d9a794;background:#201310;animation:blink-timer 0.8s step-start infinite}@keyframes blink-timer{0%,100%{opacity:1}50%{opacity:0.4}}#session-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:#251712;color:#d9a794;padding:10px 20px;text-align:center;font-size:13px;font-weight:700;letter-spacing:1px;display:none;border-bottom:2px solid #8f4a38;animation:pulse-bar 1s ease-in-out infinite}#session-bar span.cd{color:#e6e8ee;font-size:15px}@keyframes pulse-bar{0%,100%{background:#251712}50%{background:#2e1c16}}#btn-logout{position:fixed;top:14px;right:24px;z-index:200;background:#251712;color:#d9a794;border:1px solid #8f4a38;padding:7px 20px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;display:none}#btn-logout:hover{background:#8f4a38;color:#e6e8ee;box-shadow:0 0 14px rgba(143,74,56,0.5)}.btn-clear-styled{-webkit-appearance:none;appearance:none;padding:13px 16px;background:#1c212d;border:1px solid #2a3040;color:#c7cbd6;cursor:pointer;border-radius:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.2s;white-space:nowrap;flex-shrink:0}.btn-clear-styled:hover{background:#2a3040;border-color:#7a8296;color:#e6e8ee}.img-upload-zone{width:100%;margin-top:6px;border:2px dashed #2a3040;border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;background:#171b28;color:#6b7690;font-size:12px;letter-spacing:0.5px;position:relative}.img-upload-zone:hover,.img-upload-zone.drag-over{border-color:var(--accent);color:#8991a3;background:#1c2440;box-shadow:0 0 12px rgba(119,131,196,0.3)}.img-upload-zone input[type="file"]{display:none}.img-upload-zone .upload-icon{font-size:22px;display:block;margin-bottom:4px}.img-preview-wrap{margin-top:8px;text-align:center;position:relative}.img-preview-wrap img{max-width:100%;max-height:140px;border-radius:6px;border:1px solid #2a3040;object-fit:contain}.img-preview-name{font-size:10px;color:#7a8296;margin-top:4px;font-family:var(--mono)}.img-capacity-warn{display:none;margin-top:8px;padding:8px 12px;background:#251712;border:1px solid #251712;border-radius:6px;color:#c47259;font-size:11px;font-family:var(--mono);letter-spacing:0.5px}.img-capacity-warn.show{display:block}.img-capacity-ok{display:none;margin-top:8px;padding:8px 12px;background:#16241d;border:1px solid #2f5c42;border-radius:6px;color:#5e9b7f;font-size:11px;font-family:var(--mono);letter-spacing:0.5px}.img-capacity-ok.show{display:block}.btn-download-img{padding:13px 16px;background:#1a3325;border:1px solid #3f6b52;color:var(--ok);cursor:pointer;border-radius:8px;font-size:12px;font-weight:bold;transition:all 0.2s;letter-spacing:0.5px;white-space:nowrap;text-align:center;flex-shrink:0}.btn-download-img:hover{background:#223d2f;border-color:var(--ok);box-shadow:0 0 10px rgba(94,155,127,0.3)}.dec-image-preview{margin-top:10px;padding:12px;background:#16241d;border:1px solid #3f6b52;border-radius:8px;text-align:center;display:none}.dec-image-preview img{max-width:100%;max-height:200px;border-radius:6px;border:1px solid #5e9b7f;object-fit:contain}.dec-image-label{font-size:11px;color:#5e9b7f;margin-bottom:8px;letter-spacing:1px;text-transform:uppercase;font-weight:bold}.output-mode-toggle{display:flex;gap:0;margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid #2a3040}.output-mode-btn{flex:1;padding:9px 8px;background:#171b28;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#6b7690;transition:all 0.2s}.output-mode-btn:first-child{border-right:1px solid #2a3040}.output-mode-btn.active{background:var(--accent);color:#e6e8ee}.output-mode-btn:hover:not(.active){background:#1c2440;color:#8991a3}.enc-img-output-wrap{margin-top:10px;text-align:center;display:none}.enc-img-output-wrap canvas{border-radius:8px;border:1px solid #3f6b52;max-width:100%;image-rendering:pixelated}.enc-img-output-label{font-size:10px;color:#5e9b7f;margin-bottom:6px;letter-spacing:1px;text-transform:uppercase;font-weight:bold}.dec-img-upload-zone{width:100%;border:2px dashed #4a3a68;border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;background:#211a30;color:#9a7bc4;font-size:12px;letter-spacing:0.5px;display:none}.dec-source-badge{margin-top:6px;padding:6px 12px;border-radius:6px;font-size:11px;font-family:var(--mono);letter-spacing:0.5px;font-weight:bold}.dec-source-badge.hash{background:#1a1f33;border:1px solid #3d4a7a;color:#7783c4}.dec-source-badge.image{background:#21192f;border:1px solid #453465;color:#9a7bc4}.dec-img-upload-zone:hover,.dec-img-upload-zone.drag-over{border-color:#9a7bc4;color:#b7a0d9;background:#2b2140;box-shadow:0 0 12px rgba(154,123,196,0.3)}.dec-img-upload-zone input[type="file"]{display:none}.dec-img-loaded{margin-top:6px;font-size:10px;color:#9a7bc4;font-family:var(--mono);display:none}.log-toggle-bar{width:100%;background:#1c212d;border:1px solid var(--win-border);color:#8991a3;padding:11px;text-align:center;cursor:pointer;font-size:11px;font-weight:bold;margin-bottom:5px;border-radius:8px;transition:background 0.2s}.log-toggle-bar:hover{background:#242a38}#admin-area{display:flex;flex-direction:column;gap:16px;width:1060px;margin-bottom:50px;align-items:stretch}.admin-toggle-row{display:flex;gap:16px;width:100%}.admin-toggle-row .log-toggle-bar{flex:1;margin-bottom:0}#admin-log-panel{width:100%;background:var(--panel);border:1px solid var(--win-border);padding:20px;border-radius:var(--r);display:none}.log-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;border-bottom:1px solid #232838;padding-bottom:10px}.audit-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px;color:#c7cbd6;table-layout:fixed}.audit-table th{color:var(--accent);text-align:left;border-bottom:1px solid #2a3040;padding:8px;text-transform:uppercase}.audit-table td{padding:8px;border-bottom:1px solid #232838;word-break:break-all}.audit-table tr:nth-child(even){background:var(--row-alt)}.purge-btn{background:none;border:1px solid var(--danger);color:var(--danger);padding:5px 12px;cursor:pointer;font-size:10px;font-weight:bold;border-radius:6px;transition:background 0.2s}.purge-btn:hover{background:rgba(177,97,74,0.1)}.rich-toolbar{display:flex;flex-wrap:wrap;gap:3px;padding:6px 8px;background:#161a23;border:1px solid #2a3040;border-bottom:none;border-radius:8px 8px 0 0}.rich-toolbar button{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:3px 8px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:bold;min-width:28px;transition:background 0.15s,color 0.15s;font-family:var(--mono)}.rich-toolbar button:hover{background:#2a3040;color:#e6e8ee}.rich-toolbar button.active{background:#223d2f;border-color:#3f6b52;color:#5e9b7f}.rich-toolbar select{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:2px 4px;border-radius:4px;font-size:12px;font-family:var(--mono);cursor:pointer}.rich-toolbar .tb-sep{width:1px;background:#2a3040;margin:2px 3px;align-self:stretch}.rich-editor{min-height:110px;max-height:280px;overflow-y:auto;padding:10px 13px;background:#10131a;border:1px solid #2a3040;color:#e6e8ee;font-family:var(--sans);font-size:14px;border-radius:0 0 8px 8px;outline:none;transition:border-color 0.2s;line-height:1.5}.rich-editor:focus{border-color:var(--matrix)}.rich-editor-readonly{cursor:default;background:#0d1119;}.rich-editor[data-placeholder]:empty:before{content:attr(data-placeholder);color:#2a3040;pointer-events:none}.rich-editor ul,.rich-editor ol{padding-left:22px;margin:4px 0}.rich-editor h1{font-size:1.4em;margin:6px 0}.rich-editor h2{font-size:1.2em;margin:5px 0}.rich-editor h3{font-size:1.05em;margin:4px 0}.rich-editor.disabled{opacity:0.4;pointer-events:none}.rich-editor-wrap{margin-bottom:0}#op-modal-overlay{display:none;position:fixed;inset:0;z-index:4000;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;animation:fadeIn 0.15s ease;overflow:auto}#op-modal-overlay.visible{display:flex}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}#op-auth-panel{width:420px;background:#161a23;border:1px solid #1a1f33;border-radius:12px;padding:24px 28px;box-shadow:0 0 40px rgba(119,131,196,0.25),0 20px 60px rgba(0,0,0,0.6);animation:slideUp 0.2s ease;position:relative}.op-modal-close{position:absolute;top:12px;right:14px;background:none;border:none;color:#2a3040;font-size:18px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:4px;transition:color 0.15s}.op-modal-close:hover{color:#c7cbd6}.op-modal-title{font-size:13px;color:#7783c4;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}.op-modal-subtitle{font-size:10px;color:#2a3040;letter-spacing:0.5px;font-family:var(--mono);margin-bottom:18px;border-bottom:1px solid #232f45;padding-bottom:12px}.op-label{font-size:11px;color:#7783c4;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}.op-timer-bar{height:3px;background:#1a1f33;border-radius:2px;margin-top:12px;overflow:hidden;display:none}.op-timer-bar.visible{display:block}.op-timer-fill{height:100%;background:var(--accent);transition:width 1s linear;width:100%}.op-timer-fill.warning{background:#c2953f}.op-timer-fill.critical{background:var(--danger)}.op-status{font-size:10px;margin-top:6px;letter-spacing:0.5px;font-family:var(--mono);text-align:center}.op-status.locked{color:#2a3040}.op-status.unlocked{color:var(--ok)}.op-status.duress{color:var(--ok)}.btn-sys.locked{background:#1a1e28 !important;border:1px solid #232838 !important;color:#2a3040 !important;cursor:not-allowed !important;position:relative}.btn-sys.locked::after{content:"🔒";position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px}#op-status-badge{display:none;position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:200;padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px;font-family:var(--mono);cursor:pointer;transition:all 0.2s}#op-status-badge.locked{display:none}#op-status-badge.unlocked{display:block;background:#16241d;border:1px solid #3f6b52;color:var(--ok)}#op-status-badge.duress{display:block;background:#16241d;border:1px solid #3f6b52;color:var(--ok)}.umgmt-title{font-size:12px;color:#c2953f;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}.user-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px;color:#c7cbd6;margin-bottom:16px;table-layout:fixed}.user-table th{color:#c2953f;text-align:left;border-bottom:1px solid #2a3040;padding:8px 6px;text-transform:uppercase;font-size:10px}.user-table td{padding:7px 6px;border-bottom:1px solid #1a1e28;vertical-align:middle}.user-table tr:nth-child(even){background:var(--row-alt)}.user-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:0.5px}.user-badge.admin{background:#1a1f33;color:#7783c4;border:1px solid #3d4a7a}.user-badge.user{background:#241d16;color:#a58767;border:1px solid #4a3a26}.user-badge.root{background:#251c38;color:#b7a0d9;border:1px solid #4a3a68}.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.status-dot.on{background:#5e9b7f;box-shadow:0 0 6px #5e9b7f}.status-dot.off{background:#2a3040}.umgmt-btn{background:none;border:1px solid #2a3040;color:#8991a3;padding:3px 10px;border-radius:4px;cursor:pointer;font-size:10px;font-weight:700;transition:all 0.15s}.umgmt-btn:hover{border-color:#7a8296;color:#e6e8ee}.umgmt-btn.enable{border-color:#3f6b52;color:#5e9b7f}.umgmt-btn.enable:hover{background:#223d2f}.umgmt-btn.disable{border-color:#251712;color:#c47259}.umgmt-btn.disable:hover{background:#251712}.umgmt-btn.danger{border-color:#8f4a38;color:#b1614a}.umgmt-btn.danger:hover{background:#2a1712}.umgmt-btn.export-sys{border-color:#3d4a7a;color:#7783c4}.umgmt-btn.export-sys:hover:not(:disabled){background:#1a1f33;border-color:#7783c4;color:#a3addf;box-shadow:0 0 8px rgba(119,131,196,.35)}.umgmt-btn.export-sys:disabled{border-color:#232838;color:#2a3040;cursor:not-allowed;opacity:.6}.umgmt-btn.export-sys.ready{border-color:#3f6b52;color:#5e9b7f;animation:blink-timer 1.4s step-start infinite}.umgmt-add-form{background:#10131a;border:1px solid #232838;border-radius:8px;padding:14px 16px;margin-top:8px;display:none}.umgmt-add-form.visible{display:block}.umgmt-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}.umgmt-input{background:#10131a;border:1px solid #2a3040;color:#e6e8ee;padding:7px 10px;border-radius:6px;font-size:11px;font-family:var(--mono);flex:1;min-width:100px}.umgmt-input:focus{outline:none;border-color:var(--accent)}.umgmt-select{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:7px 10px;border-radius:6px;font-size:11px;cursor:pointer}.op-expiry-row{display:flex;gap:8px;align-items:center}.op-expiry-row label{font-size:10px;color:#6b7690;white-space:nowrap}#base-img-grid{display:none;margin-top:6px;flex-wrap:wrap;gap:8px}.base-img-card{flex:1;min-width:calc(50% - 4px);max-width:calc(50% - 4px);border:2px solid #232838;border-radius:8px;cursor:pointer;overflow:hidden;position:relative;transition:all 0.2s;background:#10131a}.base-img-card:hover{border-color:var(--accent);box-shadow:0 0 10px rgba(119,131,196,.4);transform:scale(1.02)}.base-img-card.selected{border-color:#5e9b7f;box-shadow:0 0 14px rgba(94,155,127,.4)}.base-img-card img{width:100%;height:72px;object-fit:cover;display:block}.base-img-card .card-label{padding:4px 6px;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#8991a3;text-align:center;background:#10131a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.base-img-card.selected .card-label{color:#5e9b7f}.base-img-card .check-badge{position:absolute;top:4px;right:4px;background:#5e9b7f;color:#0a0c11;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:bold;display:none;align-items:center;justify-content:center}.base-img-card.selected .check-badge{display:flex}.dispositivo-movel .grid,.dispositivo-movel .modo-switch,.dispositivo-movel #admin-area{width:100%}.dispositivo-movel .form-cols{flex-direction:column;gap:16px;align-items:stretch}.dispositivo-movel #admin-area{flex-direction:column;gap:16px;align-items:stretch}.dispositivo-movel #display-box,.dispositivo-movel #boot-screen{width:100%;max-width:850px}.dispositivo-movel .rich-toolbar{display:none}.dispositivo-movel .rich-editor{border-radius:8px}.barra-cluster-esquerda{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.dispositivo-movel .timer-pill,.dispositivo-movel #btn-wipe-all,.dispositivo-movel #btn-logout{font-size:10px;padding:6px 10px;letter-spacing:0.5px}.dispositivo-movel #top-left-bar{left:12px;right:12px;top:10px;gap:8px;flex-wrap:wrap}.dispositivo-movel .barra-cluster-esquerda{gap:6px}.dispositivo-movel #main-system{padding-top:100px}.dispositivo-movel .modo-btn,.dispositivo-movel .box h3,.dispositivo-movel .timer-pill,.dispositivo-movel #btn-wipe-all,.dispositivo-movel #btn-logout,.dispositivo-movel .win-label,.dispositivo-movel .field-label{line-height:1.6}.dispositivo-movel .modo-btn{padding:14px 10px}
-/* ------------------------------- Tela de login ------------------------------
-   Mesmo visual da tela de senha do Portal de Gestão: corredor de data center em
-   canvas e janela de terminal. Fonte monoespaçada local (a CSP bloqueia fontes externas). */
-#auth-overlay{position:fixed;inset:0;z-index:5000;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden;
-  background:radial-gradient(ellipse 60% 50% at 50% 45%,rgba(37,99,235,.28),transparent 70%),linear-gradient(180deg,#020611,#061634 55%,#020611);
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;color-scheme:dark;transition:opacity .5s ease}
-#auth-overlay.saindo{opacity:0;pointer-events:none}
-#auth-overlay .cena{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
-#auth-box.term{position:relative;width:min(560px,100%);max-width:none;border-radius:12px;background:rgba(10,20,44,.62);border:1px solid rgba(125,170,255,.28);
-  box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 30px 80px -20px rgba(0,0,0,.9),0 0 60px -10px rgba(59,130,246,.35);overflow:visible;
-  backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);color:#cbd5e1;transition:border-color .2s}
-/* a entrada só roda junto com a espera: ao digitar (sai "aguardando") ou depois do erro a caixa não reaparece do zero */
-#auth-box.term.aguardando{animation:lg-surgir .5s ease both,lg-aguardar 2.8s ease-in-out .5s infinite}
-#auth-box.term.auth-error{border-color:#f87171;animation:lg-shake .4s ease-in-out}
-#auth-box.term.auth-success{border-color:#4ade80;animation:lg-success-pulse .5s ease-out}
-@keyframes lg-surgir{from{opacity:0;transform:translateY(12px)}}
-@keyframes lg-aguardar{0%,100%{box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 30px 80px -20px rgba(0,0,0,.9),0 0 40px -12px rgba(59,130,246,.3);border-color:rgba(125,170,255,.28)}
-  50%{box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 30px 80px -20px rgba(0,0,0,.9),0 0 70px -6px rgba(96,165,250,.6);border-color:rgba(147,197,253,.6)}}
-@keyframes lg-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
-@keyframes lg-success-pulse{0%{box-shadow:0 0 0 rgba(74,222,128,0);transform:scale(1)}40%{box-shadow:0 0 26px rgba(74,222,128,.55);transform:scale(1.015)}100%{box-shadow:0 0 0 rgba(74,222,128,0);transform:scale(1)}}
-@keyframes lg-piscar{50%{opacity:0}}
-#auth-box .term-barra{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(125,170,255,.16);font-size:12px;color:#94a3b8}
-#auth-box .term-barra .d{width:12px;height:12px;border-radius:50%}
-#auth-box .term-barra .vm{background:#ff5f57}#auth-box .term-barra .am{background:#febc2e}#auth-box .term-barra .vd{background:#28c840}
-#auth-box .term-barra span{margin-left:10px}
-#auth-box .term-corpo{position:relative;padding:16px 18px 18px;font-size:13.5px;line-height:1.75;text-align:left}
-#auth-box .boot{min-height:7em;color:#4ade80;white-space:pre-wrap}
-#auth-box .boot .u{color:#7dd3fc}
-#auth-box .boot .t{color:#94a3b8}
-#auth-box .campo-t{display:flex;align-items:center;gap:10px;position:relative;margin:0}
-#auth-box .campo-t .pr{color:#4ade80;flex:none;min-width:84px}
-#auth-box .campo-t input{flex:1;min-width:0;width:auto;margin:0;background:transparent;border:0;border-radius:0;border-bottom:1px dashed rgba(125,170,255,.25);outline:none;box-shadow:none;color:#e2e8f0;
-  font:inherit;letter-spacing:normal;text-transform:none;padding:3px 2px;caret-color:transparent}
-#auth-box .campo-t input:focus{border-bottom-color:#4ade80}
-#auth-box .campo-t input:-webkit-autofill,#auth-box .campo-t input:-webkit-autofill:hover,#auth-box .campo-t input:-webkit-autofill:focus,#auth-box .campo-t input:autofill{
-  -webkit-text-fill-color:#e2e8f0;caret-color:transparent;-webkit-box-shadow:0 0 0 1000px rgba(10,20,44,0) inset;box-shadow:0 0 0 1000px rgba(10,20,44,0) inset;
-  background-color:transparent!important;background-clip:text;transition:background-color 99999s ease-out 0s;font:inherit}
-/* cursor em bloco do terminal: fica no campo em foco, logo depois do último caractere */
-#auth-box .cursor-t{position:absolute;width:.62em;height:1.15em;background:#4ade80;opacity:.85;pointer-events:none;animation:lg-piscar 1s steps(1) infinite;display:none}
-#auth-box .cursor-t.parado{animation:none}
-#auth-box .medidor-t{position:absolute;visibility:hidden;white-space:pre;pointer-events:none}
-#auth-box .msg{min-height:1.75em;margin-top:6px}
-#auth-box .msg.erro{color:#f87171}#auth-box .msg.ok{color:#4ade80}
-#auth-box .rodape-t{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
-#auth-box .dica{color:#64748b;font-size:12px}
-#auth-box .entrar{font:inherit;font-size:12.5px;color:#0b1a3a;background:#4ade80;border:0;border-radius:6px;padding:5px 12px;cursor:pointer;font-weight:600;width:auto;margin:0;text-transform:none;letter-spacing:normal}
-#auth-box .entrar:hover{filter:brightness(1.08)}
-@media(max-width:520px){#auth-box .campo-t{flex-wrap:wrap;gap:0 10px}#auth-box .campo-t .pr{min-width:0}#auth-box .term-corpo{font-size:12.5px}}
-@media(prefers-reduced-motion:reduce){#auth-overlay,#auth-overlay *{animation:none!important;transition:none!important}}
-</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src;">
+<title>Módulo de Comunicação - V9.6</title>
+<style> :root{--bg:#10131a;--panel:#161a23;--accent:#7783c4;--matrix:#6f9d82;--danger:#b1614a;--ok:#5e9b7f;--win-border:#2a3040;--win-hover:#8f99d6;--row-alt:#1c212d;--r:10px;--aviso:#c2953f;--imagem:#9a7bc4;--border-soft:#232838;--serif:Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;--mono:'Courier New',ui-monospace,'Cascadia Code',monospace}*,*::before,*::after{box-sizing:border-box}body,html{margin:0;padding:0;min-height:100%;background:var(--bg);background-attachment:fixed;color:#e6e8ee;font-family:var(--sans);overflow-x:auto}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#10131a}::-webkit-scrollbar-thumb{background:#2a3040;border-radius:4px}#auth-overlay{position:fixed;inset:0;background:var(--bg);background-attachment:fixed;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:5000;overflow:auto}.container-logo{width:100%;max-width:650px;margin-bottom:10px}#auth-box{width:460px;background:var(--panel);border:1px solid var(--win-border);border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,0.7);overflow:hidden}#auth-box.auth-error{border-color:var(--danger);animation:auth-shake .4s ease-in-out}#auth-box.auth-success{border-color:var(--ok);animation:auth-success-pulse .5s ease-out}@keyframes auth-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}@keyframes auth-success-pulse{0%{box-shadow:0 0 0 rgba(94,155,127,0);transform:scale(1)}40%{box-shadow:0 0 22px rgba(94,155,127,.55);transform:scale(1.015)}100%{box-shadow:0 0 0 rgba(94,155,127,0);transform:scale(1)}}@media (prefers-reduced-motion:reduce){#auth-box.auth-error,#auth-box.auth-success{animation:none}}.win-titlebar{background:#1c212d;color:#b7bccb;padding:11px 16px;font-size:13px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--win-border);position:relative}.win-titlebar .title-text{position:absolute;left:50%;transform:translateX(-50%);font-size:12px;color:#7a8296;pointer-events:none;font-family:var(--serif);font-style:italic;letter-spacing:0.3px}.mac-dots{display:flex;gap:7px;align-items:center}.mac-dot{width:13px;height:13px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:8px;color:transparent;transition:color 0.15s;position:relative;flex-shrink:0}.mac-dot:hover{color:rgba(0,0,0,0.6)}.mac-dot.close{background:#ff5f57;border:1px solid #e0443e}.mac-dot.min{background:#ffbd2e;border:1px solid #dfa123}.mac-dot.max{background:#28c840;border:1px solid #1aab29}.mac-dot.close::after{content:"✕"}.mac-dot.min::after{content:"−"}.mac-dot.max::after{content:"+"}.win-body{padding:25px}.win-label{color:#c7cbd6;font-size:13px;margin-bottom:7px;display:block;font-weight:bold;letter-spacing:0.5px}.win-input{width:100%;background:#10131a;border:1px solid #2a3040;color:var(--matrix);font-weight:bold;padding:11px 12px;margin-bottom:22px;outline:none;font-size:15px;font-family:var(--sans);text-transform:uppercase;border-radius:6px;transition:border-color 0.2s}.win-input:focus{border-color:var(--accent)}.win-button{background:var(--accent);color:white;border:none;padding:11px 28px;cursor:pointer;float:right;font-size:14px;font-weight:600;text-transform:uppercase;border-radius:8px;transition:background 0.2s,transform 0.1s}.win-button:hover{background:var(--win-hover)}.win-button:active{transform:scale(0.97)}.inner-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px}#risk-login{margin-top:22px;border-top:1px solid #232838;padding-top:14px;color:#b1614a;font-family:var(--mono);min-height:38px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px}#risk-text-login{color:#e6e8ee;text-transform:uppercase;display:inline-block;width:250px;text-align:left;white-space:nowrap}#splash-screen{display:none;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center;background:var(--bg);background-attachment:fixed;gap:20px;z-index:1000;overflow:auto}#display-box{width:850px;height:155px;border:2px solid #7783c4;border-radius:16px;background:#161a23;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:box-shadow 0.3s}#display-box:hover{box-shadow:0 0 30px rgba(119,131,196,0.3)}#text-anim{font-size:3.1rem;font-weight:bold;color:#7783c4;text-shadow:0 0 12px #7783c4;letter-spacing:4px;font-family:var(--mono)}#boot-screen{width:850px;background:#0a0c11;border:1px solid #232838;border-radius:8px;padding:14px 18px;height:320px;color:#dfe1e8;font-family:var(--mono);font-size:12px;overflow-y:auto}.lnx-ok{color:var(--ok);font-weight:bold}.lnx-alert{color:var(--danger);font-weight:bold}.lnx-warn{color:#c2953f;font-weight:bold}.lnx-info{color:#7783c4;font-weight:bold}.lnx-time{color:#2a3040;margin-right:8px}#main-system{display:none;flex-direction:column;align-items:center;padding:60px 20px 40px}.grid{display:flex;gap:30px;width:1060px;margin-bottom:28px}.box{flex:1;min-width:0;width:0;overflow:hidden;background:var(--panel);padding:1.8rem;border:1px solid var(--win-border);border-radius:var(--r);box-shadow:0 4px 20px rgba(0,0,0,0.4)}.modo-switch{display:flex;gap:16px;width:1060px;margin-bottom:24px}.modo-btn{flex:1;padding:16px;border:1px solid var(--win-border);border-radius:var(--r);background:var(--panel);color:#8991a3;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:var(--sans)}.modo-btn.proteger.ativo{background:#16241d;border-color:var(--matrix);color:var(--matrix)}.modo-btn.revelar.ativo{background:#1a1f33;border-color:var(--accent);color:var(--accent)}.modo-btn:hover:not(.ativo){border-color:#3a4358;color:#c7cbd6}.box{display:none}.box.ativo{display:block}.box.ativo.revelando{animation:revelarForm .35s ease}@keyframes revelarForm{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){.box.ativo.revelando{animation:none}}.form-cols{display:flex;gap:24px;align-items:flex-start}.form-col{flex:1;min-width:0}.box h3{margin:0 0 14px;font-size:14px;letter-spacing:1px;color:#c7cbd6;border-bottom:1px solid #232838;padding-bottom:10px}textarea{width:100%;margin-top:6px;padding:11px 13px;background:#10131a;color:#e6e8ee;border:1px solid #2a3040;font-family:var(--mono);font-size:12px;resize:none;border-radius:8px;outline:none;transition:border-color 0.2s}textarea:focus{border-color:var(--accent)}.btn-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.btn-sys{-webkit-appearance:none;appearance:none;flex:1;padding:13px;background:var(--accent);border:none;color:white;font-weight:bold;cursor:pointer;border-radius:8px;font-size:13px;letter-spacing:0.5px;transition:background 0.2s,transform 0.1s}.btn-sys:hover{background:var(--win-hover)}.btn-sys:active{transform:scale(0.98)}.btn-send{-webkit-appearance:none;appearance:none;padding:13px 16px;background:#223d2f;border:1px solid #3f6b52;color:var(--ok);cursor:pointer;border-radius:8px;font-size:12px;font-weight:bold;transition:all 0.2s;white-space:nowrap;flex-shrink:0}.btn-send:hover{background:#2c4a3a;border-color:var(--ok)}.pass-container{position:relative;width:100%;margin-top:8px}.pass-input{width:100%;height:44px;padding:11px 46px 11px 13px;background:#10131a;color:#e6e8ee;border:1px solid #2a3040;font-family:var(--mono);outline:none;border-radius:8px;font-size:13px;transition:border-color 0.2s}.pass-input:focus{border-color:var(--accent)}.eye-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:17px;user-select:none;filter:grayscale(1) opacity(0.5);transition:filter 0.2s}.eye-icon:hover{filter:grayscale(0) opacity(1)}.field-label{font-size:11px;color:#6b7690;margin-top:10px;margin-bottom:2px;letter-spacing:0.5px;text-transform:uppercase;display:block}#top-left-bar{position:fixed;top:14px;left:24px;right:24px;z-index:200;display:none;align-items:center;justify-content:space-between;gap:12px}#timer-container{display:none;flex-direction:column;gap:6px;font-family:var(--sans)}#timer-container.visible{display:flex}#btn-wipe-all{background:#2a1712;color:#e0917a;border:1px solid #8f4a38;padding:7px 16px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;white-space:nowrap}#btn-wipe-all:hover{background:#8f4a38;color:#fff;box-shadow:0 0 14px rgba(143,74,56,0.6)}.timer-pill{display:flex;align-items:center;gap:8px;padding:7px 18px;border-radius:8px;cursor:default;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}#session-timer-display{background:#10131a;color:#a3addf;border:1px solid #7783c4}#session-timer-display.warning{border-color:#8f4a38;color:#d9a794;background:#201310;animation:blink-timer 0.8s step-start infinite}#op-timer-widget{background:#16241d;color:#5e9b7f;border:1px solid #3f6b52;display:none;cursor:pointer;transition:background 0.2s}#op-timer-widget:hover{background:#1c2f24}#op-timer-widget.warning{border-color:#c2953f;color:#d4ac5f;background:#2a2011}#op-timer-widget.critical{border-color:var(--danger);color:#d9a794;background:#201310;animation:blink-timer 0.8s step-start infinite}@keyframes blink-timer{0%,100%{opacity:1}50%{opacity:0.4}}#session-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:#251712;color:#d9a794;padding:10px 20px;text-align:center;font-size:13px;font-weight:700;letter-spacing:1px;display:none;border-bottom:2px solid #8f4a38;animation:pulse-bar 1s ease-in-out infinite}#session-bar span.cd{color:#e6e8ee;font-size:15px}@keyframes pulse-bar{0%,100%{background:#251712}50%{background:#2e1c16}}#btn-logout{position:fixed;top:14px;right:24px;z-index:200;background:#251712;color:#d9a794;border:1px solid #8f4a38;padding:7px 20px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;display:none}#btn-logout:hover{background:#8f4a38;color:#e6e8ee;box-shadow:0 0 14px rgba(143,74,56,0.5)}.btn-clear-styled{-webkit-appearance:none;appearance:none;padding:13px 16px;background:#1c212d;border:1px solid #2a3040;color:#c7cbd6;cursor:pointer;border-radius:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.2s;white-space:nowrap;flex-shrink:0}.btn-clear-styled:hover{background:#2a3040;border-color:#7a8296;color:#e6e8ee}.img-upload-zone{width:100%;margin-top:6px;border:2px dashed #2a3040;border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;background:#171b28;color:#6b7690;font-size:12px;letter-spacing:0.5px;position:relative}.img-upload-zone:hover,.img-upload-zone.drag-over{border-color:var(--accent);color:#8991a3;background:#1c2440;box-shadow:0 0 12px rgba(119,131,196,0.3)}.img-upload-zone input[type="file"]{display:none}.img-upload-zone .upload-icon{font-size:22px;display:block;margin-bottom:4px}.img-preview-wrap{margin-top:8px;text-align:center;position:relative}.img-preview-wrap img{max-width:100%;max-height:140px;border-radius:6px;border:1px solid #2a3040;object-fit:contain}.img-preview-name{font-size:10px;color:#7a8296;margin-top:4px;font-family:var(--mono)}.img-capacity-warn{display:none;margin-top:8px;padding:8px 12px;background:#251712;border:1px solid #251712;border-radius:6px;color:#c47259;font-size:11px;font-family:var(--mono);letter-spacing:0.5px}.img-capacity-warn.show{display:block}.img-capacity-ok{display:none;margin-top:8px;padding:8px 12px;background:#16241d;border:1px solid #2f5c42;border-radius:6px;color:#5e9b7f;font-size:11px;font-family:var(--mono);letter-spacing:0.5px}.img-capacity-ok.show{display:block}.btn-download-img{padding:13px 16px;background:#1a3325;border:1px solid #3f6b52;color:var(--ok);cursor:pointer;border-radius:8px;font-size:12px;font-weight:bold;transition:all 0.2s;letter-spacing:0.5px;white-space:nowrap;text-align:center;flex-shrink:0}.btn-download-img:hover{background:#223d2f;border-color:var(--ok);box-shadow:0 0 10px rgba(94,155,127,0.3)}.dec-image-preview{margin-top:10px;padding:12px;background:#16241d;border:1px solid #3f6b52;border-radius:8px;text-align:center;display:none}.dec-image-preview img{max-width:100%;max-height:200px;border-radius:6px;border:1px solid #5e9b7f;object-fit:contain}.dec-image-label{font-size:11px;color:#5e9b7f;margin-bottom:8px;letter-spacing:1px;text-transform:uppercase;font-weight:bold}.output-mode-toggle{display:flex;gap:0;margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid #2a3040}.output-mode-btn{flex:1;padding:9px 8px;background:#171b28;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#6b7690;transition:all 0.2s}.output-mode-btn:first-child{border-right:1px solid #2a3040}.output-mode-btn.active{background:var(--accent);color:#e6e8ee}.output-mode-btn:hover:not(.active){background:#1c2440;color:#8991a3}.enc-img-output-wrap{margin-top:10px;text-align:center;display:none}.enc-img-output-wrap canvas{border-radius:8px;border:1px solid #3f6b52;max-width:100%;image-rendering:pixelated}.enc-img-output-label{font-size:10px;color:#5e9b7f;margin-bottom:6px;letter-spacing:1px;text-transform:uppercase;font-weight:bold}.dec-img-upload-zone{width:100%;border:2px dashed #4a3a68;border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;background:#211a30;color:#9a7bc4;font-size:12px;letter-spacing:0.5px;display:none}.dec-source-badge{margin-top:6px;padding:6px 12px;border-radius:6px;font-size:11px;font-family:var(--mono);letter-spacing:0.5px;font-weight:bold}.dec-source-badge.hash{background:#1a1f33;border:1px solid #3d4a7a;color:#7783c4}.dec-source-badge.image{background:#21192f;border:1px solid #453465;color:#9a7bc4}.dec-img-upload-zone:hover,.dec-img-upload-zone.drag-over{border-color:#9a7bc4;color:#b7a0d9;background:#2b2140;box-shadow:0 0 12px rgba(154,123,196,0.3)}.dec-img-upload-zone input[type="file"]{display:none}.dec-img-loaded{margin-top:6px;font-size:10px;color:#9a7bc4;font-family:var(--mono);display:none}.log-toggle-bar{width:100%;background:#1c212d;border:1px solid var(--win-border);color:#8991a3;padding:11px;text-align:center;cursor:pointer;font-size:11px;font-weight:bold;margin-bottom:5px;border-radius:8px;transition:background 0.2s}.log-toggle-bar:hover{background:#242a38}#admin-area{display:flex;flex-direction:column;gap:16px;width:1060px;margin-bottom:50px;align-items:stretch}.admin-toggle-row{display:flex;gap:16px;width:100%}.admin-toggle-row .log-toggle-bar{flex:1;margin-bottom:0}#admin-log-panel{width:100%;background:var(--panel);border:1px solid var(--win-border);padding:20px;border-radius:var(--r);display:none}.log-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;border-bottom:1px solid #232838;padding-bottom:10px}.audit-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px;color:#c7cbd6;table-layout:fixed}.audit-table th{color:var(--accent);text-align:left;border-bottom:1px solid #2a3040;padding:8px;text-transform:uppercase}.audit-table td{padding:8px;border-bottom:1px solid #232838;word-break:break-all}.audit-table tr:nth-child(even){background:var(--row-alt)}.purge-btn{background:none;border:1px solid var(--danger);color:var(--danger);padding:5px 12px;cursor:pointer;font-size:10px;font-weight:bold;border-radius:6px;transition:background 0.2s}.purge-btn:hover{background:rgba(177,97,74,0.1)}.rich-toolbar{display:flex;flex-wrap:wrap;gap:3px;padding:6px 8px;background:#161a23;border:1px solid #2a3040;border-bottom:none;border-radius:8px 8px 0 0}.rich-toolbar button{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:3px 8px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:bold;min-width:28px;transition:background 0.15s,color 0.15s;font-family:var(--mono)}.rich-toolbar button:hover{background:#2a3040;color:#e6e8ee}.rich-toolbar button.active{background:#223d2f;border-color:#3f6b52;color:#5e9b7f}.rich-toolbar select{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:2px 4px;border-radius:4px;font-size:12px;font-family:var(--mono);cursor:pointer}.rich-toolbar .tb-sep{width:1px;background:#2a3040;margin:2px 3px;align-self:stretch}.rich-editor{min-height:110px;max-height:280px;overflow-y:auto;padding:10px 13px;background:#10131a;border:1px solid #2a3040;color:#e6e8ee;font-family:var(--sans);font-size:14px;border-radius:0 0 8px 8px;outline:none;transition:border-color 0.2s;line-height:1.5}.rich-editor:focus{border-color:var(--matrix)}.rich-editor-readonly{cursor:default;background:#0d1119;}.rich-editor[data-placeholder]:empty:before{content:attr(data-placeholder);color:#2a3040;pointer-events:none}.rich-editor ul,.rich-editor ol{padding-left:22px;margin:4px 0}.rich-editor h1{font-size:1.4em;margin:6px 0}.rich-editor h2{font-size:1.2em;margin:5px 0}.rich-editor h3{font-size:1.05em;margin:4px 0}.rich-editor.disabled{opacity:0.4;pointer-events:none}.rich-editor-wrap{margin-bottom:0}#op-modal-overlay{display:none;position:fixed;inset:0;z-index:4000;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;animation:fadeIn 0.15s ease;overflow:auto}#op-modal-overlay.visible{display:flex}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}#op-auth-panel{width:420px;background:#161a23;border:1px solid #1a1f33;border-radius:12px;padding:24px 28px;box-shadow:0 0 40px rgba(119,131,196,0.25),0 20px 60px rgba(0,0,0,0.6);animation:slideUp 0.2s ease;position:relative}.op-modal-close{position:absolute;top:12px;right:14px;background:none;border:none;color:#2a3040;font-size:18px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:4px;transition:color 0.15s}.op-modal-close:hover{color:#c7cbd6}.op-modal-title{font-size:13px;color:#7783c4;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}.op-modal-subtitle{font-size:10px;color:#2a3040;letter-spacing:0.5px;font-family:var(--mono);margin-bottom:18px;border-bottom:1px solid #232f45;padding-bottom:12px}.op-label{font-size:11px;color:#7783c4;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}.op-timer-bar{height:3px;background:#1a1f33;border-radius:2px;margin-top:12px;overflow:hidden;display:none}.op-timer-bar.visible{display:block}.op-timer-fill{height:100%;background:var(--accent);transition:width 1s linear;width:100%}.op-timer-fill.warning{background:#c2953f}.op-timer-fill.critical{background:var(--danger)}.op-status{font-size:10px;margin-top:6px;letter-spacing:0.5px;font-family:var(--mono);text-align:center}.op-status.locked{color:#2a3040}.op-status.unlocked{color:var(--ok)}.op-status.duress{color:var(--ok)}.btn-sys.locked{background:#1a1e28 !important;border:1px solid #232838 !important;color:#2a3040 !important;cursor:not-allowed !important;position:relative}.btn-sys.locked::after{content:"🔒";position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px}#op-status-badge{display:none;position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:200;padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px;font-family:var(--mono);cursor:pointer;transition:all 0.2s}#op-status-badge.locked{display:none}#op-status-badge.unlocked{display:block;background:#16241d;border:1px solid #3f6b52;color:var(--ok)}#op-status-badge.duress{display:block;background:#16241d;border:1px solid #3f6b52;color:var(--ok)}.umgmt-title{font-size:12px;color:#c2953f;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}.user-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px;color:#c7cbd6;margin-bottom:16px;table-layout:fixed}.user-table th{color:#c2953f;text-align:left;border-bottom:1px solid #2a3040;padding:8px 6px;text-transform:uppercase;font-size:10px}.user-table td{padding:7px 6px;border-bottom:1px solid #1a1e28;vertical-align:middle}.user-table tr:nth-child(even){background:var(--row-alt)}.user-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:0.5px}.user-badge.admin{background:#1a1f33;color:#7783c4;border:1px solid #3d4a7a}.user-badge.user{background:#241d16;color:#a58767;border:1px solid #4a3a26}.user-badge.root{background:#251c38;color:#b7a0d9;border:1px solid #4a3a68}.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.status-dot.on{background:#5e9b7f;box-shadow:0 0 6px #5e9b7f}.status-dot.off{background:#2a3040}.umgmt-btn{background:none;border:1px solid #2a3040;color:#8991a3;padding:3px 10px;border-radius:4px;cursor:pointer;font-size:10px;font-weight:700;transition:all 0.15s}.umgmt-btn:hover{border-color:#7a8296;color:#e6e8ee}.umgmt-btn.enable{border-color:#3f6b52;color:#5e9b7f}.umgmt-btn.enable:hover{background:#223d2f}.umgmt-btn.disable{border-color:#251712;color:#c47259}.umgmt-btn.disable:hover{background:#251712}.umgmt-btn.danger{border-color:#8f4a38;color:#b1614a}.umgmt-btn.danger:hover{background:#2a1712}.umgmt-btn.export-sys{border-color:#3d4a7a;color:#7783c4}.umgmt-btn.export-sys:hover:not(:disabled){background:#1a1f33;border-color:#7783c4;color:#a3addf;box-shadow:0 0 8px rgba(119,131,196,.35)}.umgmt-btn.export-sys:disabled{border-color:#232838;color:#2a3040;cursor:not-allowed;opacity:.6}.umgmt-btn.export-sys.ready{border-color:#3f6b52;color:#5e9b7f;animation:blink-timer 1.4s step-start infinite}.umgmt-add-form{background:#10131a;border:1px solid #232838;border-radius:8px;padding:14px 16px;margin-top:8px;display:none}.umgmt-add-form.visible{display:block}.umgmt-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}.umgmt-input{background:#10131a;border:1px solid #2a3040;color:#e6e8ee;padding:7px 10px;border-radius:6px;font-size:11px;font-family:var(--mono);flex:1;min-width:100px}.umgmt-input:focus{outline:none;border-color:var(--accent)}.umgmt-select{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:7px 10px;border-radius:6px;font-size:11px;cursor:pointer}.op-expiry-row{display:flex;gap:8px;align-items:center}.op-expiry-row label{font-size:10px;color:#6b7690;white-space:nowrap}#base-img-grid{display:none;margin-top:6px;flex-wrap:wrap;gap:8px}.base-img-card{flex:1;min-width:calc(50% - 4px);max-width:calc(50% - 4px);border:2px solid #232838;border-radius:8px;cursor:pointer;overflow:hidden;position:relative;transition:all 0.2s;background:#10131a}.base-img-card:hover{border-color:var(--accent);box-shadow:0 0 10px rgba(119,131,196,.4);transform:scale(1.02)}.base-img-card.selected{border-color:#5e9b7f;box-shadow:0 0 14px rgba(94,155,127,.4)}.base-img-card img{width:100%;height:72px;object-fit:cover;display:block}.base-img-card .card-label{padding:4px 6px;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#8991a3;text-align:center;background:#10131a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.base-img-card.selected .card-label{color:#5e9b7f}.base-img-card .check-badge{position:absolute;top:4px;right:4px;background:#5e9b7f;color:#0a0c11;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:bold;display:none;align-items:center;justify-content:center}.base-img-card.selected .check-badge{display:flex}.dispositivo-movel .grid,.dispositivo-movel .modo-switch,.dispositivo-movel #admin-area{width:100%}.dispositivo-movel .form-cols{flex-direction:column;gap:16px;align-items:stretch}.dispositivo-movel #admin-area{flex-direction:column;gap:16px;align-items:stretch}.dispositivo-movel #auth-box{width:100%;max-width:460px}.dispositivo-movel #display-box,.dispositivo-movel #boot-screen{width:100%;max-width:850px}.dispositivo-movel .rich-toolbar{display:none}.dispositivo-movel .rich-editor{border-radius:8px}.barra-cluster-esquerda{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.dispositivo-movel .timer-pill,.dispositivo-movel #btn-wipe-all,.dispositivo-movel #btn-logout{font-size:10px;padding:6px 10px;letter-spacing:0.5px}.dispositivo-movel #top-left-bar{left:12px;right:12px;top:10px;gap:8px;flex-wrap:wrap}.dispositivo-movel .barra-cluster-esquerda{gap:6px}.dispositivo-movel #main-system{padding-top:100px}.dispositivo-movel .modo-btn,.dispositivo-movel .box h3,.dispositivo-movel .timer-pill,.dispositivo-movel #btn-wipe-all,.dispositivo-movel #btn-logout,.dispositivo-movel .win-label,.dispositivo-movel .field-label{line-height:1.6}.dispositivo-movel .modo-btn{padding:14px 10px}</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
 <div id="session-bar">
@@ -65,7 +15,7 @@
 </div>
 <div id="top-left-bar"><div class="barra-cluster-esquerda"><div id="timer-container"><div class="timer-pill" id="session-timer-display">🔒 SESSÃO <span id="session-time-left">00:00</span></div><div class="timer-pill" id="op-timer-widget" onclick="travarOperacao(true)" title="Clique para travar operação">🔑 OP <span id="op-time-left">02:00</span></div>
 </div><button id="btn-wipe-all" onclick="wipeAll()" title="Apagar todo o conteúdo dos formulários">&#9888; LIMPAR TUDO</button></div><button id="btn-logout" onclick="fazerLogout()">&#9211; LOGOUT</button></div>
-<div id="auth-overlay"><canvas class="cena" id="cena" aria-hidden="true"></canvas><form class="term aguardando" id="auth-box" autocomplete="off" data-form-type="other" novalidate><div class="term-barra"><i class="d vm"></i><i class="d am"></i><i class="d vd"></i><span>root@sysboot: ~/comunicacao</span></div><div class="term-corpo"><div class="boot" id="boot" aria-hidden="true"></div><label class="campo-t"><span class="pr">user:</span><input id="user-id" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" aria-label="Usuário"></label><label class="campo-t"><span class="pr">password:</span><input id="user-pass" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" aria-label="Senha (caracteres ocultos)"></label><i class="cursor-t" id="cursorT" aria-hidden="true"></i><span class="medidor-t" id="medidorT" aria-hidden="true"></span><div class="msg" id="lgMsg" role="status" aria-live="polite"></div><div class="rodape-t"><span class="dica">[Enter] para entrar</span><button type="submit" class="entrar">entrar ›</button></div></div></form>
+<div id="auth-overlay"><div id="auth-box"><div class="win-titlebar"><div class="mac-dots"><div class="mac-dot close" title="Fechar" onclick="window.close()"></div><div class="mac-dot min"   title="Minimizar" onclick="document.body.style.display='none'"></div><div class="mac-dot max"   title="Maximizar" onclick="toggleMaximize()"></div></div><span class="title-text">Módulo de Comunicação - Autenticação</span></div><div class="win-body"><label class="win-label">IDENTIFICAÇÃO DO USUÁRIO</label><input type="text" id="user-id" class="win-input" autocomplete="off" placeholder="DIGITE SEU USUÁRIO AQUI" autofocus><label class="win-label">SENHA DE ACESSO</label><div class="pass-container" style="margin-bottom:22px;"><input type="password" id="user-pass" class="win-input" placeholder="DIGITE SUA SENHA DE USUÁRIO AQUI" style="margin-bottom:0;"><button class="inner-toggle" onclick="toggleVisibility('user-pass',this)">🔒</button></div><button class="win-button" onclick="validarAcesso()">Login</button><div style="clear:both;"></div></div></div>
 </div>
 <div id="splash-screen"><div id="display-box" onclick="abrirCofre()"><div id="text-anim"></div></div></div>
 </div>
@@ -89,21 +39,19 @@
         [+] GESTÃO DE USUÁRIOS
     </div><div id="log-master-btn" class="log-toggle-bar" onclick="toggleLogPanel()" style="display:none;">
         [+] LOG
-    </div><div id="tg-master-btn" class="log-toggle-bar" onclick="toggleTgPanel()" style="display:none;">
-        [+] ALERTA TELEGRAM
     </div></div><div id="user-mgmt-panel" style="display:none; width:100%; background:var(--panel); border:1px solid var(--win-border); padding:20px; border-radius:var(--r); margin-bottom:5px;"><div id="default-pass-warn" style="display:none;
             background:#2a2011; border:1px solid #c2953f; border-radius:8px;
             padding:10px 14px; margin-bottom:14px;
             font-size:11px; color:#d4ac5f; font-family:var(--mono); line-height:1.7;">
             ⚠ <strong>SENHAS PADRÃO DETECTADAS</strong> — os usuários abaixo ainda utilizam senhas de fábrica.<br>
-            Altere todas as senhas antes de distribuir ou copiar este arquivo.<br><span id="default-pass-list" style="color:#c47259;"></span></div><div class="log-header"><h3 style="margin:0;font-size:15px;color:#c2953f;">⚙ GESTÃO DE USUÁRIOS</h3><div style="display:flex;gap:8px;align-items:center;"><button id="btn-export-system" class="umgmt-btn export-sys" onclick="exportarSistemaAtualizado()" disabled title="Gera e baixa um novo arquivo .html do sistema com TODOS os usuários e senhas atuais já embutidos no código-fonte (VAULT_DB), sem depender do cache local (localStorage) do navegador. Fica habilitado somente após alguma alteração em usuários ou senhas nesta sessão. Exclusivo do usuário root.">⬇ GERAR ARQUIVO ATUALIZADO</button><span id="export-pendente" style="display:none;flex-basis:100%;font-size:11px;color:#c2953f;font-family:var(--mono);margin-top:4px;">⚠ Há alterações de usuários ainda não gravadas neste arquivo. Gere o arquivo atualizado e passe a usar o arquivo novo.</span><button class="umgmt-btn enable" onclick="toggleAddForm()">＋ NOVO USUÁRIO</button></div></div><table class="user-table"><thead><tr><th style="width:14%">LOGIN</th><th style="width:10%">PERFIL</th><th style="width:10%">STATUS</th><th style="width:24%">VALIDADE OP</th><th style="width:42%">AÇÕES</th></tr></thead><tbody id="user-table-body"></tbody></table><div class="umgmt-add-form" id="umgmt-add-form"><div class="umgmt-row"><input class="umgmt-input" id="new-username"  placeholder="login" autocomplete="off"><input class="umgmt-input" id="new-pass1"     placeholder="senha 1 (login)"       type="password"><input class="umgmt-input" id="new-op-pass"   placeholder="senha 2 (operacional)" type="password"><input class="umgmt-input" id="new-duress"    placeholder="senha 3 (duress)"      type="password"><select class="umgmt-select" id="new-role"><option value="user">user</option><option value="admin">admin</option></select></div><div class="umgmt-row"><label style="font-size:10px;color:#6b7690;">Validade senha op:</label><input class="umgmt-input" id="new-op-expiry" placeholder="HH:MM"
+            Altere todas as senhas antes de distribuir ou copiar este arquivo.<br><span id="default-pass-list" style="color:#c47259;"></span></div><div class="log-header"><h3 style="margin:0;font-size:15px;color:#c2953f;">⚙ GESTÃO DE USUÁRIOS</h3><div style="display:flex;gap:8px;align-items:center;"><button id="btn-export-system" class="umgmt-btn export-sys" onclick="exportarSistemaAtualizado()" disabled title="Gera e baixa um novo arquivo .html do sistema com TODOS os usuários e senhas atuais já embutidos no código-fonte (VAULT_DB), sem depender do cache local (localStorage) do navegador. Fica habilitado somente após alguma alteração em usuários ou senhas nesta sessão. Exclusivo do usuário root.">⬇ GERAR ARQUIVO ATUALIZADO</button><button class="umgmt-btn enable" onclick="toggleAddForm()">＋ NOVO USUÁRIO</button></div></div><table class="user-table"><thead><tr><th style="width:14%">LOGIN</th><th style="width:10%">PERFIL</th><th style="width:10%">STATUS</th><th style="width:24%">VALIDADE OP</th><th style="width:42%">AÇÕES</th></tr></thead><tbody id="user-table-body"></tbody></table><div class="umgmt-add-form" id="umgmt-add-form"><div class="umgmt-row"><input class="umgmt-input" id="new-username"  placeholder="login" autocomplete="off"><input class="umgmt-input" id="new-pass1"     placeholder="senha 1 (login)"       type="password"><input class="umgmt-input" id="new-op-pass"   placeholder="senha 2 (operacional)" type="password"><input class="umgmt-input" id="new-duress"    placeholder="senha 3 (duress)"      type="password"><select class="umgmt-select" id="new-role"><option value="user">user</option><option value="admin">admin</option></select></div><div class="umgmt-row"><label style="font-size:10px;color:#6b7690;">Validade senha op:</label><input class="umgmt-input" id="new-op-expiry" placeholder="HH:MM"
                     style="max-width:120px;" autocomplete="off" maxlength="5"
-                    oninput="mascaraHHMM(this)" onkeydown="mascaraHHMMdel(event,this)"><span style="font-size:10px;color:#2a3040;">horas:minutos — vazio = permanente</span></div><div class="umgmt-row"><button class="umgmt-btn enable" onclick="adicionarUsuario()">✓ CRIAR</button><button class="umgmt-btn" onclick="toggleAddForm()">✕ CANCELAR</button></div></div></div><div id="admin-log-panel" style="display:none; width:100%; background:var(--panel); border:1px solid var(--win-border); padding:20px; border-radius:var(--r);"><div class="log-header"><h3 style="margin:0;font-size:15px;color:var(--ok);">📋 REGISTROS DE ATIVIDADES</h3><button class="purge-btn" onclick="limparLogs()">&#9888; APAGAR TODOS OS REGISTROS</button></div><table class="audit-table"><thead><tr><th style="width:14%">LOGIN</th><th style="width:20%">DATA/HORA</th><th style="width:18%">S.O. / BROWSER</th><th style="width:48%">AÇÃO / CONTEÚDO</th></tr></thead><tbody id="log-body"></tbody></table></div><div id="tg-cfg-panel" style="display:none; width:100%; background:var(--panel); border:1px solid var(--win-border); padding:20px; border-radius:var(--r); margin-bottom:5px;"><div class="log-header"><h3 style="margin:0;font-size:15px;color:var(--accent);">🔔 ALERTA DE ACESSO — TELEGRAM</h3></div><p style="font-size:11px;color:#6b7690;margin:0 0 14px;line-height:1.6;">O sistema envia alertas ao bot do Telegram configurado abaixo: login, 3ª senha inválida e bloqueio, senha de coação, ações sensíveis (exportação, gestão de usuários, limpeza do log) e fim de sessão. O destino padrão (Token e Chat ID) está gravado no arquivo e vale em qualquer navegador. Salvar aqui grava um destino alternativo só neste navegador; Remover volta ao padrão.</p><div class="umgmt-row"><input class="umgmt-input" id="tg-bot-token" placeholder="Bot Token (ex: 123456:ABC-DEF...)" autocomplete="off"><input class="umgmt-input" id="tg-chat-id" placeholder="Chat ID" autocomplete="off"></div><div class="umgmt-row"><button class="umgmt-btn enable" onclick="salvarConfigTelegram()">✓ SALVAR</button><button class="umgmt-btn" onclick="testarAlertaTelegram()">📨 ENVIAR TESTE</button><button class="umgmt-btn danger" onclick="limparConfigTelegram()">✕ REMOVER</button></div><div id="tg-cfg-status" style="font-size:11px;color:#6b7690;margin-top:8px;font-family:var(--mono);"></div></div></div>
+                    oninput="mascaraHHMM(this)" onkeydown="mascaraHHMMdel(event,this)"><span style="font-size:10px;color:#2a3040;">horas:minutos — vazio = permanente</span></div><div class="umgmt-row"><button class="umgmt-btn enable" onclick="adicionarUsuario()">✓ CRIAR</button><button class="umgmt-btn" onclick="toggleAddForm()">✕ CANCELAR</button></div></div></div><div id="admin-log-panel" style="display:none; width:100%; background:var(--panel); border:1px solid var(--win-border); padding:20px; border-radius:var(--r);"><div class="log-header"><h3 style="margin:0;font-size:15px;color:var(--ok);">📋 REGISTROS DE ATIVIDADES</h3><button class="purge-btn" onclick="limparLogs()">&#9888; APAGAR TODOS OS REGISTROS</button></div><table class="audit-table"><thead><tr><th style="width:14%">LOGIN</th><th style="width:20%">DATA/HORA</th><th style="width:18%">S.O. / BROWSER</th><th style="width:48%">AÇÃO / CONTEÚDO</th></tr></thead><tbody id="log-body"></tbody></table></div></div>
 </div><script>
 const VAULT_DB = {
-"root": { hash:"pbkdf2$711e765bbb1cb4bed8b5a61de0c4cae4$0182616a29df1d518eeb5fd650f06a2661658caeaf1f27d74a15299a7152f23b", op_hash:"pbkdf2$b2cfddafac8924c5dc06e51d073b696d$2c5ddb048f73fbf0bad1f5a1610ce8390e5a3c97636233868e021d3461dd3ac2", duress_hash:"pbkdf2$b34956c8062a953e0459e9b3602da5f6$1c3ed3cb30233da6596bbac1ebba47e0b0b27e4c30351362a965b2f525c38768", role:"admin", active:true, op_expiry:null },
-"user1": { hash:"pbkdf2$41ff43c0f7387a7e45984450c5e52630$a309cecdb9c158564194b1e61e2007bb4e66bbab8286b5091f4900001e90aa2a", op_hash:"pbkdf2$405bfef35113c9efe981f50cea250599$61017e59b0f5ad91959f0d80f0dd2c25794bb1c8335f191173a46bcc62471363", duress_hash:"pbkdf2$c7e787a2b77829da7300efad5927b711$f80c25ec1e20ef23c5905efb3a668d21ea805392b2455c656cd95eab4bb074de", role:"user", active:true, op_expiry:null },
-"user2": { hash:"pbkdf2$ddd95f2aa737e25fbb8bb126323e3f45$06976703d224d554a1154171000d299dd0e7b26081c7b326f9d9082da5a8d44c", op_hash:"pbkdf2$35e99c204793c07aa65240cdcfd7e8e8$7d74eb7eda901f9133d31d5223203e8ba5fe1977f71966bb4ed06660f4503fe3", duress_hash:"pbkdf2$2fa5913db8d26ef26fd549148b3e91d6$6e509e1055adcbfe02a5ee4e41e66725ae88b60d958b089708b1b3dbb3f1708f", role:"user", active:true, op_expiry:null }
+"root": { hash:"pbkdf2$dc10ef98aed9e4aee9d88e96f45886a9$8e2ce90dcef8744c2d423da6033088fd61d06908734749bf044260d95013cc14", op_hash:"pbkdf2$65aed6870def0d643e6ca61e6b97dec9$219b50634e6db494efdc8be50a1172fc1e011b963d354f346b566ff4211559a9", duress_hash:"pbkdf2$3bebcb4ccc12846683fde65b53693ab2$7681f179b58844bda8512714b2dae621c58ec296b6eb345abbab78a33e1b94ab", role:"admin", active:true, op_expiry:null },
+"user1": { hash:"pbkdf2$3d12bdcd59124b112d8efa24f5b496bd$141c262dc69b1ccf901d7727df2883898cc24cfa97312c20bd95677d3a54e979", op_hash:"pbkdf2$a9d526fb45f16efd57c3a13c155434dd$3875e841da07bf8c75507a6b85e263c8c42e61239bad0774bf3b235ea7968d02", duress_hash:"pbkdf2$a5996f9c1ad6f5badfec7cb05f7e7f25$a8cc88259607ef2639c06b60c4aab4dac83d69db6325068d291593e2070aa206", role:"user", active:true, op_expiry:null },
+"user2": { hash:"pbkdf2$d2b44d163169addcbb763bcd8b1802a9$5d8865c584078a0b102cf0d26e865f0b8c4d2f16ed791b92fba89a113c9e41d5", op_hash:"pbkdf2$fcea53123bafed5e57d141ab0937181a$81e6e8018fe62b748903ab2a11c43ef78378c17d2ac7d5bd0345564c1cdb7da7", duress_hash:"pbkdf2$1dfaf00407af9e808484a36467a13d49$3aca6746c8021b54e0dc8f3feba119b13e3c0690e5b02c0d2ed4fca7e2c54d9a", role:"user", active:true, op_expiry:null }
 };
 
 // ── localStorage obfuscation helpers ──────────────────────────────
@@ -123,25 +71,11 @@ function _lsDec(raw) {
   } catch(e){ return null; }
 }
 
-function _assinaturaTexto(t){ let h = 5381; for (let i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return (h >>> 0).toString(16); }
 function loadRuntimeDB() {
-// usuários como vieram no arquivo, antes de qualquer mesclagem: base da assinatura e das "alterações pendentes"
-window._dbLiteralArquivo  = _dbToLiteral();
-window._assinaturaArquivo = _assinaturaTexto(window._dbLiteralArquivo);
 try {
   const _rawU = localStorage.getItem('vault_users');
   const _decU = _rawU ? _lsDec(_rawU) : null;
   const saved = JSON.parse((_decU && (_decU.startsWith('{') || _decU.startsWith('['))) ? _decU : (_rawU||'{}'));
-  // Os usuários guardados neste navegador só valem para o mesmo arquivo. Se o arquivo mudou
-  // (senhas novas, versão exportada), ele prevalece e a cópia do navegador é descartada.
-  if (Object.keys(saved).length && saved['#base'] !== window._assinaturaArquivo) {
-    localStorage.removeItem('vault_users');
-    setTimeout(function(){ try { registrarAcesso('SYSTEM', 'RUNTIME_DB | USUÁRIOS DO NAVEGADOR DESCARTADOS — O ARQUIVO É MAIS NOVO'); } catch(e){} }, 0);
-    return;
-  }
-  delete saved['#base'];
-  // a cópia do navegador é a lista completa (saveRuntimeDB grava todos): usuário removido lá também sai daqui
-  if (Object.keys(saved).length) Object.keys(VAULT_DB).forEach(u => { if (!saved[u]) delete VAULT_DB[u]; });
   Object.keys(saved).forEach(u => {
       if (VAULT_DB[u]) Object.assign(VAULT_DB[u], saved[u]);
       else VAULT_DB[u] = saved[u];
@@ -161,7 +95,6 @@ Object.keys(VAULT_DB).forEach(u => {
       op_expiry:   VAULT_DB[u].op_expiry
   };
 });
-out['#base'] = window._assinaturaArquivo;   // amarra a cópia do navegador a este arquivo
 const _encU = _lsEnc(out); if(_encU) localStorage.setItem('vault_users', _encU);
 markUsersDirty();
 }
@@ -171,21 +104,15 @@ loadRuntimeDB();
 window.__ORIG_HTML__ = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
 
 // -- Estado/UX do botao de exportacao (exclusivo root) --
-// Pendente = usuários em uso diferentes dos gravados neste arquivo (vale também depois de recarregar a página).
-function usuariosPendentes(){ try { return _dbToLiteral() !== window._dbLiteralArquivo; } catch(e){ return false; } }
-function atualizarEstadoExportacao(){
-  var pend = usuariosPendentes(), root = false;
-  try { state.usersDirty = pend; root = state.user === 'root'; } catch(e){ return; }
-  var b = document.getElementById('btn-export-system'), a = document.getElementById('export-pendente');
-  if (b){ b.disabled = !(pend && root); b.classList.toggle('ready', pend && root); }
-  if (a) a.style.display = pend ? 'block' : 'none';
+function markUsersDirty(){
+  try { state.usersDirty = true; } catch(e){ return; }
+  var b = document.getElementById('btn-export-system');
+  if (b && state.user === 'root'){ b.disabled = false; b.classList.add('ready'); }
 }
-function markUsersDirty(){ atualizarEstadoExportacao(); }
 function resetExportButton(){
   try { state.usersDirty = false; } catch(e){}
-  var b = document.getElementById('btn-export-system'), a = document.getElementById('export-pendente');
+  var b = document.getElementById('btn-export-system');
   if (b){ b.disabled = true; b.classList.remove('ready'); }
-  if (a) a.style.display = 'none';
 }
 function _dbToLiteral(){
   var keys = Object.keys(VAULT_DB);
@@ -207,17 +134,15 @@ function exportarSistemaAtualizado(){
   if (!reVault.test(html)){ alert('Nao foi possivel localizar o bloco VAULT_DB no snapshot.'); return; }
   html = html.replace(reVault, function(){ return novoVault; });
 
-  // versão AAAA.MM.n: mesma competência soma 1; mês novo (ou título antigo V9.x) recomeça em 1
-  var hoje = new Date(), ano = String(hoje.getFullYear()), mes = String(hoje.getMonth()+1).padStart(2,'0'), seq = 1;
-  var mv = html.match(/<title>[^<]*V(\d{4})\.(\d{2})\.(\d+)[^<]*<\/title>/);
-  if (mv && mv[1] === ano && mv[2] === mes){ seq = parseInt(mv[3],10) + 1; }
-  var versao = ano + '.' + mes + '.' + seq;
-  html = html.replace(/(<title>[^<]*?V)\d+(?:\.\d+)+([^<]*<\/title>)/, '$1'+versao+'$2');
+  var maj = 9, min = 1;
+  var mv = html.match(/<title>[^<]*V(\d+)\.(\d+)[^<]*<\/title>/);
+  if (mv){ maj = parseInt(mv[1],10); min = parseInt(mv[2],10) + 1; }
+  html = html.replace(/(<title>[^<]*?V)\d+\.\d+([^<]*<\/title>)/, '$1'+maj+'.'+min+'$2');
 
   var now = new Date();
   var p2 = function(n){ return String(n).padStart(2,'0'); };
   var stamp = p2(now.getDate())+p2(now.getMonth()+1)+now.getFullYear()+'_'+p2(now.getHours())+p2(now.getMinutes());
-  var fname = 'sys_comm_V'+versao.replace(/\./g,'-')+'_'+stamp+'.html';
+  var fname = 'sys_comm_V'+maj+'-'+min+'_'+stamp+'.html';
 
   var blob = new Blob([html], {type:'text/html;charset=utf-8'});
   var url = URL.createObjectURL(blob);
@@ -306,410 +231,14 @@ else if (ua.includes("Android"))     { const m=ua.match(/Android ([\d.]+)/);  os
 else if (ua.includes("iPhone OS")||ua.includes("CPU OS")) { const m=ua.match(/OS ([\d_]+)/); os="iOS "+(m?m[1].replace(/_/g,"."):""); }
 else if (ua.includes("Mac OS X"))    { const m=ua.match(/Mac OS X ([\d_.]+)/); os="macOS "+(m?m[1].replace(/_/g,"."):""); }
 else if (ua.includes("CrOS"))        { os="ChromeOS"; }
-else if (ua.includes("Linux"))       { const d=ua.match(/Fedora|Ubuntu|Debian|Mint|Arch|openSUSE/); const a=(navigator.oscpu||ua).match(/x86_64|aarch64|arm\w*|i686/); os="Linux"+(d?" "+d[0]:"")+(a?" "+a[0]:""); }
+else if (ua.includes("Linux"))       { os="Linux"; }
 let br = "Unknown";
 if      (ua.includes("Edg/"))        { const m=ua.match(/Edg\/([\d.]+)/);     br="Edge "+(m?m[1].split(".")[0]:""); }
 else if (ua.includes("OPR/"))        { const m=ua.match(/OPR\/([\d.]+)/);     br="Opera "+(m?m[1].split(".")[0]:""); }
 else if (ua.includes("Firefox/"))    { const m=ua.match(/Firefox\/([\d.]+)/); br="Firefox "+(m?m[1].split(".")[0]:""); }
 else if (ua.includes("Chrome/"))     { const m=ua.match(/Chrome\/([\d.]+)/);  br="Chrome "+(m?m[1].split(".")[0]:""); }
 else if (ua.includes("Safari/")&&!ua.includes("Chrome")) { const m=ua.match(/Version\/([\d.]+)/); br="Safari "+(m?m[1].split(".")[0]:""); }
-if (navigator.brave && br.startsWith("Chrome")) br = br.replace("Chrome", "Brave");
 return { os, br };
-}
-
-// ── Alerta de acesso via Telegram (dispara só no login do próprio usuário) ──
-const _TG_KEY = 'vault_tg_cfg';
-// Destino padrão gravado no arquivo: vale em qualquer navegador. O formulário do
-// painel grava uma configuração alternativa só neste navegador, que tem prioridade.
-const TG_PADRAO = { token: '8248870062:AAHrI_pa2Jc2aJEmQbKOCtNFl4dHSeorXkk', chatId: '34408211' };
-
-function carregarConfigLocalTelegram() {
-  try {
-    const raw = localStorage.getItem(_TG_KEY);
-    const dec = raw ? _lsDec(raw) : null;
-    return JSON.parse(dec || '{}');
-  } catch(e) { return {}; }
-}
-function carregarConfigTelegram() {
-  const loc = carregarConfigLocalTelegram();
-  return (loc.token && loc.chatId) ? loc : TG_PADRAO;
-}
-
-function salvarConfigTelegram() {
-  const token = $('tg-bot-token').value.trim();
-  const chatId = $('tg-chat-id').value.trim();
-  if (!token || !chatId) { $('tg-cfg-status').textContent = 'Preencha Bot Token e Chat ID.'; return; }
-  const enc = _lsEnc({ token, chatId });
-  if (enc) localStorage.setItem(_TG_KEY, enc);
-  $('tg-cfg-status').textContent = '✓ Configuração salva neste navegador.';
-}
-
-function limparConfigTelegram() {
-  localStorage.removeItem(_TG_KEY);
-  preencherFormConfigTelegram();
-  $('tg-cfg-status').textContent = 'Configuração deste navegador removida — volta a valer o destino padrão do arquivo.';
-}
-
-function preencherFormConfigTelegram() {
-  const cfg = carregarConfigTelegram();
-  $('tg-bot-token').value = cfg.token  || '';
-  $('tg-chat-id').value   = cfg.chatId || '';
-  $('tg-cfg-status').textContent = carregarConfigLocalTelegram().token
-    ? 'Usando a configuração salva neste navegador.' : 'Usando o destino padrão gravado no arquivo.';
-}
-
-function toggleTgPanel() {
-  const p = $('tg-cfg-panel'), btn = $('tg-master-btn');
-  const open = p.style.display !== 'block';
-  p.style.display = open ? 'block' : 'none';
-  btn.textContent = open ? '[-] ALERTA TELEGRAM' : '[+] ALERTA TELEGRAM';
-  if (open) {
-    const logP = $('admin-log-panel'), logBtn = $('log-master-btn');
-    const userP = $('user-mgmt-panel'), userBtn = $('users-master-btn');
-    logP.style.display = 'none';  logBtn.textContent  = '[+] LOG';
-    userP.style.display = 'none'; userBtn.textContent = '[+] GESTÃO DE USUÁRIOS';
-    preencherFormConfigTelegram();
-  }
-}
-
-// Localização pelo IP: tenta serviços gratuitos (sem chave, com CORS) até um responder.
-// O ipapi.co fica por último: em algumas redes o nome nem resolve e a consulta trava.
-const _GEO_FONTES = [
-  { url: 'https://get.geojs.io/v1/ip/geo.json',
-    ler: j => ({ ip: j.ip, cidade: j.city, regiao: j.region, pais: j.country, isp: j.organization_name, asn: j.asn ? 'AS' + j.asn : null,
-      lat: j.latitude, lon: j.longitude, fuso: j.timezone }) },
-  { url: 'https://ipwho.is/',
-    ler: j => j.success === false ? null : { ip: j.ip, cidade: j.city, regiao: j.region, pais: j.country,
-      isp: (j.connection || {}).isp || (j.connection || {}).org, asn: (j.connection || {}).asn ? 'AS' + j.connection.asn : null,
-      lat: j.latitude, lon: j.longitude, fuso: (j.timezone || {}).id } },
-  { url: 'https://ipinfo.io/json',
-    ler: j => { const m = (j.org || '').match(/^(AS\d+)\s+(.*)$/); const ll = (j.loc || '').split(',');
-      return { ip: j.ip, cidade: j.city, regiao: j.region, pais: j.country, isp: m ? m[2] : j.org, asn: m ? m[1] : null,
-        lat: ll[0], lon: ll[1], fuso: j.timezone }; } },
-  { url: 'https://ipapi.co/json/',
-    ler: j => j.error ? null : { ip: j.ip, cidade: j.city, regiao: j.region, pais: j.country_name, isp: j.org, asn: j.asn,
-      lat: j.latitude, lon: j.longitude, fuso: j.timezone } }
-];
-// IPv4 à parte: com IPv6 disponível, os serviços de localização devolvem o endereço IPv6.
-const _IPV4_FONTES = [
-  { url: 'https://api.ipify.org?format=json', ler: t => JSON.parse(t).ip },
-  { url: 'https://ipv4.icanhazip.com/',       ler: t => t.trim() },
-  { url: 'https://ipv4.seeip.org/jsonip',     ler: t => JSON.parse(t).ip }
-];
-async function _buscarComLimite(url, ms) {
-  const ctrl = new AbortController();
-  const to = setTimeout(() => ctrl.abort(), ms);
-  try { return await fetch(url, { signal: ctrl.signal, cache: 'no-store' }); } finally { clearTimeout(to); }
-}
-async function consultarIPv4() {
-  for (const f of _IPV4_FONTES) {
-    try {
-      const resp = await _buscarComLimite(f.url, 3500);
-      if (!resp.ok) continue;
-      const ip = f.ler(await resp.text());
-      if (/^\d{1,3}(\.\d{1,3}){3}$/.test(ip)) return ip;
-    } catch(e) { /* tenta o próximo */ }
-  }
-  return null;
-}
-async function consultarGeoIP() {
-  for (const f of _GEO_FONTES) {
-    try {
-      const resp = await _buscarComLimite(f.url, 3500);
-      if (!resp.ok) continue;
-      const g = f.ler(await resp.json());
-      if (g && g.ip) return g;
-    } catch(e) { /* serviço fora do ar, bloqueado ou lento — tenta o próximo */ }
-  }
-  return null;
-}
-// A rede não muda durante a sessão: reaproveita a consulta por 10 minutos (vários alertas seguidos não repetem as buscas).
-let _redeCache = null;
-function consultarRede() {
-  if (!_redeCache || Date.now() - _redeCache.em > 10 * 60 * 1000) {
-    _redeCache = { em: Date.now(), p: Promise.all([consultarGeoIP(), consultarIPv4()]) };
-    _redeCache.p.then(r => { if (!r[0] && !r[1]) _redeCache = null; });   // se tudo falhou, tenta de novo no próximo alerta
-  }
-  return _redeCache.p;
-}
-
-// Diferença, em minutos, entre o fuso do navegador e o fuso do local do IP (null se não der para comparar).
-function _minutosUTC(fuso) {
-  try {
-    const p = new Intl.DateTimeFormat('en-US', { timeZone: fuso, timeZoneName: 'longOffset' }).formatToParts(new Date());
-    const m = (p.find(x => x.type === 'timeZoneName') || {}).value.match(/GMT([+-])(\d{2}):?(\d{2})?/);
-    return m ? (m[1] === '-' ? -1 : 1) * (parseInt(m[2], 10) * 60 + parseInt(m[3] || '0', 10)) : 0;   // "GMT" puro = UTC
-  } catch(e) { return null; }
-}
-// Provedores de nuvem/hospedagem e de VPN comerciais: IP deles quase nunca é de uma casa ou escritório.
-const _ASN_HOSPEDAGEM = /amazon|aws|google|microsoft|azure|digitalocean|ovh|hetzner|linode|akamai|vultr|oracle|cloudflare|contabo|leaseweb|choopa|m247|datacamp|packethub|tzulo|hostinger|hostroyale|ionos|scaleway|alibaba|tencent|nord|expressvpn|proton|mullvad|surfshark|private internet|cyberghost|psychz|colocrossing|quadranet|zenlayer|g-core|gcore|tor exit|torservers/i;
-function avaliarAnonimizacao(d, geo) {
-  const sinais = [];
-  if (geo && geo.fuso && d.fusoId) {
-    const a = _minutosUTC(d.fusoId), b = _minutosUTC(geo.fuso);
-    if (a !== null && b !== null && a !== b) sinais.push(`fuso do aparelho (${d.fusoId}) difere do fuso do IP (${geo.fuso})`);
-  }
-  if (_ASN_HOSPEDAGEM.test(`${d.isp} ${d.asn}`)) sinais.push(`provedor de nuvem/VPN (${d.isp})`);
-  return sinais.length ? '⚠️ possível VPN/proxy: ' + sinais.join('; ') : 'nenhum sinal';
-}
-
-// Placa de vídeo pelo WebGL (o Brave altera o valor; o Firefox às vezes devolve um nome genérico).
-function lerGPU() {
-  try {
-    const gl = document.createElement('canvas').getContext('webgl') || document.createElement('canvas').getContext('experimental-webgl');
-    if (!gl) return 'N/D';
-    const ext = gl.getExtension('WEBGL_debug_renderer_info');
-    const r = ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
-    const v = ext ? gl.getParameter(ext.UNMASKED_VENDOR_WEBGL) : gl.getParameter(gl.VENDOR);
-    return [v, r].filter(Boolean).join(' / ') || 'N/D';
-  } catch(e) { return 'N/D'; }
-}
-// Chrome, Edge e Brave informam a versão real do sistema e o modelo do aparelho (Firefox e Safari não).
-async function lerDetalheSistema() {
-  try {
-    if (!navigator.userAgentData || !navigator.userAgentData.getHighEntropyValues) return null;
-    const h = await navigator.userAgentData.getHighEntropyValues(['platformVersion', 'model', 'architecture', 'bitness', 'fullVersionList']);
-    let so = h.platform || navigator.userAgentData.platform || '';
-    if (so === 'Windows' && h.platformVersion) so += parseInt(h.platformVersion, 10) >= 13 ? ' 11' : ' 10';
-    else if (h.platformVersion) so += ' ' + h.platformVersion;
-    const partes = [so, h.architecture ? h.architecture + (h.bitness ? '-' + h.bitness : '') : '', h.model ? 'modelo ' + h.model : ''];
-    return partes.filter(Boolean).join(' · ') || null;
-  } catch(e) { return null; }
-}
-async function lerBateria() {
-  try {
-    if (!navigator.getBattery) return 'não informada pelo navegador';
-    if (navigator.brave) return 'oculta pelo Brave (informa sempre 100%)';
-    const b = await navigator.getBattery();
-    return `${Math.round(b.level * 100)}%${b.charging ? ' (carregando)' : ''}`;
-  } catch(e) { return 'não informada pelo navegador'; }
-}
-function _esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-
-async function coletarDadosAcesso() {
-  const { os, br } = getSpecs();
-  const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  const conexao = conn
-    ? `${conn.effectiveType || 'N/D'} @ ${conn.downlink != null ? conn.downlink + 'Mbps' : 'N/D'} RTT:${conn.rtt != null ? conn.rtt + 'ms' : 'N/D'}`
-    : 'não informada pelo navegador';
-  const touch = (navigator.maxTouchPoints || 0) > 0;
-  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'N/D';
-  const offsetMin = -new Date().getTimezoneOffset();
-  const offsetStr = (offsetMin >= 0 ? '+' : '-') + String(Math.floor(Math.abs(offsetMin) / 60)).padStart(2, '0');
-
-  let local = 'N/D, N/D - N/D', isp = 'N/D', asn = 'N/D', mapa = null, lat = null, lon = null;
-  // localização, IPv4 e dados extras em paralelo; nada disso pode travar o alerta
-  const [[geo, ipv4Sep], detalheSO, bateria] = await Promise.all([consultarRede(), lerDetalheSistema(), lerBateria()]);
-  const ipGeo = geo && geo.ip ? geo.ip : null;
-  const ipv6  = ipGeo && ipGeo.includes(':') ? ipGeo : 'não detectado';
-  const ipv4  = ipv4Sep || (ipGeo && !ipGeo.includes(':') ? ipGeo : 'N/D');
-  if (geo) {
-    local = `${geo.cidade || 'N/D'}, ${geo.regiao || 'N/D'} - ${geo.pais || 'N/D'}`;
-    isp   = geo.isp || 'N/D';
-    asn   = geo.asn || 'N/D';
-    lat = parseFloat(geo.lat); lon = parseFloat(geo.lon);
-    if (isFinite(lat) && isFinite(lon)) mapa = `https://www.google.com/maps?q=${lat},${lon}`; else { lat = lon = null; }
-  }
-
-  // mesma base de sempre: mudar os campos mudaria o fingerprint dos aparelhos já conhecidos
-  const fingerprintBase = [os, br, navigator.language, screen.width + 'x' + screen.height,
-    window.devicePixelRatio, navigator.hardwareConcurrency, navigator.deviceMemory,
-    tz, navigator.userAgent].join('|');
-  const fingerprint = (await sha256(fingerprintBase)).slice(0, 20) + '...';
-
-  const arquivo = location.protocol === 'file:' ? decodeURIComponent(location.pathname) : location.origin + location.pathname;
-  const versao = (document.title.match(/V\d+(?:\.\d+)+/) || ['N/D'])[0];
-  const monitores = typeof screen.isExtended === 'boolean' ? (screen.isExtended ? 'mais de um' : 'um') : 'não informado';
-  const d = {
-    dataHora: new Date().toLocaleString('pt-BR'),
-    arquivo, versao,
-    ipv4, ipv6, local, isp, asn, mapa, lat, lon, conexao, online: navigator.onLine ? 'Sim' : 'Não',
-    navegador: br, sistema: os, detalheSO: detalheSO || 'não informado pelo navegador', idioma: navigator.language || 'N/D',
-    idiomas: (navigator.languages || []).join(', ') || 'N/D',
-    resolucao: `${screen.width}x${screen.height} ratio:${window.devicePixelRatio}x`,
-    janela: `${window.innerWidth}x${window.innerHeight}`, monitores,
-    cpu: navigator.hardwareConcurrency || 'N/D',
-    ram: navigator.deviceMemory ? navigator.deviceMemory + ' GB' : 'RAM não informada pelo navegador',
-    gpu: lerGPU(), bateria,
-    mobile: touch ? 'Sim' : 'Não', touchPoints: navigator.maxTouchPoints || 0,
-    ponteiro: matchMedia('(pointer: fine)').matches ? 'mouse/touchpad' : (matchMedia('(pointer: coarse)').matches ? 'toque' : 'N/D'),
-    tema: matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro',
-    cookies: navigator.cookieEnabled ? 'Sim' : 'Não',
-    fusoId: tz, fuso: `${tz} (UTC${offsetStr})`, fingerprint
-  };
-  d.anonimizacao = avaliarAnonimizacao(d, geo);
-  if (_localizacaoPrecisa) {
-    const g = _localizacaoPrecisa;
-    d.gpsLat = g.lat; d.gpsLon = g.lon;
-    d.gps = `${g.lat.toFixed(5)}, ${g.lon.toFixed(5)} (±${g.precisao} m)` + (g.baixaPrecisao ? ' ⚠️ baixa precisão — aparelho provavelmente sem GPS' : '');
-    d.gpsMapa = `https://www.google.com/maps?q=${g.lat},${g.lon}`;
-  } else { d.gpsLat = null; d.gpsLon = null; }
-  return d;
-}
-
-// Tipos de alerta: título, ícone e se manda o pino de localização junto.
-const _TG_TIPOS = {
-  ACESSO:     { icone: '✅', titulo: 'ACESSO DETECTADO' },
-  TESTE:      { icone: '🧪', titulo: 'TESTE DE ALERTA' },
-  OPERACAO:   { icone: '🔐', titulo: 'OPERAÇÃO DE MENSAGEM', pino: true },
-  TENTATIVAS: { icone: '⚠️', titulo: 'TENTATIVAS DE SENHA INVÁLIDAS' },
-  BLOQUEIO:   { icone: '🚨', titulo: 'ACESSO BLOQUEADO — 5 TENTATIVAS', pino: true },
-  COACAO:     { icone: '🚨', titulo: 'ACESSO SOB COAÇÃO', pino: true },
-  SENSIVEL:   { icone: '⚠️', titulo: 'AÇÃO SENSÍVEL' },
-  OP_FALHA:   { icone: '⚠️', titulo: 'SENHA OPERACIONAL INCORRETA' },
-  FIM:        { icone: 'ℹ️', titulo: 'SESSÃO ENCERRADA' }
-};
-
-// Monta a mensagem (HTML do Telegram). Eventos de rotina saem no formato curto; acesso, coação e bloqueio, completos.
-function montarRelatorioAcesso(d, usuario, tipo, evento, completo) {
-  const t = _TG_TIPOS[tipo] || _TG_TIPOS.ACESSO;
-  const L = (rot, val) => `<b>${rot}:</b> ${_esc(val)}`;
-  const linhas = [`${t.icone} <b>KRIPTOS — ${t.titulo}</b>`, L('Usuário', usuario), L('Data/Hora', d.dataHora)];
-  if (evento) linhas.push(L('Evento', evento));
-  linhas.push('', '🌐 <b>REDE</b>', L('IPv4', d.ipv4), L('IPv6', d.ipv6), L('Local', d.local),
-    L('ISP', d.isp) + ` (${_esc(d.asn)})`, L('Anonimização', d.anonimizacao));
-  if (d.mapa) linhas.push(`<b>Mapa:</b> <a href="${d.mapa}">localização aproximada pelo IP</a>`);
-  if (d.gps) linhas.push(L('GPS (preciso)', d.gps));
-  if (d.gpsMapa) linhas.push(`<b>Mapa GPS:</b> <a href="${d.gpsMapa}">localização exata pelo GPS</a>`);
-  if (completo) {
-    linhas.push(L('Conexão', d.conexao), L('Online', d.online),
-      '', '💻 <b>DISPOSITIVO</b>', L('Navegador', d.navegador), L('Sistema', d.sistema), L('Sistema (detalhe)', d.detalheSO),
-      L('Placa de vídeo', d.gpu), L('CPU/RAM', `${d.cpu} núcleos / ${d.ram}`), L('Bateria', d.bateria),
-      L('Tela', d.resolucao), L('Janela', d.janela) + ` · monitores: ${_esc(d.monitores)}`,
-      L('Entrada', `${d.ponteiro} · touch ${d.touchPoints}pt · móvel: ${d.mobile}`),
-      L('Idiomas', d.idiomas), L('Tema', d.tema), L('Cookies', d.cookies),
-      '', '🗂 <b>ARQUIVO</b>', L('Caminho', d.arquivo), L('Versão', d.versao),
-      '', '🕒 <b>SISTEMA</b>', L('Fuso', d.fuso), L('Fingerprint', d.fingerprint));
-  } else {
-    linhas.push('', L('Navegador', `${d.navegador} · ${d.sistema}`), L('Arquivo', d.arquivo), L('Fingerprint', d.fingerprint));
-  }
-  return linhas.join('\n');
-}
-
-// Envio: corpo de formulário (e não JSON) evita a consulta prévia de CORS, que o Telegram responde com 501 e o navegador bloqueia.
-async function _tgEnviar(cfg, metodo, campos) {
-  return fetch(`https://api.telegram.org/bot${cfg.token}/${metodo}`, { method: 'POST', body: new URLSearchParams(campos) });
-}
-async function enviarEventoTelegram(tipo, usuario, evento, opcoes) {
-  opcoes = opcoes || {};
-  const cfg = carregarConfigTelegram();
-  if (!cfg.token || !cfg.chatId) return null;
-  const t = _TG_TIPOS[tipo] || _TG_TIPOS.ACESSO;
-  const completo = opcoes.completo != null ? opcoes.completo : ['ACESSO', 'TESTE', 'BLOQUEIO', 'COACAO'].indexOf(tipo) >= 0;
-  const d = await coletarDadosAcesso();
-  const texto = montarRelatorioAcesso(d, (usuario || 'DESCONHECIDO').toUpperCase(), tipo, evento, completo);
-  let resp = await _tgEnviar(cfg, 'sendMessage', { chat_id: cfg.chatId, text: texto, parse_mode: 'HTML', disable_web_page_preview: 'true' });
-  if (resp.status === 400) {   // formatação recusada: reenvia como texto simples para o alerta não se perder
-    const simples = texto.replace(/<a href="([^"]*)">[^<]*<\/a>/g, '$1').replace(/<[^>]+>/g, '')
-      .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
-    resp = await _tgEnviar(cfg, 'sendMessage', { chat_id: cfg.chatId, text: simples, disable_web_page_preview: 'true' });
-  }
-  const pinLat = d.gpsLat != null ? d.gpsLat : d.lat, pinLon = d.gpsLat != null ? d.gpsLon : d.lon;
-  if (t.pino && pinLat != null) { try { await _tgEnviar(cfg, 'sendLocation', { chat_id: cfg.chatId, latitude: pinLat, longitude: pinLon }); } catch(e) {} }
-  return resp;
-}
-// Disparo sem esperar e sem erro: alerta é best-effort e nunca pode travar o sistema.
-function alertarTelegram(tipo, usuario, evento, opcoes) {
-  try { enviarEventoTelegram(tipo, usuario, evento, opcoes).catch(function(){}); } catch(e) {}
-}
-function _duracaoSessao() {
-  if (!window._inicioSessao) return '';
-  const s = Math.round((Date.now() - window._inicioSessao) / 1000);
-  return ` · duração ${Math.floor(s / 60)}min ${String(s % 60).padStart(2, '0')}s`;
-}
-// Chamado a cada registro do log: escolhe os eventos que merecem alerta.
-function alertarPorRegistro(u, acao) {
-  const a = String(acao || '');
-  if (a.startsWith('⚠ DURESS_ALERT'))           alertarTelegram('COACAO', u, 'senha de coação usada para liberar a operação — o sistema passou a gerar dados falsos');
-  else if (a.startsWith('⚠ DURESS_'))           alertarTelegram('COACAO', u, a.replace(/^⚠\s*/, ''), { completo: false });
-  else if (a.startsWith('SYSTEM_EXPORT | ARQUIVO')) alertarTelegram('SENSIVEL', u, 'exportou o sistema: ' + a.split('ARQUIVO GERADO: ')[1]);
-  else if (a.startsWith('USER_MGMT'))            alertarTelegram('SENSIVEL', u, 'gestão de usuários — ' + a.replace(/^USER_MGMT \| /, ''));
-  else if (a.startsWith('OP_AUTH_FAIL'))         alertarTelegram('OP_FALHA', u, 'senha operacional incorreta');
-  else if (a.startsWith('SESSION_TIMEOUT'))      alertarTelegram('FIM', u, 'sessão expirada por inatividade' + _duracaoSessao());
-}
-
-// ── Localização precisa (GPS), pedida ao encriptar/decriptar ────────────────
-// Só é obtida com a permissão do navegador. Nestes aparelhos do próprio dono,
-// serve para o alerta registrar de onde a operação foi feita.
-let _localizacaoPrecisa = null;      // {lat, lon, precisao, em}
-let _ultimoAlertaGps = 0;
-// Usa watchPosition e espera a precisão convergir: num aparelho com GPS (celular)
-// o primeiro fix costuma ser grosseiro e melhora em segundos. maximumAge:0 evita
-// devolver um fix antigo em cache. No desktop (sem chip GPS) fica em nível-cidade.
-const _GPS_JANELA_MS = 20000;   // tempo máximo esperando o GPS convergir
-const _GPS_BOM_M    = 50;       // precisão (m) já considerada boa: para cedo
-function _obterPosicao() {
-  return new Promise(function(resolve) {
-    if (!navigator.geolocation) { resolve({ estado: 'indisponivel' }); return; }
-    let melhor = null, id = null, done = false, tmr = null;
-    function finalizar() {
-      if (done) return; done = true;
-      if (id !== null) { try { navigator.geolocation.clearWatch(id); } catch(e) {} }
-      if (tmr !== null) clearTimeout(tmr);
-      if (melhor) resolve({ estado: 'ok', lat: melhor.coords.latitude, lon: melhor.coords.longitude, precisao: Math.round(melhor.coords.accuracy) });
-      else resolve({ estado: 'erro' });
-    }
-    tmr = setTimeout(finalizar, _GPS_JANELA_MS);
-    id = navigator.geolocation.watchPosition(
-      function(pos) {
-        if (!melhor || pos.coords.accuracy < melhor.coords.accuracy) melhor = pos;
-        if (melhor.coords.accuracy <= _GPS_BOM_M) finalizar();   // já está bom
-      },
-      function(err) {
-        if (done) return;
-        if (err && err.code === 1) {   // permissão negada: encerra na hora
-          done = true;
-          if (id !== null) { try { navigator.geolocation.clearWatch(id); } catch(e) {} }
-          if (tmr !== null) clearTimeout(tmr);
-          resolve({ estado: 'negado', msg: err.message });
-        }
-        // outros erros: aguarda o timeout, pode ainda vir um fix bom
-      },
-      { enableHighAccuracy: true, timeout: _GPS_JANELA_MS, maximumAge: 0 }
-    );
-  });
-}
-// Chamada no momento de encriptar/decriptar. root sempre prossegue; os demais
-// usuários só concluem a operação após autorizar a localização no navegador.
-async function garantirLocalizacaoParaOperacao(acao) {
-  // Aviso antes de o navegador pedir a permissão: o sistema só opera com a
-  // localização autorizada. Se o operador cancelar aqui, a operação não segue
-  // e o navegador nem chega a pedir permissão.
-  const seguir = confirm('🔐 ' + acao.toUpperCase() + ' DE MENSAGEM\n\n'
-    + 'Este sistema só conclui a operação após você autorizar a localização.\n\n'
-    + 'Ao continuar, o navegador vai pedir permissão de localização. Deseja continuar?');
-  if (!seguir) return false;
-  const pos = await _obterPosicao();
-  if (pos.estado === 'ok') {
-    const baixa = pos.precisao > 1000;   // > 1 km: provavelmente sem GPS (nível-IP)
-    _localizacaoPrecisa = { lat: pos.lat, lon: pos.lon, precisao: pos.precisao, em: Date.now(), baixaPrecisao: baixa };
-    if (Date.now() - _ultimoAlertaGps > 90 * 1000) {   // não repete a cada operação
-      _ultimoAlertaGps = Date.now();
-      alertarTelegram('OPERACAO', state.user, acao + ' de mensagem — localização ' + (baixa ? 'autorizada (baixa precisão, ±' + pos.precisao + ' m)' : 'precisa autorizada'));
-    }
-    return true;
-  }
-  _localizacaoPrecisa = null;
-  if (state.user === 'root') return true;              // root nunca é bloqueado
-  const motivo = pos.estado === 'negado' ? 'A localização foi negada.' : 'Não foi possível obter a localização.';
-  alert(motivo + '\n\nPara ' + acao + ', autorize a localização no navegador e tente novamente.');
-  return false;
-}
-
-async function enviarAlertaAcessoTelegram(usuario, tentativasAntes) {
-  const n = tentativasAntes || 0;
-  alertarTelegram('ACESSO', usuario, n ? `login após ${n} tentativa(s) inválida(s)` : 'login na primeira tentativa');
-}
-
-async function testarAlertaTelegram() {
-  const status = $('tg-cfg-status');
-  const cfg = carregarConfigTelegram();
-  if (!cfg.token || !cfg.chatId) { status.textContent = 'Salve o Token e o Chat ID antes de testar.'; return; }
-  status.textContent = 'Enviando...';
-  try {
-    const resp = await enviarEventoTelegram('TESTE', (state.user || 'TESTE') + ' (teste manual)', 'teste pelo painel ALERTA TELEGRAM');
-    status.textContent = resp && resp.ok ? '✓ Enviado — confira o Telegram.' : '✕ Falhou: verifique Token/Chat ID.';
-  } catch(e) { status.textContent = '✕ Falhou: sem conexão ou bloqueio de rede/CSP.'; }
 }
 
 function toggleMaximize() {
@@ -722,25 +251,21 @@ box.style.transition = "all 0.3s";
 function dispararEfeitoAuth(tipo) {
   const box = $("auth-box");
   if (!box) return;
-  box.classList.remove('auth-error', 'auth-success', 'aguardando');
+  box.classList.remove('auth-error', 'auth-success');
   void box.offsetWidth; // força reflow para permitir reexecução da animação em erros consecutivos
   box.classList.add(tipo === 'success' ? 'auth-success' : 'auth-error');
-  clearTimeout(dispararEfeitoAuth._t);
-  if (tipo !== 'success') dispararEfeitoAuth._t = setTimeout(function(){ box.classList.remove('auth-error'); }, 1600);
 }
 
 async function validarAcesso() {
 const u = $("user-id").value.trim().toLowerCase();
-const p = lerSenhaLogin();
-if (!u || !p) { msgLogin('erro', 'informe usuário e senha'); dispararEfeitoAuth('error'); $(u ? "user-pass" : "user-id").focus(); return; }
+const p = $("user-pass").value;
+if (!u || !p) { alert("FILL ALL FIELDS"); return; }
 loginLockedUntil = parseInt(sessionStorage.getItem('_vll')||'0');
 loginAttempts    = parseInt(sessionStorage.getItem('_vla')||'0');
 if (loginLockedUntil > Date.now()) {
   dispararEfeitoAuth('error');
   const rem = Math.ceil((loginLockedUntil - Date.now()) / 1000);
   if ($('risk-login')) $('risk-login').textContent = '⛔ BLOQUEADO — aguarde ' + rem + 's';
-  msgLogin('erro', 'bloqueado — aguarde ' + rem + 's');
-  limparSenha(); setTimeout(posicionarCursor, 0);
   return;
 }
 const entry = VAULT_DB[u];
@@ -755,18 +280,11 @@ if (entry && await verifyPassword(entry.hash, p) && entry.active !== false) {
   } else {
       window._userOpTimeout = null;
   }
-  const _tentativasAntes = loginAttempts; window._inicioSessao = Date.now();
-  sessionStorage.removeItem('_vla'); sessionStorage.removeItem('_vll'); loginAttempts = 0; loginLockedUntil = 0;
   registrarAcesso(u, "SESSION_ESTABLISHED");
-  enviarAlertaAcessoTelegram(u, _tentativasAntes);
 
-  msgLogin('ok', 'acesso concedido');
   dispararEfeitoAuth('success');
   setTimeout(() => {
-    const ov = $("auth-overlay");
-    ov.classList.add('saindo'); pararCena();
-    setTimeout(() => { ov.style.display = "none"; ov.classList.remove('saindo'); }, SEM_ANIMACAO ? 0 : 500);
-    limparSenha();
+    $("auth-overlay").style.display = "none";
     state.running = true;
     iniciarSessaoTimer();
     abrirCofre();
@@ -779,18 +297,11 @@ if (entry && await verifyPassword(entry.hash, p) && entry.active !== false) {
   if (loginAttempts >= MAX_LOGIN_ATTEMPTS) {
       loginLockedUntil = Date.now() + LOCKOUT_MS;
       loginAttempts = 0;
-      sessionStorage.setItem('_vll', loginLockedUntil);
-      sessionStorage.setItem('_vla', 0);
       if ($('risk-login')) $('risk-login').textContent = `⛔ ${MAX_LOGIN_ATTEMPTS} TENTATIVAS INVÁLIDAS — BLOQUEADO POR ${LOCKOUT_MS/1000}s`;
-      msgLogin('erro', `${MAX_LOGIN_ATTEMPTS} tentativas inválidas — bloqueado por ${LOCKOUT_MS/1000}s`);
-      alertarTelegram('BLOQUEIO', u, `${MAX_LOGIN_ATTEMPTS} senhas inválidas seguidas — login bloqueado por ${LOCKOUT_MS/1000}s · usuário digitado ${VAULT_DB[u] ? 'existe' : 'NÃO existe'} no sistema`);
   } else {
       if ($('risk-login')) $('risk-login').textContent = `⛔ ACCESS DENIED — tentativa ${loginAttempts}/${MAX_LOGIN_ATTEMPTS}`;
-      msgLogin('erro', `acesso negado — tentativa ${loginAttempts}/${MAX_LOGIN_ATTEMPTS}`);
-      if (loginAttempts === 3) alertarTelegram('TENTATIVAS', u, `3 senhas inválidas seguidas (bloqueio na ${MAX_LOGIN_ATTEMPTS}ª) · usuário digitado ${VAULT_DB[u] ? 'existe' : 'NÃO existe'} no sistema`);
       aplicarGlitch("ACCESS DENIED");
   }
-  limparSenha(); $("user-pass").focus(); setTimeout(posicionarCursor, 0);
 }
 }
 
@@ -832,8 +343,7 @@ $("main-system").style.display = "flex";
 selecionarModoComunicacao('proteger');
 $("log-master-btn").style.display   = state.role === "admin" ? "block" : "none";
 $("users-master-btn").style.display = state.user === "root"  ? "block" : "none";
-$("tg-master-btn").style.display    = state.role === "admin" ? "block" : "none";
-atualizarEstadoExportacao();
+resetExportButton();
 $("btn-logout").style.display = "block";
 $("top-left-bar").style.display = "flex";
 clearInterval(riscoInterval);   // ← ADICIONE ESTA LINHA
@@ -973,19 +483,17 @@ $("admin-log-panel").style.display  = "none";
 $("log-master-btn").style.display    = "none";
 $("user-mgmt-panel").style.display  = "none";
 $("users-master-btn").style.display = "none";
-$("tg-cfg-panel").style.display     = "none";
-$("tg-master-btn").style.display    = "none";
 ["e-pass","e-res","d-cipher","d-pass"].forEach(function(id){ var el=$(id); if(el){el.value="";el.dataset.touched="0";} });
 clearImageEnc(); limparDecResult();
 encCanvasBytes = null; decImgCipherBytes = null;
+$("user-id").value = ""; $("user-pass").value = "";
 state.user=""; state.role="user"; state.running=false;
-abrirTelaLogin();
+$("auth-overlay").style.display = "flex";
 setTimeout(function(){ alert("SESSÃO EXPIRADA\nFAÇA LOGIN NOVAMENTE"); $("user-id").focus(); }, 100);
 }
 
 function fazerLogout() {
 if (!confirm("ENCERRAR SESSÃO?")) return;
-alertarTelegram('FIM', state.user, 'logout manual' + _duracaoSessao());
 travarOperacao(false);
 fecharModalOp();
 limparSessaoTimer();
@@ -996,11 +504,10 @@ $("admin-log-panel").style.display  = "none";
 $("log-master-btn").style.display    = "none";
 $("user-mgmt-panel").style.display  = "none";
 $("users-master-btn").style.display = "none";
-$("tg-cfg-panel").style.display     = "none";
-$("tg-master-btn").style.display    = "none";
 ["e-pass","e-res","d-cipher","d-pass"].forEach(function(id){ var el=$(id); if(el){el.value="";el.dataset.touched="0";} });
+$("user-id").value = ""; $("user-pass").value = "";
 state.user=""; state.role="user";
-abrirTelaLogin();
+$("auth-overlay").style.display = "flex";
 setTimeout(() => $("user-id").focus(), 100);
 }
 
@@ -1497,7 +1004,6 @@ try { const _rl=localStorage.getItem('vault_logs'); const _dl=_rl?_lsDec(_rl):nu
 logs.unshift({user:userLabel,time:new Date().toLocaleString('pt-BR'),os,browser:br,msg:acao});
 try { const _el=_lsEnc(logs.slice(0,200)); if(_el) localStorage.setItem('vault_logs',_el); } catch(e){}
 if ($("admin-log-panel")&&$("admin-log-panel").style.display==="block") renderizarLogs();
-try { alertarPorRegistro(u, acao); } catch(e) {}
 }
 
 function renderizarLogs() {
@@ -1511,7 +1017,7 @@ $("log-body").innerHTML=logs.map(l=>{
 }
 
 function limparLogs() {
-if (confirm("PURGE ALL RECORDS?")) { localStorage.removeItem('vault_logs'); renderizarLogs(); alertarTelegram('SENSIVEL', state.user, 'apagou todos os registros do log'); }
+if (confirm("PURGE ALL RECORDS?")) { localStorage.removeItem('vault_logs'); renderizarLogs(); }
 }
 
 let riscoInterval;              // ← ADICIONE esta declaração antes da IIFE
@@ -1527,307 +1033,13 @@ el.addEventListener("focus",()=>{ if(el.dataset.touched!=="1") el.value=""; });
 el.addEventListener("input",()=>{ el.dataset.touched="1"; });
 }
 
-
-/* ----------------------------- Tela de login ---------------------------------
-   Visual da tela de senha do Portal de Gestão (terminal sobre o corredor de data
-   center). Só a aparência muda: a validação continua em validarAcesso(). */
-const SEM_ANIMACAO=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function escLogin(s){ return String(s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-function msgLogin(tipo,texto){ const m=$('lgMsg'); if(!m) return; m.className='msg'+(tipo?' '+tipo:''); m.textContent=texto; }
-function digitarBoot(){
-  const agora=new Date();
-  const quando='acessando em '+agora.toLocaleDateString('pt-BR')+' às '+agora.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-  const ver=(document.title.match(/V\d+(?:\.\d+)+/)||[''])[0];   // a versão vem do título, que a exportação atualiza
-  const linhas=[['u','root@sysboot:~$ '],['','./comunicacao --login\n'],['','Módulo de Comunicação\n'],['','Proteção de Mensagens · '+ver+'\n'],['t',quando+' · Apresente suas credenciais']];
-  const alvo=$('boot'); alvo.innerHTML='';
-  clearTimeout(digitarBoot._t);
-  if(SEM_ANIMACAO){ alvo.innerHTML=linhas.map(function(l){ return l[0]?'<span class="'+l[0]+'">'+escLogin(l[1])+'</span>':escLogin(l[1]); }).join(''); return; }
-  let i=0, j=0, span=null;
-  (function passo(){
-    if(i>=linhas.length){ posicionarCursor(); return; }
-    if(j===0){ span=document.createElement('span'); if(linhas[i][0]) span.className=linhas[i][0]; alvo.appendChild(span); }
-    span.textContent+=linhas[i][1].charAt(j++);
-    if(j>=linhas[i][1].length){ i++; j=0; }
-    digitarBoot._t=setTimeout(passo,18);
-  })();
-}
-/* ------------------------- Cena da tela de senha ---------------------------
-   Corredor de data center em perspectiva, desenhado em canvas: racks dos dois
-   lados, luminárias no teto, piso com reflexo, névoa azul ao fundo e LEDs que
-   piscam. O cenário fixo é pintado uma vez num canvas de apoio; a cada quadro
-   só os LEDs são redesenhados. */
-const CENA={ ctx:null, fundo:null, leds:[], sprites:{}, raf:0, ultimo:0, w:0, h:0, dpr:1 };
-function aleatorio(semente){ return function(){ semente|=0; semente=semente+0x6D2B79F5|0; let x=Math.imul(semente^semente>>>15,1|semente);
-  x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; }; }
-const NUCLEO={ 'rgba(226,236,255,1)':'#ffffff', 'rgba(74,222,128,1)':'#d4ffe0', 'rgba(251,146,60,1)':'#ffe2c7' };
-function spriteLed(cor){
-  if(CENA.sprites[cor]) return CENA.sprites[cor];
-  const c=document.createElement('canvas'); c.width=c.height=64; const g=c.getContext('2d');
-  const r=g.createRadialGradient(32,32,0,32,32,32);   // só o halo; o núcleo é desenhado à parte, nítido
-  r.addColorStop(0,cor.replace(/[\d.]+\)$/,'.9)')); r.addColorStop(.18,cor.replace(/[\d.]+\)$/,'.45)')); r.addColorStop(.5,cor.replace(/[\d.]+\)$/,'.1)')); r.addColorStop(1,'rgba(0,0,0,0)');
-  g.fillStyle=r; g.fillRect(0,0,64,64); return (CENA.sprites[cor]=c);
-}
-function montarCena(){
-  const cv=document.getElementById('cena'); if(!cv) return;
-  const dpr=Math.min(3,window.devicePixelRatio||1), W=cv.clientWidth, H=cv.clientHeight;
-  CENA.w=W; CENA.h=H; CENA.dpr=dpr;
-  cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);
-  CENA.ctx=cv.getContext('2d'); CENA.ctx.imageSmoothingQuality='high';
-  /* o cenário fixo é pintado em resolução acima da tela: com a aproximação da câmera ele continua nítido */
-  const SS=Math.min(4,dpr*1.5);
-  const f=document.createElement('canvas'); f.width=Math.round(W*SS); f.height=Math.round(H*SS);
-  const g=f.getContext('2d'); g.scale(SS,SS); CENA.fundo=f;
-  /* escala horizontal e vertical separadas: em tela em pé o corredor estreita sem perder os racks */
-  const FY=H*0.78, FX=Math.min(FY,W*0.62), F=FX, cx=W/2, cy=H*0.46, XR=1.25, PISO=-1, TETO=1.3, ZMAX=17;
-  const P=function(x,y,z){ return [cx+x/z*FX, cy-y/z*FY]; };
-  const quad=function(a,b,c,d){ g.beginPath(); g.moveTo(a[0],a[1]); g.lineTo(b[0],b[1]); g.lineTo(c[0],c[1]); g.lineTo(d[0],d[1]); g.closePath(); };
-  const nevoa=function(z){ return Math.min(1,Math.max(0,(z-1)/(ZMAX-1))); };
-  const rnd=aleatorio(20260923);
-  Object.assign(CENA,{ P:P, cx:cx, cy:cy, FX:FX, FY:FY, ZMAX:ZMAX, PISO:PISO, TETO:TETO, XR:XR });
-  // partículas de poeira suspensas na luz, vindo devagar do fundo
-  CENA.poeira=[]; for(let i=0;i<90;i++) CENA.poeira.push({ x:(rnd()*2-1)*1.1, y:PISO+rnd()*(TETO-PISO), z:1+rnd()*(ZMAX-2), v:.12+rnd()*.25, f:rnd()*6.3 });
-
-  // céu escuro e fundo do corredor aceso
-  let bg=g.createLinearGradient(0,0,0,H); bg.addColorStop(0,'#01040c'); bg.addColorStop(.5,'#04112b'); bg.addColorStop(1,'#01040c');
-  g.fillStyle=bg; g.fillRect(0,0,W,H);
-  const fd=[P(-XR,TETO,ZMAX),P(XR,TETO,ZMAX),P(XR,PISO,ZMAX),P(-XR,PISO,ZMAX)];
-  let gl=g.createRadialGradient(cx,cy,0,cx,cy,FY*0.35); gl.addColorStop(0,'rgba(120,180,255,.95)'); gl.addColorStop(.5,'rgba(40,110,255,.55)'); gl.addColorStop(1,'rgba(10,40,120,0)');
-  g.fillStyle=gl; g.fillRect(0,0,W,H);
-  quad(fd[0],fd[1],fd[2],fd[3]); g.fillStyle='rgba(150,200,255,.55)'; g.fill();
-
-  // teto e piso
-  quad(P(-XR,TETO,.6),P(XR,TETO,.6),P(XR,TETO,ZMAX),P(-XR,TETO,ZMAX)); g.fillStyle='#030a1a'; g.fill();
-  const pp=[P(-XR,PISO,.6),P(XR,PISO,.6),P(XR,PISO,ZMAX),P(-XR,PISO,ZMAX)];
-  let gp=g.createLinearGradient(0,pp[0][1],0,pp[2][1]); gp.addColorStop(0,'#02060f'); gp.addColorStop(1,'#0a2658');
-  quad(pp[0],pp[1],pp[2],pp[3]); g.fillStyle=gp; g.fill();
-  g.lineWidth=1; g.strokeStyle='rgba(120,170,255,.07)';
-  for(let x=-XR;x<=XR+.01;x+=.42){ const a=P(x,PISO,.6), b=P(x,PISO,ZMAX); g.beginPath(); g.moveTo(a[0],a[1]); g.lineTo(b[0],b[1]); g.stroke(); }
-  for(let z=.8;z<ZMAX;z*=1.18){ const a=P(-XR,PISO,z), b=P(XR,PISO,z); g.beginPath(); g.moveTo(a[0],a[1]); g.lineTo(b[0],b[1]); g.stroke(); }
-
-  // luminárias do teto e o reflexo delas no piso
-  [-.46,.46].forEach(function(x){
-    for(let z=1.6;z<ZMAX-.5;z+=1.05){
-      const q=[P(x-.035,TETO,z),P(x+.035,TETO,z),P(x+.035,TETO,z+.62),P(x-.035,TETO,z+.62)], n=nevoa(z);
-      const m=P(x,TETO,z+.31); let hl=g.createRadialGradient(m[0],m[1],0,m[0],m[1],.9/z*F);
-      hl.addColorStop(0,'rgba(120,170,255,'+(0.22-n*0.14)+')'); hl.addColorStop(1,'rgba(120,170,255,0)');
-      g.fillStyle=hl; g.fillRect(m[0]-FY,m[1]-FY,2*FY,2*FY);
-      g.save(); g.shadowColor='rgba(170,210,255,.95)'; g.shadowBlur=16*(1-n)+4;
-      quad(q[0],q[1],q[2],q[3]); g.fillStyle='rgba(225,238,255,'+(0.8-n*0.5)+')'; g.fill(); g.restore();
-      const r=[P(x-.1,2*PISO-TETO,z),P(x+.1,2*PISO-TETO,z),P(x+.1,2*PISO-TETO,z+.8),P(x-.1,2*PISO-TETO,z+.8)];
-      g.save(); g.filter='blur(6px)'; quad(r[0],r[1],r[2],r[3]); g.fillStyle='rgba(170,205,255,'+(0.14-n*0.08)+')'; g.fill(); g.restore();
-    }
-  });
-
-  // racks: faces voltadas para o corredor, de longe para perto
-  CENA.leds=[];
-  // LEDs de servidor: branco (energia), verde (ok/atividade) e laranja (alerta), este mais raro
-  const cores=['rgba(226,236,255,1)','rgba(226,236,255,1)','rgba(74,222,128,1)','rgba(74,222,128,1)','rgba(74,222,128,1)','rgba(251,146,60,1)'];
-  [-1,1].forEach(function(s){
-    const racks=[];
-    for(let z0=.75;z0<ZMAX-.3;z0+=.64) racks.push(z0);
-    racks.reverse().forEach(function(z0){
-      const z1=z0+.6, x=s*XR, n=nevoa(z0);
-      const a=P(x,1.12,z0), b=P(x,1.12,z1), c=P(x,PISO,z1), d=P(x,PISO,z0);
-      let gr=g.createLinearGradient(0,a[1],0,d[1]);
-      gr.addColorStop(0,'rgba('+Math.round(8+30*n)+','+Math.round(16+50*n)+','+Math.round(34+90*n)+',1)');
-      gr.addColorStop(1,'rgba('+Math.round(4+20*n)+','+Math.round(9+36*n)+','+Math.round(22+70*n)+',1)');
-      quad(a,b,c,d); g.fillStyle=gr; g.fill();
-      g.strokeStyle='rgba(140,180,255,'+(0.22-n*0.12)+')'; g.lineWidth=Math.max(.5,1.4*(1-n)); g.stroke();
-      // unidades do rack (ranhuras horizontais) e grade da porta
-      g.lineWidth=.7;
-      for(let y=PISO+.08;y<1.08;y+=.085){
-        if(rnd()<.12) continue;   // espaço vazio no rack
-        const alto=.085*(rnd()<.2?2:1)-.012;
-        const s1=P(x,y+alto,z0+.04), s2=P(x,y+alto,z1-.04), s3=P(x,y,z1-.04), s4=P(x,y,z0+.04);
-        quad(s1,s2,s3,s4); g.fillStyle='rgba('+Math.round(14+34*n)+','+Math.round(24+56*n)+','+Math.round(46+96*n)+','+(0.9)+')'; g.fill();
-        g.strokeStyle='rgba(150,190,255,'+(0.16-n*0.1)+')'; g.beginPath(); g.moveTo(s1[0],s1[1]); g.lineTo(s2[0],s2[1]); g.stroke();
-        if(rnd()<.5){
-          // baias de disco: gavetas com borda clara
-          for(let zz=z0+.3;zz<z1-.07;zz+=.034){
-            const b1=P(x,y+alto*.85,zz), b2=P(x,y+alto*.85,zz+.028), b3=P(x,y+alto*.15,zz+.028), b4=P(x,y+alto*.15,zz);
-            quad(b1,b2,b3,b4); g.fillStyle='rgba(2,6,16,'+(0.55-n*0.3)+')'; g.fill();
-            g.strokeStyle='rgba(160,195,255,'+(0.2-n*0.13)+')'; g.lineWidth=.6; g.stroke();
-          }
-        } else {
-          // grade de ventilação
-          g.strokeStyle='rgba(0,0,0,'+(0.45-n*0.25)+')';
-          for(let zz=z0+.32;zz<z1-.06;zz+=.028){ const a1=P(x,y+alto*.8,zz), a2=P(x,y+alto*.2,zz); g.beginPath(); g.moveTo(a1[0],a1[1]); g.lineTo(a2[0],a2[1]); g.stroke(); }
-        }
-        if(alto>.1) y+=.085;
-      }
-      // puxador aceso na borda da porta
-      const h1=P(x,.75,z0+.05), h2=P(x,-.25,z0+.05);
-      g.save(); g.shadowColor='rgba(80,160,255,1)'; g.shadowBlur=10*(1-n)+2; g.strokeStyle='rgba(120,190,255,'+(0.75-n*0.4)+')';
-      g.lineWidth=Math.max(1,2.4*(1-n)); g.beginPath(); g.moveTo(h1[0],h1[1]); g.lineTo(h2[0],h2[1]); g.stroke(); g.restore();
-      // LEDs: posições fixas, piscam no quadro
-      for(let y=PISO+.12;y<1.08;y+=.085){
-        if(rnd()<.25) continue;
-        const nL=2+Math.floor(rnd()*5), zi=z0+.07+rnd()*.12, cor=cores[Math.floor(rnd()*cores.length)];
-        for(let i=0;i<nL;i++){
-          const z=zi+i*.022, pt=P(x,y,z), tam=Math.min(3.2,Math.max(.9,.009/z*F));
-          const sorte=rnd(); CENA.leds.push({ x:pt[0], y:pt[1], t:tam, cor:(i===0&&rnd()<.3)?'rgba(226,236,255,1)':cor, a:(1-n*0.7), fase:rnd()*6.3, vel:.4+rnd()*1.2, tipo: sorte<.42?'fixo':(sorte<.85?'ativ':'lento'), id:CENA.leds.length });
-          if(y<-.3 && rnd()<.35){ const rf=P(x,2*PISO-y,z); CENA.leds.push({ x:rf[0], y:rf[1], t:tam*1.4, cor:cor, a:(1-n)*.09, fase:rnd()*6.3, vel:1, tipo:'fixo', id:CENA.leds.length, reflexo:true }); }
-        }
-      }
-    });
-  });
-
-  // LEDs que não piscam (status e reflexos) vão direto para o cenário fixo
-  g.globalCompositeOperation='lighter';
-  CENA.leds=CENA.leds.filter(function(l){
-    if(l.tipo!=='fixo') return true;
-    const d=l.t*3.6; g.globalAlpha=l.a*.8; g.drawImage(spriteLed(l.cor),l.x-d/2,l.y-d/2,d,d);
-    if(!l.reflexo){ const s=Math.max(.8,l.t*.62); g.globalAlpha=l.a; g.fillStyle=NUCLEO[l.cor]||'#e0f2fe'; g.fillRect(l.x-s/2,l.y-s*.4,s,s*.8); }
-    return false;
-  });
-  g.globalCompositeOperation='source-over'; g.globalAlpha=1;
-  // névoa e vinheta
-  let nv=g.createRadialGradient(cx,cy,0,cx,cy,Math.max(W,H)*.55); nv.addColorStop(0,'rgba(70,140,255,.12)'); nv.addColorStop(1,'rgba(70,140,255,0)');
-  g.fillStyle=nv; g.fillRect(0,0,W,H);
-  let vg=g.createRadialGradient(cx,cy,Math.min(W,H)*.25,cx,cy,Math.max(W,H)*.75); vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,.72)');
-  g.fillStyle=vg; g.fillRect(0,0,W,H);
-}
-function quadroCena(ts){
-  CENA.raf=requestAnimationFrame(quadroCena);
-  if(ts-CENA.ultimo<40) return;   // ~25 quadros por segundo
-  CENA.ultimo=ts; desenharCena(ts/1000);
-}
-/* ruído determinístico: mesma entrada, mesmo valor entre 0 e 1 */
-function ruido(n){ const s=Math.sin(n*12.9898)*43758.5453; return s-Math.floor(s); }
-function desenharCena(tempo){
-  const c=CENA.ctx; if(!c||!CENA.fundo) return;
-  const W=CENA.w, H=CENA.h, dpr=CENA.dpr;
-  // câmera: aproximação lenta pelo corredor, vai e volta a cada 28 s
-  const zoom=1.012+.012*Math.sin(tempo*2*Math.PI/28), ox=CENA.cx*(1-zoom), oy=CENA.cy*(1-zoom);
-  c.setTransform(1,0,0,1,0,0); c.globalAlpha=1; c.fillStyle='#01040c'; c.fillRect(0,0,c.canvas.width,c.canvas.height);
-  c.setTransform(dpr*zoom,0,0,dpr*zoom,dpr*ox,dpr*oy);
-  c.drawImage(CENA.fundo,0,0,W,H);
-  // respiração da luz no fim do corredor
-  const res=.5+.5*Math.sin(tempo*.9);
-  let gl=c.createRadialGradient(CENA.cx,CENA.cy,0,CENA.cx,CENA.cy,CENA.FY*.5);
-  gl.addColorStop(0,'rgba(110,170,255,'+(.10+.08*res)+')'); gl.addColorStop(1,'rgba(110,170,255,0)');
-  c.globalCompositeOperation='lighter'; c.fillStyle=gl; c.fillRect(0,0,W,H);
-  // LEDs: status acesos, atividade de disco/rede em rajadas, alguns respirando
-  const lotes={};
-  CENA.leds.forEach(function(l){
-    let a=l.a;
-    if(l.tipo==='ativ'){
-      const rajada=ruido(Math.floor(tempo*.7+l.fase)+l.id*.37)>.45;              // períodos de atividade
-      a*= rajada ? (ruido(Math.floor(tempo*14)+l.id*1.7)>.35 ? 1 : .12) : .9;   // pisca rápido na rajada
-    } else if(l.tipo==='lento'){ a*=.35+.65*(.5+.5*Math.sin(tempo*l.vel*2+l.fase)); }
-    a=Math.max(0,Math.min(1,a)); if(a<.04) return;
-    if(l.t>=1.3){ const d=l.t*3.6; c.globalAlpha=a*.8; c.drawImage(spriteLed(l.cor),l.x-d/2,l.y-d/2,d,d); }
-    // núcleo nítido: agrupado por cor e intensidade para desenhar de uma vez
-    const k=l.cor+'|'+Math.round(a*4), s=Math.max(.8,l.t*.62);
-    (lotes[k]||(lotes[k]=[])).push(l.x-s/2,l.y-s*.4,s,s*.8);
-  });
-  Object.keys(lotes).forEach(function(k){
-    const r=lotes[k], sep=k.lastIndexOf('|');
-    c.globalAlpha=(+k.slice(sep+1))/4; c.fillStyle=NUCLEO[k.slice(0,sep)]||'#e0f2fe'; c.beginPath();
-    for(let i=0;i<r.length;i+=4) c.rect(r[i],r[i+1],r[i+2],r[i+3]);
-    c.fill();
-  });
-  // poeira em suspensão atravessando a luz
-  const P=CENA.P;
-  CENA.poeira.forEach(function(q){
-    q.z-=q.v/30; if(q.z<.9){ q.z=CENA.ZMAX-1; q.x=(Math.random()*2-1)*1.1; }
-    const y=q.y+Math.sin(tempo*.4+q.f)*.05, pt=P(q.x,y,q.z), n=Math.min(1,(q.z-1)/(CENA.ZMAX-1));
-    const tam=Math.max(.6,.018/q.z*CENA.FX);
-    c.globalAlpha=(1-n)*.35*(.6+.4*Math.sin(tempo*1.3+q.f));
-    c.drawImage(spriteLed('rgba(170,205,255,1)'),pt[0]-tam*2,pt[1]-tam*2,tam*4,tam*4);
-  });
-  // feixe de varredura que percorre o piso de vez em quando
-  const ciclo=(tempo%11)/11;
-  if(ciclo<.45){
-    const z=CENA.ZMAX-1-(ciclo/.45)*(CENA.ZMAX-1.8), pt=P(0,CENA.PISO,z), n=Math.min(1,(z-1)/(CENA.ZMAX-1));
-    const r=1.6/z*CENA.FX, fx=Math.sin(ciclo/.45*Math.PI);
-    let sw=c.createRadialGradient(pt[0],pt[1],0,pt[0],pt[1],r);
-    sw.addColorStop(0,'rgba(90,160,255,'+(.16*fx*(1-n*.5))+')'); sw.addColorStop(1,'rgba(90,160,255,0)');
-    c.globalAlpha=1; c.fillStyle=sw; c.save(); c.translate(pt[0],pt[1]); c.scale(1,.28); c.translate(-pt[0],-pt[1]);
-    c.fillRect(pt[0]-r,pt[1]-r,2*r,2*r); c.restore();
-  }
-  c.globalCompositeOperation='source-over'; c.globalAlpha=1;
-}
-function iniciarCena(){
-  montarCena();
-  if(SEM_ANIMACAO){ desenharCena(0); return; }
-  cancelAnimationFrame(CENA.raf); CENA.ultimo=0; CENA.raf=requestAnimationFrame(quadroCena);
-}
-function pararCena(){ cancelAnimationFrame(CENA.raf); CENA.raf=0; }
-window.addEventListener('resize',function(){
-  if(document.getElementById('auth-overlay').style.display==='none') return;
-  clearTimeout(CENA._r); CENA._r=setTimeout(function(){ montarCena(); if(SEM_ANIMACAO) desenharCena(0); },150);
-});
-
-
-/* Posiciona o bloco verde logo após o texto antes do cursor, no campo em foco. */
-function posicionarCursor(){
-  const cur=$('cursorT'), med=$('medidorT'), inp=document.activeElement;
-  if(!cur) return;
-  if(!inp || !inp.closest || !inp.closest('#auth-box .campo-t')){ cur.style.display='none'; return; }
-  const corpo=cur.parentNode, ri=inp.getBoundingClientRect(), rc=corpo.getBoundingClientRect(), cs=getComputedStyle(inp);
-  const pos = inp.selectionStart==null ? inp.value.length : inp.selectionStart;
-  med.style.font=cs.font; med.style.letterSpacing=cs.letterSpacing;
-  med.textContent = inp.value.slice(0,pos);
-  const x=Math.min(ri.width-10, parseFloat(cs.paddingLeft)+med.getBoundingClientRect().width-inp.scrollLeft);
-  cur.style.display='block';
-  cur.style.left=(ri.left-rc.left+x+1)+'px';
-  cur.style.top=(ri.top-rc.top+(ri.height-cur.offsetHeight)/2)+'px';
-  cur.classList.add('parado'); clearTimeout(posicionarCursor._t);   // não pisca enquanto digita
-  posicionarCursor._t=setTimeout(function(){ cur.classList.remove('parado'); },500);
-}
-['user-id','user-pass'].forEach(function(id){
-  $(id).addEventListener('input',function(){ $('auth-box').classList.remove('aguardando'); });
-  ['focus','blur','input','keyup','click','select'].forEach(function(evn){ $(id).addEventListener(evn,function(){ setTimeout(posicionarCursor,0); }); });
-});
-window.addEventListener('resize',function(){ setTimeout(posicionarCursor,60); });
-if(document.fonts && document.fonts.ready) document.fonts.ready.then(posicionarCursor);
-if(window.ResizeObserver) new ResizeObserver(function(){ posicionarCursor(); }).observe($('auth-box'));
-
-/* Campo de senha sem type="password": a senha fica só nesta variável e o campo
-   mostra bolinhas. Assim nenhum navegador ou gerenciador oferece salvar ou
-   preencher. Como num terminal, a edição é sempre no fim (digitar, apagar, colar). */
-let senhaDigitada='';
-function lerSenhaLogin(){ return senhaDigitada; }
-function limparSenha(){ senhaDigitada=''; $('user-pass').value=''; }
-(function(){
-  const inp=$('user-pass'), MASC='•';
-  const aoFim=function(){ const n=inp.value.length; try{ inp.setSelectionRange(n,n); }catch(e){} };
-  inp.addEventListener('input',function(){
-    const v=inp.value, novos=v.split(MASC).join('');
-    const mantidos=v.length-novos.length;                 // bolinhas que sobraram
-    senhaDigitada=senhaDigitada.slice(0,Math.min(mantidos,senhaDigitada.length))+novos;
-    inp.value=MASC.repeat(senhaDigitada.length); aoFim();
-  });
-  ['click','focus','select','keyup'].forEach(function(ev){ inp.addEventListener(ev,function(){ setTimeout(aoFim,0); }); });
-  inp.addEventListener('keydown',function(ev){ if(['ArrowLeft','ArrowRight','Home','End','ArrowUp','ArrowDown'].indexOf(ev.key)>=0) ev.preventDefault(); });
-  ['copy','cut','dragstart'].forEach(function(ev){ inp.addEventListener(ev,function(e){ e.preventDefault(); }); });
-})();
-
-/* Enter no usuário leva à senha; Enter na senha (ou o botão) envia o formulário. */
-$('user-id').addEventListener('keydown',function(ev){
-  if(ev.key!=='Enter') return;
-  ev.preventDefault();
-  if(!$('user-id').value.trim() && !senhaDigitada){ msgLogin('erro','informe usuário e senha'); dispararEfeitoAuth('error'); return; }
-  $('user-pass').focus();
-});
-$('auth-box').addEventListener('submit',function(ev){ ev.preventDefault(); validarAcesso(); });
-
-/* Mostra a tela de login do zero: abertura, cena, campos e mensagem limpos. */
-function abrirTelaLogin(){
-  const ov=$('auth-overlay'), box=$('auth-box');
-  ov.classList.remove('saindo'); ov.style.display='flex';
-  $('user-id').value=''; limparSenha(); msgLogin('','');
-  box.classList.remove('auth-error','auth-success'); box.classList.add('aguardando');
-  digitarBoot(); iniciarCena();
-  setTimeout(function(){ $('user-id').focus(); posicionarCursor(); },60);
-}
-
 (function init() {
 ["e-pass","e-res","d-cipher","d-pass"].forEach(blindField);
-abrirTelaLogin();
+$("user-id").focus();
 rotarRiscos();
 setInterval(rotarRiscos, 4000);
+$("user-id").addEventListener("keypress", e=>{ if(e.key==="Enter"){e.preventDefault();$("user-pass").focus();} });
+$("user-pass").addEventListener("keypress", e=>{ if(e.key==="Enter"){e.preventDefault();validarAcesso();} });
 })();
 
 const RICH_PREFIX = 'RICHTEXT\x00';
@@ -2419,7 +1631,7 @@ opTimerInterval = setInterval(() => {
 }, 1000);
 }
 
-async function execEncriptarGuarded() {
+function execEncriptarGuarded() {
 if (!opUnlocked) {
   abrirModalOp();
   return;
@@ -2429,12 +1641,11 @@ if (isDuressMode) {
   _execEncriptarDuress();
   return;
 }
-if (!await garantirLocalizacaoParaOperacao('encriptar')) return;
 resetOpTimer();
 execEncriptar();
 }
 
-async function execDecriptarGuarded() {
+function execDecriptarGuarded() {
 if (!opUnlocked) {
   abrirModalOp();
   return;
@@ -2444,7 +1655,6 @@ if (isDuressMode) {
   _execDecriptarDuress();
   return;
 }
-if (!await garantirLocalizacaoParaOperacao('decriptar')) return;
 resetOpTimer();
 execDecriptar();
 }
