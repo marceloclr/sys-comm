@@ -29,7 +29,9 @@
   "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/shaders/OutputShader.js":"sha384-CdpJL3xlIkjJQAbzgyazSoOx+/oBcwUCsBVSU25SKy8/PEdYEn24U+4mnmx3R4YX"
 }}
 </script>
-<title>Módulo de Comunicação - V-16102026-0941</title>
+<!-- o three.js começa a baixar já na leitura do <head>, não só quando o xadrez inicia -->
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js" integrity="sha384-IDC7sAMAIMB/TZ6dgKKPPAKZ2bXXXP8+FBMBC8cU319eBhKITx+PaalhfDkDNH28" crossorigin="anonymous">
+<title>Módulo de Comunicação - V-16102026-0959</title>
 <style> :root{--bg:#10131a;--panel:#161a23;--accent:#7783c4;--matrix:#6f9d82;--danger:#b1614a;--ok:#5e9b7f;--win-border:#2a3040;--win-hover:#8f99d6;--row-alt:#1c212d;--r:10px;--aviso:#c2953f;--imagem:#9a7bc4;--border-soft:#232838;--serif:Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;--mono:'Courier New',ui-monospace,'Cascadia Code',monospace}*,*::before,*::after{box-sizing:border-box}body,html{margin:0;padding:0;min-height:100%;background:var(--bg);background-attachment:fixed;color:#e6e8ee;font-family:var(--sans);overflow-x:auto}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#10131a}::-webkit-scrollbar-thumb{background:#2a3040;border-radius:4px}.container-logo{width:100%;max-width:650px;margin-bottom:10px}.win-titlebar{background:#1c212d;color:#b7bccb;padding:11px 16px;font-size:13px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--win-border);position:relative}.win-titlebar .title-text{position:absolute;left:50%;transform:translateX(-50%);font-size:12px;color:#7a8296;pointer-events:none;font-family:var(--serif);font-style:italic;letter-spacing:0.3px}.mac-dots{display:flex;gap:7px;align-items:center}.mac-dot{width:13px;height:13px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:8px;color:transparent;transition:color 0.15s;position:relative;flex-shrink:0}.mac-dot:hover{color:rgba(0,0,0,0.6)}.mac-dot.close{background:#ff5f57;border:1px solid #e0443e}.mac-dot.min{background:#ffbd2e;border:1px solid #dfa123}.mac-dot.max{background:#28c840;border:1px solid #1aab29}.mac-dot.close::after{content:"✕"}.mac-dot.min::after{content:"−"}.mac-dot.max::after{content:"+"}.win-body{padding:25px}.win-label{color:#c7cbd6;font-size:13px;margin-bottom:7px;display:block;font-weight:bold;letter-spacing:0.5px}.win-input{width:100%;background:#10131a;border:1px solid #2a3040;color:var(--matrix);font-weight:bold;padding:11px 12px;margin-bottom:22px;outline:none;font-size:15px;font-family:var(--sans);text-transform:uppercase;border-radius:6px;transition:border-color 0.2s}.win-input:focus{border-color:var(--accent)}.win-button{background:var(--accent);color:white;border:none;padding:11px 28px;cursor:pointer;float:right;font-size:14px;font-weight:600;text-transform:uppercase;border-radius:8px;transition:background 0.2s,transform 0.1s}.win-button:hover{background:var(--win-hover)}.win-button:active{transform:scale(0.97)}.inner-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px}#risk-login{margin-top:22px;border-top:1px solid #232838;padding-top:14px;color:#b1614a;font-family:var(--mono);min-height:38px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px}#risk-text-login{color:#e6e8ee;text-transform:uppercase;display:inline-block;width:250px;text-align:left;white-space:nowrap}#splash-screen{display:none;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center;background:var(--bg);background-attachment:fixed;gap:20px;z-index:1000;overflow:auto}#display-box{width:850px;height:155px;border:2px solid #7783c4;border-radius:16px;background:#161a23;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:box-shadow 0.3s}#display-box:hover{box-shadow:0 0 30px rgba(119,131,196,0.3)}#text-anim{font-size:3.1rem;font-weight:bold;color:#7783c4;text-shadow:0 0 12px #7783c4;letter-spacing:4px;font-family:var(--mono)}#boot-screen{width:850px;background:#0a0c11;border:1px solid #232838;border-radius:8px;padding:14px 18px;height:320px;color:#dfe1e8;font-family:var(--mono);font-size:12px;overflow-y:auto}.lnx-ok{color:var(--ok);font-weight:bold}.lnx-alert{color:var(--danger);font-weight:bold}.lnx-warn{color:#c2953f;font-weight:bold}.lnx-info{color:#7783c4;font-weight:bold}.lnx-time{color:#2a3040;margin-right:8px}#main-system{display:none;flex-direction:column;align-items:center;padding:60px 20px 40px}.grid{display:flex;gap:30px;width:1060px;margin-bottom:28px}.box{flex:1;min-width:0;width:0;overflow:hidden;background:var(--panel);padding:1.8rem;border:1px solid var(--win-border);border-radius:var(--r);box-shadow:0 4px 20px rgba(0,0,0,0.4)}.modo-switch{display:flex;gap:16px;width:1060px;margin-bottom:24px}.modo-btn{flex:1;padding:16px;border:1px solid var(--win-border);border-radius:var(--r);background:var(--panel);color:#8991a3;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:var(--sans)}.modo-btn.proteger.ativo{background:#16241d;border-color:var(--matrix);color:var(--matrix)}.modo-btn.revelar.ativo{background:#1a1f33;border-color:var(--accent);color:var(--accent)}.modo-btn:hover:not(.ativo){border-color:#3a4358;color:#c7cbd6}.box{display:none}.box.ativo{display:block}.box.ativo.revelando{animation:revelarForm .35s ease}@keyframes revelarForm{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){.box.ativo.revelando{animation:none}}.form-cols{display:flex;gap:24px;align-items:flex-start}.form-col{flex:1;min-width:0}.box h3{margin:0 0 14px;font-size:14px;letter-spacing:1px;color:#c7cbd6;border-bottom:1px solid #232838;padding-bottom:10px}textarea{width:100%;margin-top:6px;padding:11px 13px;background:#10131a;color:#e6e8ee;border:1px solid #2a3040;font-family:var(--mono);font-size:12px;resize:none;border-radius:8px;outline:none;transition:border-color 0.2s}textarea:focus{border-color:var(--accent)}.btn-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.btn-sys{-webkit-appearance:none;appearance:none;flex:1;padding:13px;background:var(--accent);border:none;color:white;font-weight:bold;cursor:pointer;border-radius:8px;font-size:13px;letter-spacing:0.5px;transition:background 0.2s,transform 0.1s}.btn-sys:hover{background:var(--win-hover)}.btn-sys:active{transform:scale(0.98)}.btn-send{-webkit-appearance:none;appearance:none;padding:13px 16px;background:#223d2f;border:1px solid #3f6b52;color:var(--ok);cursor:pointer;border-radius:8px;font-size:12px;font-weight:bold;transition:all 0.2s;white-space:nowrap;flex-shrink:0}.btn-send:hover{background:#2c4a3a;border-color:var(--ok)}.pass-container{position:relative;width:100%;margin-top:8px}.pass-input{width:100%;height:44px;padding:11px 46px 11px 13px;background:#10131a;color:#e6e8ee;border:1px solid #2a3040;font-family:var(--mono);outline:none;border-radius:8px;font-size:13px;transition:border-color 0.2s}.pass-input:focus{border-color:var(--accent)}.eye-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:17px;user-select:none;filter:grayscale(1) opacity(0.5);transition:filter 0.2s}.eye-icon:hover{filter:grayscale(0) opacity(1)}.field-label{font-size:11px;color:#6b7690;margin-top:10px;margin-bottom:2px;letter-spacing:0.5px;text-transform:uppercase;display:block}#top-left-bar{position:fixed;top:14px;left:24px;right:24px;z-index:200;display:none;align-items:center;justify-content:space-between;gap:12px}#timer-container{display:none;flex-direction:column;gap:6px;font-family:var(--sans)}#timer-container.visible{display:flex}#btn-wipe-all{background:#2a1712;color:#e0917a;border:1px solid #8f4a38;padding:7px 16px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;white-space:nowrap}#btn-wipe-all:hover{background:#8f4a38;color:#fff;box-shadow:0 0 14px rgba(143,74,56,0.6)}.timer-pill{display:flex;align-items:center;gap:8px;padding:7px 18px;border-radius:8px;cursor:default;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}#session-timer-display{background:#10131a;color:#a3addf;border:1px solid #7783c4}#session-timer-display.warning{border-color:#8f4a38;color:#d9a794;background:#201310;animation:blink-timer 0.8s step-start infinite}#op-timer-widget{background:#16241d;color:#5e9b7f;border:1px solid #3f6b52;display:none;cursor:pointer;transition:background 0.2s}#op-timer-widget:hover{background:#1c2f24}#op-timer-widget.warning{border-color:#c2953f;color:#d4ac5f;background:#2a2011}#op-timer-widget.critical{border-color:var(--danger);color:#d9a794;background:#201310;animation:blink-timer 0.8s step-start infinite}@keyframes blink-timer{0%,100%{opacity:1}50%{opacity:0.4}}#session-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:#251712;color:#d9a794;padding:10px 20px;text-align:center;font-size:13px;font-weight:700;letter-spacing:1px;display:none;border-bottom:2px solid #8f4a38;animation:pulse-bar 1s ease-in-out infinite}#session-bar span.cd{color:#e6e8ee;font-size:15px}@keyframes pulse-bar{0%,100%{background:#251712}50%{background:#2e1c16}}#btn-logout{position:fixed;top:14px;right:24px;z-index:200;background:#251712;color:#d9a794;border:1px solid #8f4a38;padding:7px 20px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;display:none}#btn-logout:hover{background:#8f4a38;color:#e6e8ee;box-shadow:0 0 14px rgba(143,74,56,0.5)}.btn-clear-styled{-webkit-appearance:none;appearance:none;padding:13px 16px;background:#1c212d;border:1px solid #2a3040;color:#c7cbd6;cursor:pointer;border-radius:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.2s;white-space:nowrap;flex-shrink:0}.btn-clear-styled:hover{background:#2a3040;border-color:#7a8296;color:#e6e8ee}.img-upload-zone{width:100%;margin-top:6px;border:2px dashed #2a3040;border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;background:#171b28;color:#6b7690;font-size:12px;letter-spacing:0.5px;position:relative}.img-upload-zone:hover,.img-upload-zone.drag-over{border-color:var(--accent);color:#8991a3;background:#1c2440;box-shadow:0 0 12px rgba(119,131,196,0.3)}.img-upload-zone input[type="file"]{display:none}.img-upload-zone .upload-icon{font-size:22px;display:block;margin-bottom:4px}.img-preview-wrap{margin-top:8px;text-align:center;position:relative}.img-preview-wrap img{max-width:100%;max-height:140px;border-radius:6px;border:1px solid #2a3040;object-fit:contain}.img-preview-name{font-size:10px;color:#7a8296;margin-top:4px;font-family:var(--mono)}.img-capacity-warn{display:none;margin-top:8px;padding:8px 12px;background:#251712;border:1px solid #251712;border-radius:6px;color:#c47259;font-size:11px;font-family:var(--mono);letter-spacing:0.5px}.img-capacity-warn.show{display:block}.img-capacity-ok{display:none;margin-top:8px;padding:8px 12px;background:#16241d;border:1px solid #2f5c42;border-radius:6px;color:#5e9b7f;font-size:11px;font-family:var(--mono);letter-spacing:0.5px}.img-capacity-ok.show{display:block}.btn-download-img{padding:13px 16px;background:#1a3325;border:1px solid #3f6b52;color:var(--ok);cursor:pointer;border-radius:8px;font-size:12px;font-weight:bold;transition:all 0.2s;letter-spacing:0.5px;white-space:nowrap;text-align:center;flex-shrink:0}.btn-download-img:hover{background:#223d2f;border-color:var(--ok);box-shadow:0 0 10px rgba(94,155,127,0.3)}.dec-image-preview{margin-top:10px;padding:12px;background:#16241d;border:1px solid #3f6b52;border-radius:8px;text-align:center;display:none}.dec-image-preview img{max-width:100%;max-height:200px;border-radius:6px;border:1px solid #5e9b7f;object-fit:contain}.dec-image-label{font-size:11px;color:#5e9b7f;margin-bottom:8px;letter-spacing:1px;text-transform:uppercase;font-weight:bold}.output-mode-toggle{display:flex;gap:0;margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid #2a3040}.output-mode-btn{flex:1;padding:9px 8px;background:#171b28;border:none;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:#6b7690;transition:all 0.2s}.output-mode-btn:first-child{border-right:1px solid #2a3040}.output-mode-btn.active{background:var(--accent);color:#e6e8ee}.output-mode-btn:hover:not(.active){background:#1c2440;color:#8991a3}.enc-img-output-wrap{margin-top:10px;text-align:center;display:none}.enc-img-output-wrap canvas{border-radius:8px;border:1px solid #3f6b52;max-width:100%;image-rendering:pixelated}.enc-img-output-label{font-size:10px;color:#5e9b7f;margin-bottom:6px;letter-spacing:1px;text-transform:uppercase;font-weight:bold}.dec-img-upload-zone{width:100%;border:2px dashed #4a3a68;border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s;background:#211a30;color:#9a7bc4;font-size:12px;letter-spacing:0.5px;display:none}.dec-source-badge{margin-top:6px;padding:6px 12px;border-radius:6px;font-size:11px;font-family:var(--mono);letter-spacing:0.5px;font-weight:bold}.dec-source-badge.hash{background:#1a1f33;border:1px solid #3d4a7a;color:#7783c4}.dec-source-badge.image{background:#21192f;border:1px solid #453465;color:#9a7bc4}.dec-img-upload-zone:hover,.dec-img-upload-zone.drag-over{border-color:#9a7bc4;color:#b7a0d9;background:#2b2140;box-shadow:0 0 12px rgba(154,123,196,0.3)}.dec-img-upload-zone input[type="file"]{display:none}.dec-img-loaded{margin-top:6px;font-size:10px;color:#9a7bc4;font-family:var(--mono);display:none}.log-toggle-bar{width:100%;background:#1c212d;border:1px solid var(--win-border);color:#8991a3;padding:11px;text-align:center;cursor:pointer;font-size:11px;font-weight:bold;margin-bottom:5px;border-radius:8px;transition:background 0.2s}.log-toggle-bar:hover{background:#242a38}#admin-area{display:flex;flex-direction:column;gap:16px;width:1060px;margin-bottom:50px;align-items:stretch}.admin-toggle-row{display:flex;gap:16px;width:100%}.admin-toggle-row .log-toggle-bar{flex:1;margin-bottom:0}#admin-log-panel{width:100%;background:var(--panel);border:1px solid var(--win-border);padding:20px;border-radius:var(--r);display:none}.log-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;border-bottom:1px solid #232838;padding-bottom:10px}.audit-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px;color:#c7cbd6;table-layout:fixed}.audit-table th{color:var(--accent);text-align:left;border-bottom:1px solid #2a3040;padding:8px;text-transform:uppercase}.audit-table td{padding:8px;border-bottom:1px solid #232838;word-break:break-all}.audit-table tr:nth-child(even){background:var(--row-alt)}.purge-btn{background:none;border:1px solid var(--danger);color:var(--danger);padding:5px 12px;cursor:pointer;font-size:10px;font-weight:bold;border-radius:6px;transition:background 0.2s}.purge-btn:hover{background:rgba(177,97,74,0.1)}.rich-toolbar{display:flex;flex-wrap:wrap;gap:3px;padding:6px 8px;background:#161a23;border:1px solid #2a3040;border-bottom:none;border-radius:8px 8px 0 0}.rich-toolbar button{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:3px 8px;border-radius:4px;cursor:pointer;font-size:12px;font-weight:bold;min-width:28px;transition:background 0.15s,color 0.15s;font-family:var(--mono)}.rich-toolbar button:hover{background:#2a3040;color:#e6e8ee}.rich-toolbar button.active{background:#223d2f;border-color:#3f6b52;color:#5e9b7f}.rich-toolbar select{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:2px 4px;border-radius:4px;font-size:12px;font-family:var(--mono);cursor:pointer}.rich-toolbar .tb-sep{width:1px;background:#2a3040;margin:2px 3px;align-self:stretch}.rich-editor{min-height:110px;max-height:280px;overflow-y:auto;padding:10px 13px;background:#10131a;border:1px solid #2a3040;color:#e6e8ee;font-family:var(--sans);font-size:14px;border-radius:0 0 8px 8px;outline:none;transition:border-color 0.2s;line-height:1.5}.rich-editor:focus{border-color:var(--matrix)}.rich-editor-readonly{cursor:default;background:#0d1119;}.rich-editor[data-placeholder]:empty:before{content:attr(data-placeholder);color:#2a3040;pointer-events:none}.rich-editor ul,.rich-editor ol{padding-left:22px;margin:4px 0}.rich-editor h1{font-size:1.4em;margin:6px 0}.rich-editor h2{font-size:1.2em;margin:5px 0}.rich-editor h3{font-size:1.05em;margin:4px 0}.rich-editor.disabled{opacity:0.4;pointer-events:none}.rich-editor-wrap{margin-bottom:0}#op-modal-overlay{display:none;position:fixed;inset:0;z-index:4000;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;animation:fadeIn 0.15s ease;overflow:auto}#op-modal-overlay.visible{display:flex}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes slideUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}#op-auth-panel{width:420px;background:#161a23;border:1px solid #1a1f33;border-radius:12px;padding:24px 28px;box-shadow:0 0 40px rgba(119,131,196,0.25),0 20px 60px rgba(0,0,0,0.6);animation:slideUp 0.2s ease;position:relative}.op-modal-close{position:absolute;top:12px;right:14px;background:none;border:none;color:#2a3040;font-size:18px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:4px;transition:color 0.15s}.op-modal-close:hover{color:#c7cbd6}.op-modal-title{font-size:13px;color:#7783c4;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}.op-modal-subtitle{font-size:10px;color:#2a3040;letter-spacing:0.5px;font-family:var(--mono);margin-bottom:18px;border-bottom:1px solid #232f45;padding-bottom:12px}.op-label{font-size:11px;color:#7783c4;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}.op-timer-bar{height:3px;background:#1a1f33;border-radius:2px;margin-top:12px;overflow:hidden;display:none}.op-timer-bar.visible{display:block}.op-timer-fill{height:100%;background:var(--accent);transition:width 1s linear;width:100%}.op-timer-fill.warning{background:#c2953f}.op-timer-fill.critical{background:var(--danger)}.op-status{font-size:10px;margin-top:6px;letter-spacing:0.5px;font-family:var(--mono);text-align:center}.op-status.locked{color:#2a3040}.op-status.unlocked{color:var(--ok)}.op-status.duress{color:var(--ok)}.btn-sys.locked{background:#1a1e28 !important;border:1px solid #232838 !important;color:#2a3040 !important;cursor:not-allowed !important;position:relative}.btn-sys.locked::after{content:"🔒";position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px}#op-status-badge{display:none;position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:200;padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px;font-family:var(--mono);cursor:pointer;transition:all 0.2s}#op-status-badge.locked{display:none}#op-status-badge.unlocked{display:block;background:#16241d;border:1px solid #3f6b52;color:var(--ok)}#op-status-badge.duress{display:block;background:#16241d;border:1px solid #3f6b52;color:var(--ok)}.umgmt-title{font-size:12px;color:#c2953f;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}.user-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px;color:#c7cbd6;margin-bottom:16px;table-layout:fixed}.user-table th{color:#c2953f;text-align:left;border-bottom:1px solid #2a3040;padding:8px 6px;text-transform:uppercase;font-size:10px}.user-table td{padding:7px 6px;border-bottom:1px solid #1a1e28;vertical-align:middle}.user-table tr:nth-child(even){background:var(--row-alt)}.user-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:0.5px}.user-badge.admin{background:#1a1f33;color:#7783c4;border:1px solid #3d4a7a}.user-badge.user{background:#241d16;color:#a58767;border:1px solid #4a3a26}.user-badge.root{background:#251c38;color:#b7a0d9;border:1px solid #4a3a68}.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.status-dot.on{background:#5e9b7f;box-shadow:0 0 6px #5e9b7f}.status-dot.off{background:#2a3040}.umgmt-btn{background:none;border:1px solid #2a3040;color:#8991a3;padding:3px 10px;border-radius:4px;cursor:pointer;font-size:10px;font-weight:700;transition:all 0.15s}.umgmt-btn:hover{border-color:#7a8296;color:#e6e8ee}.umgmt-btn.enable{border-color:#3f6b52;color:#5e9b7f}.umgmt-btn.enable:hover{background:#223d2f}.umgmt-btn.disable{border-color:#251712;color:#c47259}.umgmt-btn.disable:hover{background:#251712}.umgmt-btn.danger{border-color:#8f4a38;color:#b1614a}.umgmt-btn.danger:hover{background:#2a1712}.umgmt-btn.export-sys{border-color:#3d4a7a;color:#7783c4}.umgmt-btn.export-sys:hover:not(:disabled){background:#1a1f33;border-color:#7783c4;color:#a3addf;box-shadow:0 0 8px rgba(119,131,196,.35)}.umgmt-btn.export-sys:disabled{border-color:#232838;color:#2a3040;cursor:not-allowed;opacity:.6}.umgmt-btn.export-sys.ready{border-color:#3f6b52;color:#5e9b7f;animation:blink-timer 1.4s step-start infinite}.umgmt-add-form{background:#10131a;border:1px solid #232838;border-radius:8px;padding:14px 16px;margin-top:8px;display:none}.umgmt-add-form.visible{display:block}.umgmt-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px}.umgmt-input{background:#10131a;border:1px solid #2a3040;color:#e6e8ee;padding:7px 10px;border-radius:6px;font-size:11px;font-family:var(--mono);flex:1;min-width:100px}.umgmt-input:focus{outline:none;border-color:var(--accent)}.umgmt-select{background:#10131a;border:1px solid #2a3040;color:#c7cbd6;padding:7px 10px;border-radius:6px;font-size:11px;cursor:pointer}.op-expiry-row{display:flex;gap:8px;align-items:center}.op-expiry-row label{font-size:10px;color:#6b7690;white-space:nowrap}#base-img-grid{display:none;margin-top:6px;flex-wrap:wrap;gap:8px}.base-img-card{flex:1;min-width:calc(50% - 4px);max-width:calc(50% - 4px);border:2px solid #232838;border-radius:8px;cursor:pointer;overflow:hidden;position:relative;transition:all 0.2s;background:#10131a}.base-img-card:hover{border-color:var(--accent);box-shadow:0 0 10px rgba(119,131,196,.4);transform:scale(1.02)}.base-img-card.selected{border-color:#5e9b7f;box-shadow:0 0 14px rgba(94,155,127,.4)}.base-img-card img{width:100%;height:72px;object-fit:cover;display:block}.base-img-card .card-label{padding:4px 6px;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#8991a3;text-align:center;background:#10131a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.base-img-card.selected .card-label{color:#5e9b7f}.base-img-card .check-badge{position:absolute;top:4px;right:4px;background:#5e9b7f;color:#0a0c11;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:bold;display:none;align-items:center;justify-content:center}.base-img-card.selected .check-badge{display:flex}.dispositivo-movel .grid,.dispositivo-movel .modo-switch,.dispositivo-movel #admin-area{width:100%}.dispositivo-movel .form-cols{flex-direction:column;gap:16px;align-items:stretch}.dispositivo-movel #admin-area{flex-direction:column;gap:16px;align-items:stretch}.dispositivo-movel #display-box,.dispositivo-movel #boot-screen{width:100%;max-width:850px}.dispositivo-movel .rich-toolbar{display:none}.dispositivo-movel .rich-editor{border-radius:8px}.barra-cluster-esquerda{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.dispositivo-movel .timer-pill,.dispositivo-movel #btn-wipe-all,.dispositivo-movel #btn-logout{font-size:10px;padding:6px 10px;letter-spacing:0.5px}.dispositivo-movel #top-left-bar{left:12px;right:12px;top:10px;gap:8px;flex-wrap:wrap}.dispositivo-movel .barra-cluster-esquerda{gap:6px}.dispositivo-movel #main-system{padding-top:100px}.dispositivo-movel .modo-btn,.dispositivo-movel .box h3,.dispositivo-movel .timer-pill,.dispositivo-movel #btn-wipe-all,.dispositivo-movel #btn-logout,.dispositivo-movel .win-label,.dispositivo-movel .field-label{line-height:1.6}.dispositivo-movel .modo-btn{padding:14px 10px}
 /* ------------------------------- Tela de login ------------------------------
    Mesmo visual da tela de senha do Portal de Gestão: corredor de data center em
@@ -80,7 +82,7 @@
 #auth-box .entrar:hover{filter:brightness(1.08)}
 @media(max-width:520px){#auth-box .campo-t{flex-wrap:wrap;gap:0 10px}#auth-box .campo-t .pr{min-width:0}#auth-box .term-corpo{font-size:12.5px}}
 @media(prefers-reduced-motion:reduce){#auth-overlay,#auth-overlay *{animation:none!important;transition:none!important}}
-</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
 <!-- Config do Telegram (token/chatId) fora do index.html: tenta o arquivo local
      tg-config.js e, se o navegador não o carregar (só o index, file:// restrito etc.),
      cai para o publicado no GitHub Pages. Sem nenhum dos dois, o sistema roda
@@ -268,21 +270,30 @@
 #xz-palco.xz-carregando .xz-mesa,#xz-palco.xz-carregando .xz-ambiente{visibility:hidden}
 #xz-palco.xz-modo3d .xz-mesa,#xz-palco.xz-modo3d .xz-ambiente{display:none}
 .xz-3d{position:absolute;inset:0;transition:opacity .6s ease}
-#xz-palco.xz-calibrando .xz-3d{opacity:0;pointer-events:none}
+/* a cena se calibra visível (o navegador só faz o trabalho real num canvas visível), coberta pela
+   tela de carregamento opaca; na revelação, essa tela some e o tabuleiro aparece */
+#xz-palco.xz-calibrando .xz-3d{pointer-events:none}
 /* carregamento: cavalo Staunton traçado em dourado e um filete correndo, enquanto o three.js
    chega e a cena se calibra por trás */
 .xz-preparo3d{position:absolute;inset:0;z-index:2;display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px;pointer-events:none;
   color:rgba(236,214,176,.8);font:500 13px/1.3 var(--xz-fonte);letter-spacing:.22em;text-transform:uppercase}
 #xz-palco.xz-carregando .xz-preparo3d,#xz-palco.xz-calibrando .xz-preparo3d{display:flex;animation:xz-surgir .5s ease both}
+#xz-palco.xz-calibrando .xz-preparo3d,#xz-palco.xz-revelando .xz-preparo3d{background:#070b13}
+#xz-palco.xz-calibrando .xz-preparo3d{animation:none}   /* sem refazer a entrada ao trocar de fase: a cena atrás não pode transparecer */
+#xz-palco.xz-revelando .xz-preparo3d{display:flex;animation:xz-sumir .7s ease forwards}
 .xz-preparo3d p{margin:0}
-.xz-preparo3d svg{width:min(130px,28vw);height:auto;overflow:visible;--f:rgba(232,196,140,.06);--t:#e8c48c;--d:#e8c48c;
-  stroke-dasharray:260;stroke-dashoffset:260;filter:drop-shadow(0 0 12px rgba(240,170,90,.45));animation:xz-tracar 2.4s cubic-bezier(.45,0,.25,1) infinite alternate}
+.xz-cavalo{position:relative;will-change:transform,opacity;animation:xz-flutuar 2.6s ease-in-out infinite}
+.xz-cavalo svg{display:block;width:min(130px,28vw);height:auto;overflow:visible;--f:rgba(232,196,140,.08);--t:#e8c48c;--d:#e8c48c;filter:drop-shadow(0 0 12px rgba(240,170,90,.45))}
+.xz-aura{position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-190px 0 0 -150px;border-radius:50%;background:radial-gradient(circle,rgba(240,165,85,.2),transparent 65%);
+  will-change:transform,opacity;animation:xz-pulsar 2.6s ease-in-out infinite}
 .xz-filete{display:block;position:relative;width:min(220px,50vw);height:2px;border-radius:2px;overflow:hidden;background:rgba(232,196,140,.16)}
-.xz-filete::after{content:'';position:absolute;inset:0;width:40%;background:linear-gradient(90deg,transparent,#f0c88c,transparent);animation:xz-correr 1.5s ease-in-out infinite}
-@keyframes xz-tracar{0%{stroke-dashoffset:260}70%,100%{stroke-dashoffset:0}}
+.xz-filete::after{content:'';position:absolute;inset:0;width:40%;will-change:transform;background:linear-gradient(90deg,transparent,#f0c88c,transparent);animation:xz-correr 1.5s ease-in-out infinite}
+/* só transform e opacity: o compositor anima mesmo com o JavaScript ocupado montando a cena */
+@keyframes xz-flutuar{0%,100%{transform:translateY(0) scale(1);opacity:.75}50%{transform:translateY(-7px) scale(1.035);opacity:1}}
+@keyframes xz-pulsar{0%,100%{transform:scale(.82);opacity:.45}50%{transform:scale(1.12);opacity:1}}
 @keyframes xz-correr{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
 @keyframes xz-surgir{from{opacity:0}}
-@media (prefers-reduced-motion:reduce){.xz-preparo3d svg{stroke-dashoffset:0}}
+@keyframes xz-sumir{to{opacity:0}}
 .xz-3d[hidden]{display:none}
 .xz-3d::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(2,5,12,.7))}
 .xz-3d canvas{display:block;width:100%;height:100%;outline:none;touch-action:none;cursor:grab;-webkit-tap-highlight-color:transparent}
@@ -321,7 +332,7 @@ if (!window.TG_CONFIG) {
 <!-- ============================ XADREZ (tela inicial) ============================
      Tabuleiro jogável que abre a página. Enquanto ele tem a classe xz-cobre, a tela
      de senha (#auth-overlay, logo abaixo, intacta) fica oculta; o rei branco a abre. -->
-<section id="xz-palco" class="xz-cobre" data-tema="medieval" aria-label="Xadrez">
+<section id="xz-palco" class="xz-cobre xz-carregando" data-tema="medieval" aria-label="Xadrez">
 <svg class="xz-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>
  <!-- Medieval: silhuetas Staunton -->
  <symbol id="xz-m-base" viewBox="0 0 100 100"><path d="M23 93h54l-3-8H26z"/><path d="M29 85h42l-2-4H31z"/></symbol>
@@ -350,7 +361,7 @@ if (!window.TG_CONFIG) {
  <symbol id="xz-s-P" viewBox="0 0 100 100"><g style="fill:var(--f);stroke:var(--t)" stroke-width="2.6" stroke-linejoin="round"><use href="#xz-s-base"/><path d="M35 87c-1-16 3-27 15-30 12 3 16 14 15 30z"/><circle cx="50" cy="51" r="6"/></g><use href="#xz-s-estrela" x="43" y="67" width="14" height="14"/></symbol>
 </defs></svg>
 <div class="xz-3d" id="xz-3d" hidden><canvas id="xz-canvas" aria-label="Tabuleiro de xadrez" tabindex="0"></canvas><p class="xz-legenda3d" id="xz-legenda3d" aria-live="polite"></p><div class="xz-acoes3d"><button type="button" class="xz-btn3d xz-icone" id="xz-desfazer3d" title="Desfazer lance (Ctrl+Z)" aria-label="Desfazer lance" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button><button type="button" class="xz-btn3d" id="xz-reiniciar">Reiniciar partida</button></div></div>
-<div class="xz-preparo3d" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#xz-m-N"/></svg><i class="xz-filete"></i><p>Preparando o tabuleiro</p></div>
+<div class="xz-preparo3d" aria-hidden="true"><i class="xz-aura"></i><div class="xz-cavalo"><svg viewBox="0 0 100 100"><use href="#xz-m-N"/></svg></div><i class="xz-filete"></i><p>Preparando o tabuleiro</p></div>
 <p class="xz-versao" id="xz-versao"></p>
 <div class="xz-ambiente" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <div class="xz-mesa">
@@ -1110,6 +1121,7 @@ X._casaTela=function(s0,alt0){ if(T3) return T3.casaTela(s0,alt0); var r=casas[s
 X._legais=function(){ return legais(J.pos).map(function(m){ return [m.de,m.para,m.p]; }); };
 X._estadoJogo=function(){ return {sel:J.sel, alvos:J.alvos.length, pensando:J.pensando, modo:J.modo, vez:J.pos.vez, lances:J.hist.map(function(h){ return h.san; }), rei:J.pos.b.indexOf('K')}; };
 X._qualidade=function(){ return T3?T3.qualidade():null; };
+X._tempos=function(){ return TEMPOS; };
 X._medir=function(n,nivel){ return T3?T3.medir(n||30,nivel):null; };
 X.iniciar=iniciar; X.voltar=voltar; X.abrirAcesso=abrirAcesso;
 X.perft=function(n){ return perft(posInicial(),n); };
@@ -1123,23 +1135,34 @@ window.Xadrez=X;
    2D. A cena só desenha J.pos: regras e partida são as mesmas. */
 var T3=null, ATRASO_IA=260;
 
+/* tempos da abertura 3D em ms desde o carregamento da página (diagnóstico: Xadrez._tempos) */
+var TEMPOS={};
+function cronometrar(k){ TEMPOS[k]=Math.round(performance.now()); }
 function carregar3D(){
   var palco=el.palco, desistiu=false;
+  cronometrar('pedido');
   palco.classList.add('xz-carregando');
   var desistir=function(){ desistiu=true; palco.classList.remove('xz-carregando'); };
   var limite=setTimeout(desistir,6000);
   var ligar=function(r){
     clearTimeout(limite);
+    cronometrar('baixado');
     if(desistiu) return;
     /* a animação de carregamento continua enquanto a cena se calibra por trás (a classe entra
        antes de a caixa 3D aparecer, para ela não surgir num relance); depois o tabuleiro surge
        do escuro e as peças descem */
     palco.classList.add('xz-calibrando');
     try{ T3=criar3D(r[0],r[1]); }catch(e){ console.error(e); T3=null; }
+    cronometrar('montado');
     if(!T3){ palco.classList.remove('xz-calibrando'); desistir(); return; }
     palco.classList.remove('xz-carregando'); palco.classList.add('xz-modo3d');
     INTERVALO_DEMO=3400; ATRASO_IA=1100;
-    T3.calibrar(function(){ palco.classList.remove('xz-calibrando'); T3.entrada(); });
+    T3.calibrar(function(){
+      cronometrar('revelado');
+      palco.classList.remove('xz-calibrando'); palco.classList.add('xz-revelando');
+      setTimeout(function(){ palco.classList.remove('xz-revelando'); },750);
+      T3.entrada();
+    });
   };
   /* os passes de pós-processamento são opcionais: se falharem, a cena roda sem eles */
   var nucleo, extras;
@@ -1652,6 +1675,9 @@ function criar3D(T,PP){
   /* luz quente e suave que envolve o rei quando ele é clicado (sem tingir a madeira) */
   var luzRei=new T.PointLight(0xffc78a,0,3.2,1); cena.add(luzRei);
   var reiFoco=null, ajuste=1, ajusteJogo=1, manualAte=0, altExtra=0, modoAntes=J.modo, rw=new T.Vector3();
+  /* zoom pela roda do mouse ou pinça: aproxima ou afasta a câmera do centro do tabuleiro */
+  var zoom=1, zoomAlvo=1, ZOOM_MIN=.45, ZOOM_MAX=1.6;
+  function zoomPara(z){ zoomAlvo=Math.min(ZOOM_MAX,Math.max(ZOOM_MIN,z)); }
   function passoCamera(dt,tempo){
     var raioAlvo, altAlvo, jogo=J.modo!=='demo', livre=performance.now()>manualAte;
     if(jogo&&modoAntes==='demo'&&livre) giroJogo=0;
@@ -1668,7 +1694,8 @@ function criar3D(T,PP){
     altAlvo=Math.max(1.4,altAlvo+altExtra*ajuste);
     var k=reduz?1:Math.min(1,dt*.9);
     raio+=(raioAlvo-raio)*k; alt+=(altAlvo-alt)*k;
-    cam.position.set(Math.sin(ang)*raio,alt,Math.cos(ang)*raio);
+    zoom+=(zoomAlvo-zoom)*(reduz?1:Math.min(1,dt*9));
+    cam.position.set(Math.sin(ang)*raio*zoom,alt*zoom,Math.cos(ang)*raio*zoom);
     alvoCam.set(0,jogo?TOPO+.3:.9,0);
     if(reiFoco){ reiFoco.getWorldPosition(rw); luzRei.position.set(rw.x+.35,rw.y+1.5,rw.z+.35); }
     if(aproxima>0&&reiFoco){                 // mergulho: a câmera desce até o rei aceso
@@ -1792,7 +1819,20 @@ function criar3D(T,PP){
   /* toque/clique: arrastar gira; um clique sem arrastar joga; Ctrl+clique ou toque
      longo no rei branco abre a tela de senha */
   var arrasto=null, toqueRei=0;
+  /* roda sem Ctrl: zoom do tabuleiro (com Ctrl continua sendo o zoom da página) */
+  canvas.addEventListener('wheel',function(ev){
+    if(ev.ctrlKey||ev.metaKey) return;
+    ev.preventDefault();
+    var d=ev.deltaY*(ev.deltaMode===1?33:ev.deltaMode===2?400:1);
+    zoomPara(zoomAlvo*Math.exp(Math.max(-200,Math.min(200,d))*.0015));
+  },{passive:false});
+  /* dois dedos: pinça = zoom (o arrasto de um dedo é cancelado) */
+  var toques={}, pinca=null;
+  function nToques(){ return Object.keys(toques).length; }
+  function distToques(){ var k=Object.keys(toques), a=toques[k[0]], b=toques[k[1]]; return Math.hypot(a.x-b.x,a.y-b.y)||1; }
   canvas.addEventListener('pointerdown',function(ev){
+    if(ev.pointerType!=='mouse'){ toques[ev.pointerId]={x:ev.clientX,y:ev.clientY}; if(nToques()===2){ pinca={d0:distToques(), z0:zoomAlvo}; arrasto=null; clearTimeout(toqueRei); return; } }
+    if(pinca) return;
     if(ev.button>0) return;
     arrasto={x:ev.clientX, y:ev.clientY, giro:giro, alt:altExtra, moveu:false, id:ev.pointerId};
     try{ canvas.setPointerCapture(ev.pointerId); }catch(e){}
@@ -1801,6 +1841,7 @@ function criar3D(T,PP){
     if(s>=0&&J.pos.b[s]==='K') toqueRei=setTimeout(function(){ if(arrasto&&!arrasto.moveu){ arrasto=null; abrirAcesso(); } },TOQUE_LONGO);
   });
   canvas.addEventListener('pointermove',function(ev){
+    if(toques[ev.pointerId]){ toques[ev.pointerId]={x:ev.clientX,y:ev.clientY}; if(pinca&&nToques()===2){ zoomPara(pinca.z0*pinca.d0/distToques()); return; } }
     if(arrasto&&ev.pointerId===arrasto.id){
       var dx=ev.clientX-arrasto.x, dy=ev.clientY-arrasto.y;
       if(!arrasto.moveu&&Math.hypot(dx,dy)>7){ arrasto.moveu=true; clearTimeout(toqueRei); }
@@ -1825,8 +1866,9 @@ function criar3D(T,PP){
     var s=casaSob(ev); if(s<0) return;
     if(acessoPedido(ev,s)) abrirAcesso(); else aoClicar(s);
   }
-  canvas.addEventListener('pointerup',soltar);
-  canvas.addEventListener('pointercancel',function(){ arrasto=null; clearTimeout(toqueRei); });
+  function soltarToque(ev){ delete toques[ev.pointerId]; if(nToques()<2) pinca=null; }
+  canvas.addEventListener('pointerup',function(ev){ soltar(ev); soltarToque(ev); });
+  canvas.addEventListener('pointercancel',function(ev){ arrasto=null; clearTimeout(toqueRei); soltarToque(ev); });
   canvas.addEventListener('pointerleave',function(){ sobPonteiro=-1; });
   canvas.addEventListener('contextmenu',function(ev){ ev.preventDefault(); });
   q('xz-reiniciar').addEventListener('click',iniciarNovaPartida);   // peças voltam às casas iniciais e a partida recomeça
@@ -1851,8 +1893,8 @@ function criar3D(T,PP){
   };
   /* peças descem até as casas uma a uma; cada uma só aparece quando começa a descer */
   /* Calibração com a cena coberta pela animação de carregamento: pré-compila os shaders e
-     mede quadros reais (0,5 s de aquecimento + 1,2 s); abaixo de 40 fps desce um nível e mede
-     de novo. Assim o tabuleiro já aparece na qualidade definitiva. */
+     mede quadros reais no nível mais alto (0,3 s de aquecimento + 0,9 s), escolhendo o nível
+     que fica acima de 40 fps. Assim o tabuleiro já aparece na qualidade definitiva. */
   api.calibrar=function(pronto){
     var feito=false, limite=0;
     function fim(salvar){
@@ -1861,20 +1903,30 @@ function criar3D(T,PP){
       janela={ini:performance.now()+3000, n:0};
       pronto();
     }
-    limite=setTimeout(function(){ fim(false); },7000);   // aba em segundo plano (sem quadros): abre sem gravar
+    limite=setTimeout(function(){ fim(false); },5000);   // aba em segundo plano (sem quadros): abre sem gravar
     api.entrada(); passoAnimacoes(performance.now()+1e6);  // peças já nas casas: a medida vale para a cena cheia
+    parar();   // nada de desenhar antes de compilar: o primeiro quadro forçaria a compilação síncrona de tudo
+    /* uma só medida, no nível mais alto possível: o nível 2 custa ~60% do 3 e o 1 ~35% (medido
+       numa Intel UHD 770), então dela já sai o nível final, sem medir de novo */
     function medir(){
-      var ini=performance.now()+500, n=0;
+      var ini=performance.now()+300, n=0;
       calib=function(agora){
         if(agora<ini) return;
         n++;
-        if(agora-ini<1200) return;
+        if(agora-ini<900) return;
         calib=null;
-        if(n*1000/(agora-ini)<40&&nivel>1){ nivel--; aplicarNivel(); if(nivel>1) medir(); else fim(true); } else fim(true);
+        var fps=n*1000/(agora-ini), f3=nivel>=3?fps:fps/1.65;      // fps estimado no nível 3
+        nivel=Math.min(nivel,f3>=40?3:f3*1.65>=40?2:1); aplicarNivel(); fim(true);
       };
     }
-    var compilar=renderer.compileAsync?renderer.compileAsync(cena,cam).catch(function(){}):Promise.resolve();
+    /* compileAsync compila em paralelo, sem travar a página; às vezes não termina: espera no máximo 2,5 s */
+    var compilar=Promise.race([
+      renderer.compileAsync?renderer.compileAsync(cena,cam).catch(function(){}):Promise.resolve(),
+      new Promise(function(r){ setTimeout(r,2500); })
+    ]);
     compilar.then(function(){
+      cronometrar('compilado');
+      retomar();
       if(fixo||!efeitos||nivel<=1||conhecido) setTimeout(function(){ fim(false); },200);
       else medir();
     });
