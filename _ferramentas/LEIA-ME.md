@@ -3,7 +3,7 @@
 O `index.html` publicado tem só a **casca** em claro: a tela do decoder. Todo o resto vai cifrado nele: a página dos cards, o Chat, o Cipher e o cadastro de usuários.
 
 ## Fluxo
-1. **Decoder.** A chave do **root** é o código hexadecimal que aparece na linha `セッション` (`session`, em inglês) do boot: um duplo clique seleciona o código inteiro para copiar e colar. Para trocar esse código: `node _ferramentas/montar.mjs --novo-codigo`. O © do rodapé troca o idioma. Os **demais usuários** usam como chave a **própria senha de login (Senha 1) escrita ao contrário**.
+1. **Decoder.** A chave do **root** é o código hexadecimal que aparece na linha `セッション` (`session`, em inglês) do boot **com um ponto no final**: copie o código (o duplo clique seleciona ele inteiro), cole e acrescente o `.`. Sem o ponto, o código não abre. Para trocar esse código: `node _ferramentas/montar.mjs --novo-codigo`. O © do rodapé troca o idioma. Os **demais usuários** usam como chave a **própria senha de login (Senha 1) escrita ao contrário**.
 2. **Cards.** **Chat** abre o Garden (ou o shogi, se o navegador não tiver WebGPU). **Cipher** abre o xadrez.
 3. **Login escondido.** No computador, Ctrl/⌘+clique: no Garden, em qualquer lugar; no shogi e no xadrez, no rei branco. Em tela de toque, toque duplo no mesmo ponto.
 4. **Um só cadastro: o `VAULT_DB` do Cipher.** O Cipher usa as 3 senhas. O Chat usa só a Senha 1. No Chat, quem abre a sala é o **root**: os outros mandam usuário e senha a ele pelo canal P2P cifrado, e ele confere antes de aceitar.

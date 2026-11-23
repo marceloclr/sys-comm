@@ -19,13 +19,16 @@ if (!conteudo.chat.includes('<!--@CHAT_JS@-->')) throw new Error('marcador <!--@
 // código do root ("impressão"): aparece no boot como um ID de sessão comum, 32 hex (128 bits).
 // --novo-codigo gera outro; a chave do conteúdo K continua a mesma (abre com o código atual).
 const novoCodigo = process.argv.includes('--novo-codigo');
+// a chave do decoder do root é o código exibido com um ponto no final
+const chaveRoot = (codigo) => codigo + '.';
 const gerarCodigo = () => crypto.randomBytes(16).toString('hex');
 const arqImp = path.join(FONTES, 'impressao.txt');
 let impressao = fs.existsSync(arqImp) ? fs.readFileSync(arqImp, 'utf8').trim() : '';
 const atual = fs.existsSync(INDEX) ? lerIndex(fs.readFileSync(INDEX, 'utf8')) : null;
 let K, sal, iter;
 if (atual) {
-  K = abrirK(atual, atual.impressao);              // o código atual está no próprio index (é exibido)
+  // a chave do root é o código exibido + "." (antes de 23/11 tarde, era o código puro)
+  K = abrirK(atual, chaveRoot(atual.impressao)) || abrirK(atual, atual.impressao);
   if (!K) throw new Error('o código exibido no index.html atual não abre a chave do conteúdo');
   if (!impressao) impressao = atual.impressao;
   sal = atual.nuc.s; iter = atual.nuc.n;
@@ -36,7 +39,7 @@ if (atual) {
 if (novoCodigo || !impressao) { impressao = gerarCodigo(); console.log('código do decoder (root) novo'); }
 fs.writeFileSync(arqImp, impressao + '\n');
 
-const chaves = embaralhar([cifrar(derivar(impressao, sal, iter), K), ...chavesDoVault(conteudo.cipher)]);
+const chaves = embaralhar([cifrar(derivar(chaveRoot(impressao), sal, iter), K), ...chavesDoVault(conteudo.cipher)]);
 const c = cifrar(K, Buffer.from(JSON.stringify(conteudo), 'utf8'));
 const nuc = { s: sal, n: iter, i: c.i, c: c.c };
 const html = conteudo.casca
@@ -46,7 +49,8 @@ const html = conteudo.casca
 
 // conferência: a impressão abre K, e K abre um conteúdo igual ao das fontes
 const idx = lerIndex(html);
-const K2 = abrirK(idx, impressao);
+const K2 = abrirK(idx, chaveRoot(impressao));
+if (abrirK(idx, impressao)) throw new Error('o código sem o ponto não pode abrir');
 const volta = JSON.parse(decifrar(K2, idx.nuc).toString('utf8'));
 for (const k of Object.keys(ARQUIVOS)) if (volta[k] !== conteudo[k]) throw new Error('conferência falhou em ' + k);
 
