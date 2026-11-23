@@ -16,22 +16,24 @@ for (const m of ['/*@NUCLEO@*/null', '/*@CHAVES@*/[]', '/*@IMPRESSAO@*/'])
   if (!conteudo.casca.includes(m)) throw new Error('marcador ausente na casca: ' + m);
 if (!conteudo.chat.includes('<!--@CHAT_JS@-->')) throw new Error('marcador <!--@CHAT_JS@--> ausente no chat.html');
 
-// impressão digital do root: 6 grupos de 4, sem letras ambíguas (≈ 119 bits)
+// código do root ("impressão"): aparece no boot como um ID de sessão comum, 32 hex (128 bits).
+// --novo-codigo gera outro; a chave do conteúdo K continua a mesma (abre com o código atual).
+const novoCodigo = process.argv.includes('--novo-codigo');
+const gerarCodigo = () => crypto.randomBytes(16).toString('hex');
 const arqImp = path.join(FONTES, 'impressao.txt');
 let impressao = fs.existsSync(arqImp) ? fs.readFileSync(arqImp, 'utf8').trim() : '';
 const atual = fs.existsSync(INDEX) ? lerIndex(fs.readFileSync(INDEX, 'utf8')) : null;
 let K, sal, iter;
 if (atual) {
+  K = abrirK(atual, atual.impressao);              // o código atual está no próprio index (é exibido)
+  if (!K) throw new Error('o código exibido no index.html atual não abre a chave do conteúdo');
   if (!impressao) impressao = atual.impressao;
-  K = abrirK(atual, impressao);
-  if (!K) throw new Error('a impressão digital de _fontes/impressao.txt não abre o index.html atual');
   sal = atual.nuc.s; iter = atual.nuc.n;
 } else {
-  const ALFA = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
-  if (!impressao) impressao = Array.from({ length: 6 }, () => Array.from({ length: 4 }, () => ALFA[crypto.randomInt(ALFA.length)]).join('')).join('-');
   K = crypto.randomBytes(32); sal = b64(crypto.randomBytes(16)); iter = ITER;
-  console.log('primeira montagem: chave do conteúdo, sal e impressão digital novos');
+  console.log('primeira montagem: chave do conteúdo e sal novos');
 }
+if (novoCodigo || !impressao) { impressao = gerarCodigo(); console.log('código do decoder (root) novo'); }
 fs.writeFileSync(arqImp, impressao + '\n');
 
 const chaves = embaralhar([cifrar(derivar(impressao, sal, iter), K), ...chavesDoVault(conteudo.cipher)]);
