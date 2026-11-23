@@ -12,10 +12,13 @@ import { FONTES, INDEX, ITER, ARQUIVOS, b64, cifrar, decifrar, derivar, lerIndex
 const ler = (n) => fs.readFileSync(path.join(FONTES, n), 'utf8');
 const conteudo = { v: 1 };
 for (const [k, n] of Object.entries(ARQUIVOS)) conteudo[k] = ler(n);
-// carimbo de versão do build (V-DDMMAAAA-HHMM): injetado no decoder e no Chat (o Cipher usa a sua própria, do título)
+// carimbo de versão do build (V-DDMMAAAA-HHMM): injetado no decoder e no Chat; no Cipher, que lê a
+// versão do próprio <title>, o V-… do título é trocado pelo do build (antes ficava a data fixa da fonte)
 const _ag = new Date(), _p2 = (n) => String(n).padStart(2, '0');
 const VERSAO = 'V-' + _p2(_ag.getDate()) + _p2(_ag.getMonth() + 1) + _ag.getFullYear() + '-' + _p2(_ag.getHours()) + _p2(_ag.getMinutes());
 for (const k of ['casca', 'chat', 'inicio']) conteudo[k] = conteudo[k].split('@@VERSAO@@').join(VERSAO);
+conteudo.cipher = conteudo.cipher.replace(/(<title>[^<]*?)V-\d{8}-\d{4}/, (_, a) => a + VERSAO);
+if (!conteudo.cipher.includes(VERSAO)) throw new Error('versão V-DDMMAAAA-HHMM ausente no <title> do cipher.html');
 for (const m of ['/*@NUCLEO@*/null', '/*@CHAVES@*/[]', '/*@IMPRESSAO@*/'])
   if (!conteudo.casca.includes(m)) throw new Error('marcador ausente na casca: ' + m);
 if (!conteudo.chat.includes('<!--@CHAT_JS@-->')) throw new Error('marcador <!--@CHAT_JS@--> ausente no chat.html');
