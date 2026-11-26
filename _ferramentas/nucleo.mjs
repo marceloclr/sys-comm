@@ -13,7 +13,7 @@ export const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export const FONTES = path.join(RAIZ, '_fontes');
 export const INDEX = path.join(RAIZ, 'index.html');
 export const ITER = 300000;
-export const ARQUIVOS = { casca: 'casca.html', inicio: 'inicio.html', chat: 'chat.html', chatjs: 'chat.js', cipher: 'cipher.html' };
+export const ARQUIVOS = { casca: 'casca.html', inicio: 'inicio.html', chat: 'chat.html', chatjs: 'chat.js', cipher: 'cipher.html', identidade: 'identidade.css', relatorio: 'relatorio.js' };
 
 export const b64 = (b) => Buffer.from(b).toString('base64');
 export const deB64 = (s) => Buffer.from(s, 'base64');

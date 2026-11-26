@@ -23,6 +23,10 @@ if (!conteudo.cipher.includes(VERSAO)) throw new Error('versão V-DDMMAAAA-HHMM 
 for (const m of ['/*@NUCLEO@*/null', '/*@CHAVES@*/[]', '/*@IMPRESSAO@*/'])
   if (!conteudo.casca.includes(m)) throw new Error('marcador ausente na casca: ' + m);
 if (!conteudo.chat.includes('<!--@CHAT_JS@-->')) throw new Error('marcador <!--@CHAT_JS@--> ausente no chat.html');
+// identidade visual única (identidade.css): a casca injeta no lugar do marcador, no Chat e no Cipher
+for (const k of ['chat', 'cipher']) if (!conteudo[k].includes('/*@IDENTIDADE@*/')) throw new Error('marcador /*@IDENTIDADE@*/ ausente no ' + ARQUIVOS[k]);
+// relatório de acesso (relatorio.js): injetado no Cipher e no chat.js pelo marcador
+for (const k of ['cipher', 'chatjs']) if (!conteudo[k].includes('/*@RELATORIO@*/')) throw new Error('marcador /*@RELATORIO@*/ ausente no ' + ARQUIVOS[k]);
 
 // código do root ("impressão"): aparece no boot como um ID de sessão comum, 32 hex (128 bits).
 // --novo-codigo gera outro; a chave do conteúdo K continua a mesma (abre com o código atual).
