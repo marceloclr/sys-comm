@@ -30,3 +30,17 @@ node _ferramentas/montar.mjs     # cifra _fontes/ em index.html (mantém a chave
 - A chave do root fica à vista na página pública: a proteção depende só de ninguém saber que aquela linha é uma chave.
 - A chave dos outros é a Senha 1 invertida: quem souber uma sabe a outra.
 - O conteúdo usa AES-256-GCM, e as chaves do decoder passam por PBKDF2-SHA256 com 300.000 iterações.
+
+## Metadados dos anexos do Chat
+Antes de enviar um arquivo, o Chat abre um popup com todos os metadados lidos. As caixas vêm marcadas, e o que estiver marcado sai **só da cópia enviada**. O nome do arquivo é editável e pode ser sorteado. O núcleo é o objeto `META`, entre os marcadores `/*@META-INICIO@*/` e `/*@META-FIM@*/` do `_fontes/chat.js`. Ele não usa DOM, então roda no Node.
+
+```
+node _ferramentas/testar-meta.mjs            # usa _fontes/chat.js e as amostras de _fontes/_testes/fx
+VERBOSE=1 node _ferramentas/testar-meta.mjs  # lista cada item lido
+```
+
+- **Amostras:** `_fontes/_testes/gerar-fixtures.py` (fotos), `gerar-fixtures-docs.py` (DOCX, ODT, PDF), mais áudio, vídeo e compactados gerados com ffmpeg, zip, tar, 7z.
+- **Teste de cada amostra:** lê os itens; limpa tudo e confere que nada removível sobrou; limpa uma parte e confere que os desmarcados ficaram.
+- **Formatos que podem ser limpos:** JPEG, PNG, WebP, GIF, SVG, HEIC/AVIF, PDF, DOCX/XLSX/PPTX, ODT/ODS/ODP, MP4/MOV/M4A, MP3, FLAC, Ogg/Opus, WAV, ZIP, TAR, GZ/TGZ. Nos compactados, a limpeza vale também para os arquivos de dentro, até 2 níveis.
+- **Só leitura:** 7z e RAR.
+- **Fora daqui:** bz2, xz, zst. O popup avisa que o formato não é suportado e oferece só o envio do original.
