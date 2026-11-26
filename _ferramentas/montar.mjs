@@ -7,6 +7,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { FONTES, INDEX, ITER, ARQUIVOS, b64, cifrar, decifrar, derivar, lerIndex, abrirK, chavesDoVault, embaralhar } from './nucleo.mjs';
 
 const ler = (n) => fs.readFileSync(path.join(FONTES, n), 'utf8');
@@ -63,3 +64,19 @@ for (const k of Object.keys(ARQUIVOS)) if (volta[k] !== conteudo[k]) throw new E
 
 fs.writeFileSync(INDEX, html);
 console.log(`index.html: ${(html.length / 1024).toFixed(0)} KB · ${chaves.length} chave(s) de decoder (root + ${chaves.length - 1} usuário(s)) · conferido`);
+
+// Cópia com o número da versão (index-DDMMAAAA-HHMM.html, igual ao V- do rodapé): serve para saber
+// qual versão cada usuário está usando. Ficam só as 5 últimas versões; cópias de montagens que nunca
+// foram publicadas (fora do git) saem. As removidas aqui saem do git com `git add -A -- 'index*.html'`.
+const raizRepo = path.dirname(INDEX);
+const nomeVer = 'index-' + VERSAO.slice(2) + '.html';
+const ordem = (n) => { const m = n.match(/^index-(\d{2})(\d{2})(\d{4})-(\d{4})\.html$/); return m ? m[3] + m[2] + m[1] + m[4] : null; };
+fs.writeFileSync(path.join(raizRepo, nomeVer), html);
+let rastreados = new Set();
+try { rastreados = new Set(execFileSync('git', ['ls-files', '--', 'index-*.html'], { cwd: raizRepo }).toString().split('\n').filter(Boolean)); } catch { /* fora do git */ }
+for (const n of fs.readdirSync(raizRepo).filter(ordem)) {
+  if (n !== nomeVer && !rastreados.has(n)) { fs.unlinkSync(path.join(raizRepo, n)); console.log('cópia não publicada removida: ' + n); }
+}
+const copias = fs.readdirSync(raizRepo).filter(ordem).sort((a, b) => ordem(a).localeCompare(ordem(b)));
+for (const n of copias.slice(0, Math.max(0, copias.length - 5))) { fs.unlinkSync(path.join(raizRepo, n)); console.log('versão antiga removida (fica no histórico do git): ' + n); }
+console.log('cópia da versão: ' + nomeVer + ' · versões na pasta: ' + fs.readdirSync(raizRepo).filter(ordem).sort((a, b) => ordem(a).localeCompare(ordem(b))).join(', '));

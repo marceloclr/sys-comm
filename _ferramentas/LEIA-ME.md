@@ -44,3 +44,11 @@ VERBOSE=1 node _ferramentas/testar-meta.mjs  # lista cada item lido
 - **Formatos que podem ser limpos:** JPEG, PNG, WebP, GIF, SVG, HEIC/AVIF, PDF, DOCX/XLSX/PPTX, ODT/ODS/ODP, MP4/MOV/M4A, MP3, FLAC, Ogg/Opus, WAV, ZIP, TAR, GZ/TGZ. Nos compactados, a limpeza vale também para os arquivos de dentro, até 2 níveis.
 - **Só leitura:** 7z e RAR.
 - **Fora daqui:** bz2, xz, zst. O popup avisa que o formato não é suportado e oferece só o envio do original.
+
+## Versões na pasta
+- **`index.html`:** sempre a versão atual.
+- **`index-DDMMAAAA-HHMM.html`:** cópias com o **mesmo número do rodapé** (`V-DDMMAAAA-HHMM`). Assim dá para saber qual versão cada usuário está usando.
+- **Cópia da atual:** `index-<versão atual>.html` existe junto com o `index.html`, com o mesmo conteúdo.
+- **Automático:** o `montar.mjs` grava a cópia a cada montagem e mantém só as **5 últimas versões**. Também apaga as cópias de montagens que nunca foram publicadas (as que estão fora do git).
+- **Ao publicar:** `git add -A -- 'index*.html'`, para levar ao git também as remoções.
+- **Data de modificação:** a de cada cópia deve ser a hora do nome (`touch -d`), para que a ordenação por data no gerenciador de arquivos não engane.
