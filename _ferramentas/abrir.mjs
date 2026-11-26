@@ -19,6 +19,8 @@ if (!chave) {
 const K = abrirK(idx, chave);
 if (!K) { console.error('chave errada'); process.exit(1); }
 const c = JSON.parse(decifrar(K, idx.nuc).toString('utf8'));
+// o montar.mjs troca @@VERSAO@@ pela data do build; aqui o marcador volta, para a próxima montagem
+for (const k of ['casca', 'chat', 'inicio']) if (typeof c[k] === 'string') c[k] = c[k].replace(/V-\d{8}-\d{4}/g, '@@VERSAO@@');
 
 fs.mkdirSync(FONTES, { recursive: true });
 const saidas = Object.entries(ARQUIVOS).map(([k, n]) => [path.join(FONTES, n), c[k]]);
